@@ -8,11 +8,14 @@
 #include "periodic_scheduler.h"
 #include "sj2_cli.h"
 #include "queue.h"
+#include "acceleration.h"
 
 QueueHandle_t sd_card_Q;
+QueueHandle_t accel_data_Q;
 char string[64];
 const char *filename = "file.txt";
 FIL file; // File handle
+acceleration__axis_data_s* accel_data;
 
 // 'static' to make these functions 'private' to this file
 static void create_producer_task(int part);
@@ -29,6 +32,8 @@ int main(void) {
   create_producer_task(part);
   create_consumer_task(part);
   create_watchdog_task();
+  acceleration__init();
+
 
   puts("Starting RTOS");
   vTaskStartScheduler(); // This function never returns unless RTOS scheduler runs out of memory and fails
@@ -60,7 +65,28 @@ static void producer_task(void *params) {
       - After collecting 100 samples (after 100ms), compute the average
       - Write average value every 100ms (avg. of 100 samples) to the sensor queue
       - Use medium priority for this task
-      */
+      */ 
+      acceleration__axis_data_s accel_data[100];
+      acceleration__axis_data_s accel_data_avg;
+      int16_t x, y, z = 0;
+    
+
+
+      for (int i = 0; i < 100; i++){
+
+        accel_data[i] = acceleration__get_data();
+        x += accel_data[i].x;
+        y += accel_data[i].y;
+        z += accel_data[i].z;
+        vTaskDelay(1);
+      
+      }
+      accel_data_avg.x = x/100;
+      accel_data_avg.y = x/100;
+      accel_data_avg.z = x/100;
+
+
+      xQueueSend(accel_data_Q, &accel_data_avg, 0);
 
     }
 
@@ -102,6 +128,8 @@ static void consumer_task(void *params) {
       - Also, note that periodically you may have to "flush" the file (or close it) otherwise data on the SD card may be cached and the file may not get written
       - Use medium priority for this task
       */
+      acceleration__axis_data_s accel_data_avg;
+      xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
 
   }
     
