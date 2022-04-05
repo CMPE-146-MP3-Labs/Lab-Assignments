@@ -45,15 +45,14 @@ void sj2_cli__init(void) {
           "tasklist <time>' will display CPU utilization within this time "
           "window.",
       .app_cli_handler = cli__task_list};
-  static app_cli__command_s suspend = {
-      .command_name = "suspend",
-      .help_message_for_command = "Suspend a task",
-      .app_cli_handler = cli__suspend_task};
-  static app_cli__command_s resume = {
-      .command_name = "resume",
-      .help_message_for_command = "Resume a task",
-      .app_cli_handler = cli__resume_task};
-  
+  static app_cli__command_s suspend = {.command_name = "suspend",
+                                       .help_message_for_command =
+                                           "Suspend a task",
+                                       .app_cli_handler = cli__suspend_task};
+  static app_cli__command_s resume = {.command_name = "resume",
+                                      .help_message_for_command =
+                                          "Resume a task",
+                                      .app_cli_handler = cli__resume_task};
 
   // Add your CLI commands in descending sorted order to make them appear in
   // sorted order

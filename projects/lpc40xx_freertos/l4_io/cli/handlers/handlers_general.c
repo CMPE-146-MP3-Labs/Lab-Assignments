@@ -45,31 +45,35 @@ app_cli_status_e cli__task_list(app_cli__argument_t argument,
   return APP_CLI_STATUS__SUCCESS;
 }
 
-app_cli_status_e cli__suspend_task(app_cli__argument_t argument, sl_string_s user_input_minus_command_name,
+app_cli_status_e cli__suspend_task(app_cli__argument_t argument,
+                                   sl_string_s user_input_minus_command_name,
                                    app_cli__print_string_function cli_output) {
-  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
- 
+  // sl_string is a powerful string library, and you can utilize the sl_string.h
+  // API to parse parameters of a command
+
   vTaskSuspend(argument);
- 
+
   // Sample code to output data back to the CLI
-  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
-  // sl_string__printf(s, "Hello back to the CLI\n");
-  // cli_output(NULL, s);
- 
+  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save
+  // memory sl_string__printf(s, "Hello back to the CLI\n"); cli_output(NULL,
+  // s);
+
   return APP_CLI_STATUS__SUCCESS;
 }
 
-app_cli_status_e cli__resume_task(app_cli__argument_t argument, sl_string_s user_input_minus_command_name,
-                                   app_cli__print_string_function cli_output) {
-  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
- 
+app_cli_status_e cli__resume_task(app_cli__argument_t argument,
+                                  sl_string_s user_input_minus_command_name,
+                                  app_cli__print_string_function cli_output) {
+  // sl_string is a powerful string library, and you can utilize the sl_string.h
+  // API to parse parameters of a command
+
   vTaskResume(argument);
- 
+
   // Sample code to output data back to the CLI
-  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
-  // sl_string__printf(s, "Hello back to the CLI\n");
-  // cli_output(NULL, s);
- 
+  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save
+  // memory sl_string__printf(s, "Hello back to the CLI\n"); cli_output(NULL,
+  // s);
+
   return APP_CLI_STATUS__SUCCESS;
 }
 

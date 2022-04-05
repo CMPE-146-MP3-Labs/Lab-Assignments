@@ -43,15 +43,18 @@ int main(void) {
 }
 
 static void create_producer_task() {
-  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
+  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL,
+              PRIORITY_MEDIUM, NULL);
 }
 
 static void create_consumer_task() {
-  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
+  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), NULL,
+              PRIORITY_MEDIUM, NULL);
 }
 
 static void create_watchdog_task() {
-  xTaskCreate(watchdog_task, "Watchdog", (512U * 8) / sizeof(void *), NULL, PRIORITY_HIGH, NULL);
+  xTaskCreate(watchdog_task, "Watchdog", (512U * 8) / sizeof(void *), NULL,
+              PRIORITY_HIGH, NULL);
 }
 
 static void producer_task(void *params) {
@@ -157,7 +160,8 @@ static void consumer_task(void *params) {
     if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) {
 
       int16_t time = xTaskGetTickCount();
-      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
+      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
+              accel_data_avg.y, accel_data_avg.z);
       write_file_using_fatfs_pi();
       xEventGroupSetBits(Check_In, 1 << 1);
     }
@@ -185,18 +189,21 @@ void watchdog_task(void *params) {
     // of the expected production rate of the producer() task and its check-in
     const TickType_t xTicksToWait = 200;
     EventBits_t uxBits;
-    uxBits = xEventGroupWaitBits(Check_In,      /* The event group being tested. */
-                                 0x3,           /* The bits within the event group to wait for. */
-                                 pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
-                                 pdTRUE,        /* Don't wait for both bits, either bit will do. */
-                                 xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
+    uxBits = xEventGroupWaitBits(
+        Check_In,      /* The event group being tested. */
+        0x3,           /* The bits within the event group to wait for. */
+        pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
+        pdTRUE,        /* Don't wait for both bits, either bit will do. */
+        xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
 
     if (uxBits == 0x0) {
       fprintf(stderr, "Tasks did not complete: Producer and Consumer failed\n");
     } else if (uxBits == 0x1) {
-    fprintf(stderr, "Tasks did not complete: Producer Succeeded, Conusmer Failed\n");
+      fprintf(stderr,
+              "Tasks did not complete: Producer Succeeded, Conusmer Failed\n");
     } else if (uxBits == 0x2) {
-    fprintf(stderr, "Tasks did not complete: Producer Failed, Conusmer Succeeded\n");
+      fprintf(stderr,
+              "Tasks did not complete: Producer Failed, Conusmer Succeeded\n");
     } else if (uxBits == 0x3) {
       fprintf(stderr, "Tasks completed\n");
     }
@@ -207,7 +214,8 @@ void write_file_using_fatfs_pi(void) {
   const char *filename = "file.txt";
   FIL file; // File handle
   UINT bytes_written = 0;
-  FRESULT result = f_open(&file, filename, (FA_OPEN_APPEND | FA_WRITE | FA_CREATE_ALWAYS));
+  FRESULT result =
+      f_open(&file, filename, (FA_OPEN_APPEND | FA_WRITE | FA_CREATE_ALWAYS));
 
   if (FR_OK == result) {
     // char string[64];
@@ -221,5 +229,3 @@ void write_file_using_fatfs_pi(void) {
     printf("ERROR: Failed to open: %s\n", filename);
   }
 }
-
-
