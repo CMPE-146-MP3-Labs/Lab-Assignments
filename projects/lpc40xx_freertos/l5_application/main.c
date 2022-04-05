@@ -114,17 +114,14 @@ static void producer_task(void *params) {
       accel_data_avg.x = x/100;
       accel_data_avg.y = x/100;
       accel_data_avg.z = x/100;
-      xEventGroupSetBits(Check_In, 1);
 
 
       if (xQueueSend(sd_card_Q, &accel_data_avg, 0)) {
       }
-      vTaskDelay(1000);
+      xEventGroupSetBits(Check_In, 1 << 0);
+      vTaskDelay(100);
       // 3. xEventGroupSetBits(checkin)
       // 4. vTaskDelay(100)
-      int data_send;
-    
-      data_send = 99;
 
       
     }
@@ -156,6 +153,7 @@ static void consumer_task(void *params) {
       int16_t time = xTaskGetTickCount();
       sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
       write_file_using_fatfs_pi();
+    }
 
   }
     
@@ -167,14 +165,18 @@ static void consumer_task(void *params) {
       // Sample code:
       // 1. xQueueReceive(&handle, &sensor_value, portMAX_DELAY); // Wait forever for an item
       // 2. xEventGroupSetBits(checkin)
-      int data_receive;
+      acceleration__axis_data_s accel_data_avg;
     
-      if (xQueueReceive(sd_card_Q, &data_receive, portMAX_DELAY)) {
-        sd_card_init(data_receive);
-      }
+      if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) 
+
+        xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
+        int16_t time = xTaskGetTickCount();
+        sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
+        write_file_using_fatfs_pi();
+        xEventGroupSetBits(Check_In, 0 << 0);
       // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
-      f_close(&file);
-      vTaskSuspend(NULL);
+      }
+
     }
 
     else{
@@ -184,6 +186,7 @@ static void consumer_task(void *params) {
   }
 
 }
+
 
 /*
 Create a watchdog task that monitors the operation of the two tasks.
