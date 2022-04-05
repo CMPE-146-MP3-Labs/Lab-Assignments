@@ -34,7 +34,7 @@ int main(void) {
   create_consumer_task(part);
   create_watchdog_task();
   acceleration__init();
-  Check_In = xEventGroupCreate;
+  Check_In = xEventGroupCreate();
 
 
   puts("Starting RTOS");
