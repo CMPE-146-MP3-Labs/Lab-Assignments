@@ -2940,17 +2940,16 @@ END GROUP
  .rodata.uart_peripheral_ids
                 0x000000000000b5b8        0x4 _build_lpc40xx_freertos/objects/uart.o
  .rodata.consumer_task.str1.1
-                0x000000000000b5bc       0x17 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000b5bc       0x19 _build_lpc40xx_freertos/objects/main.o
  .rodata.main.str1.1
-                0x000000000000b5d3       0x29 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000b5d5       0x29 _build_lpc40xx_freertos/objects/main.o
  .rodata.watchdog_task.str1.1
-                0x000000000000b5fc       0xc1 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000b5fe       0xc1 _build_lpc40xx_freertos/objects/main.o
  .rodata.write_file_using_fatfs_pi.str1.1
-                0x000000000000b6bd       0x48 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000b6bf       0x48 _build_lpc40xx_freertos/objects/main.o
  .rodata._ctype_
-                0x000000000000b705      0x101 /Users/aaronricepersonal/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ctype_.o)
-                0x000000000000b705                _ctype_
- *fill*         0x000000000000b806        0x2 ff
+                0x000000000000b707      0x101 /Users/aaronricepersonal/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ctype_.o)
+                0x000000000000b707                _ctype_
  .rodata._global_impure_ptr
                 0x000000000000b808        0x4 /Users/aaronricepersonal/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-impure.o)
                 0x000000000000b808                _global_impure_ptr
