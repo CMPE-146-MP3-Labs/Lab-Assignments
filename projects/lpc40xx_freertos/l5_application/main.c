@@ -19,8 +19,8 @@ const char *filename = "file.txt";
 FIL file; // File handle
 
 // 'static' to make these functions 'private' to this file
-static void create_producer_task(int part);
-static void create_consumer_task(int part);
+static void create_producer_task(void);
+static void create_consumer_task(void);
 static void create_watchdog_task(void);
 static void producer_task(void *params);
 static void consumer_task(void *params);
@@ -29,9 +29,8 @@ static void watchdog_task(void *params);
 void write_file_using_fatfs_pi(void);
 
 int main(void) {
-  int part = 0;
-  create_producer_task(part);
-  create_consumer_task(part);
+  create_producer_task();
+  create_consumer_task();
   create_watchdog_task();
   acceleration__init();
   Check_In = xEventGroupCreate();
@@ -43,13 +42,13 @@ int main(void) {
   return 0;
 }
 
-static void create_producer_task(part) {
-  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), part,
+static void create_producer_task() {
+  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL,
               PRIORITY_MEDIUM, NULL);
 }
 
-static void create_consumer_task(part) {
-  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), part,
+static void create_consumer_task() {
+  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), NULL,
               PRIORITY_MEDIUM, NULL);
 }
 
@@ -60,7 +59,7 @@ static void create_watchdog_task() {
 
 static void producer_task(void *params) {
   while (1) {
-    if (params == 0) {
+    /*if (params == 0) {
       /*
       Create a producer task that reads a sensor value every 1ms.
       - The sensor can be any input type, such as a light sensor, or an
@@ -69,7 +68,7 @@ static void producer_task(void *params) {
       - Write average value every 100ms (avg. of 100 samples) to the sensor
       queue
       - Use medium priority for this task
-      */
+      
       acceleration__axis_data_s accel_data[100];
       acceleration__axis_data_s accel_data_avg;
       int16_t x, y, z = 0;
@@ -88,9 +87,9 @@ static void producer_task(void *params) {
 
       xQueueSend(accel_data_Q, &accel_data_avg, 0);
 
-    }
+    }*/
 
-    else if (params == 1) {
+    
       // Assume 100ms loop - vTaskDelay(100)
       // Sample code:
       // 1. get_sensor_value()
@@ -117,13 +116,13 @@ static void producer_task(void *params) {
       vTaskDelay(100);
       // 3. xEventGroupSetBits(checkin)
       // 4. vTaskDelay(100)
-    }
+    
   }
 }
 
 static void consumer_task(void *params) {
   while (1) {
-    if (params == 0) {
+    /*if (params == 0) {
       /*
       Create a consumer task that pulls the data off the sensor queue
       - Use infinite timeout value during xQueueReceive API
@@ -139,7 +138,7 @@ static void consumer_task(void *params) {
       it) otherwise data on the SD card may be cached and the file may not get
       written
       - Use medium priority for this task
-      */
+      
       acceleration__axis_data_s accel_data_avg;
       xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
       int16_t time = xTaskGetTickCount();
@@ -148,7 +147,7 @@ static void consumer_task(void *params) {
       write_file_using_fatfs_pi();
     }
 
-    else if (params == 1) {
+    else if (params == 1) {*/
       // Assume 100ms loop
       // No need to use vTaskDelay() because the consumer will consume as fast
       // as production rate because we should block on xQueueReceive(&handle,
@@ -166,7 +165,7 @@ static void consumer_task(void *params) {
         write_file_using_fatfs_pi();
         xEventGroupSetBits(Check_In, 1 << 1);
       }
-    }
+    
   }
 }
 
@@ -185,7 +184,7 @@ the RTOS Event Groups API
 void watchdog_task(void *params) {
   while (1) {
     // ...
-    // vTaskDelay(200);
+    vTaskDelay(200);
     // We either should vTaskDelay, but for better robustness, we should
     // block on xEventGroupWaitBits() for slightly more than 100ms because
     // of the expected production rate of the producer() task and its check-in
