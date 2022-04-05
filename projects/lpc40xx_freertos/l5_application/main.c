@@ -127,9 +127,6 @@ static void producer_task(void *params) {
       
     }
 
-    else{
-
-    }
 
   }
 
@@ -178,9 +175,6 @@ static void consumer_task(void *params) {
 
     }
 
-    else{
-      continue;
-    }
 
   }
 
