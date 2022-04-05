@@ -14,48 +14,10 @@ QueueHandle_t sd_card_Q;
 char string[64];
 const char *filename = "file.txt";
 FIL file; // File handle
-void sd_card_init(int data) {
 
-  UINT bytes_written = 0;
-  FRESULT open_file = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS)); 
-  if (FR_OK == open_file) {
-    sprintf(string, "SD card open,%i\n", data);     
-    if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
-      fprintf(stderr, "Successfully write data to SD card\n");
-    } else {
-      fprintf(stderr, "ERROR: Failed to write data to file\n");
-    }
-    f_close(&file);
-  } else {
-    fprintf(stderr, "ERROR: Failed to open: %s\n", filename);
-  }
-  f_read(&file, &string, strlen(string), &bytes_written); 
-  for (int i = 0; i < strlen(string); i++) {
-    fprintf(stderr, "%c", string[i]);
-  }
-}
 
-void Producer(void *p) {
-  int data_send;
-  while (1) {
-    data_send = 99;
-    if (xQueueSend(sd_card_Q, &data_send, 0)) {
-    }
-    vTaskDelay(1000);
-  }
-}
 
-void Consumer(void *p) {
-  int data_receive;
-  while (1) {
-    if (xQueueReceive(sd_card_Q, &data_receive, portMAX_DELAY)) {
-      sd_card_init(data_receive);
-    }
-    // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
-    f_close(&file);
-    vTaskSuspend(NULL);
-  }
-}
+
 
 // 'static' to make these functions 'private' to this file
 static void create_producer_task(int part);
@@ -105,6 +67,13 @@ static void producer_task(void *params) {
       - Write average value every 100ms (avg. of 100 samples) to the sensor queue
       - Use medium priority for this task
       */
+      int data_send;
+      while (1) {
+        data_send = 99;
+        if (xQueueSend(sd_card_Q, &data_send, 0)) {
+        }
+        vTaskDelay(1000);
+      }
     }
 
     else if (params = 1){
@@ -139,6 +108,15 @@ static void consumer_task(void *params) {
       - Also, note that periodically you may have to "flush" the file (or close it) otherwise data on the SD card may be cached and the file may not get written
       - Use medium priority for this task
       */
+      int data_receive;
+      while (1) {
+        if (xQueueReceive(sd_card_Q, &data_receive, portMAX_DELAY)) {
+          sd_card_init(data_receive);
+        }
+        // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
+        f_close(&file);
+        vTaskSuspend(NULL);
+  }
     }  
 
     else if (params = 1){
