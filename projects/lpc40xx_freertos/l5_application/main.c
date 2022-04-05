@@ -201,10 +201,31 @@ void watchdog_task(void *params) {
     // We either should vTaskDelay, but for better robustness, we should
     // block on xEventGroupWaitBits() for slightly more than 100ms because
     // of the expected production rate of the producer() task and its check-in
-    
-    if (xEventGroupWaitBits(...)) { // TODO
-      // TODO
-    }
+   EventBits_t uxBits 
+   uxBits = xEventGroupWaitBits(
+            Check_In,   /* The event group being tested. */
+            BIT_0 | BIT_1, /* The bits within the event group to wait for. */
+            pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
+            pdFALSE,       /* Don't wait for both bits, either bit will do. */
+            xTicksToWait );/* Wait a maximum of 100ms for either bit to be set. */
+
+  if( ( uxBits & ( BIT_0 | BIT_1 ) ) == ( BIT_0 | BIT_1 ) )
+  {
+      /* xEventGroupWaitBits() returned because both bits were set. */
+  }
+  else if( ( uxBits & BIT_0 ) != 0 )
+  {
+      /* xEventGroupWaitBits() returned because just BIT_0 was set. */
+  }
+  else if( ( uxBits & BIT_1 ) != 0 )
+  {
+      /* xEventGroupWaitBits() returned because just BIT_1 was set. */
+  }
+  else
+  {
+      /* xEventGroupWaitBits() returned because xTicksToWait ticks passed
+      without either BIT_0 or BIT_1 becoming set. */
+  }
   }
 }
 
