@@ -28,13 +28,13 @@ EventGroupHandle_t Check_In;
 char string[64];
 
 int main(void) {
+  sj2_cli__init();
   sd_card_Q = xQueueCreate(10, sizeof(unsigned long));
   create_producer_task();
   create_consumer_task();
   create_watchdog_task();
   acceleration__init();
   Check_In = xEventGroupCreate();
-  sj2_cli__init();
 
   puts("Starting RTOS");
   vTaskStartScheduler(); // This function never returns unless RTOS scheduler

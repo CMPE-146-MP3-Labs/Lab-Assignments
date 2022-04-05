@@ -3413,7 +3413,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_ranges  0x0000000000001db8       0xd8 _build_lpc40xx_freertos/objects/uart.o
  .debug_ranges  0x0000000000001e90       0xc0 _build_lpc40xx_freertos/objects/main.o
 
-.debug_line     0x0000000000000000    0x14d57
+.debug_line     0x0000000000000000    0x14d5c
  .debug_line    0x0000000000000000      0x485 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_line    0x0000000000000485      0x4c2 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_line    0x0000000000000947      0x28e _build_lpc40xx_freertos/objects/clock.o
@@ -3454,7 +3454,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_line    0x000000000001340c      0x43d _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_line    0x0000000000013849      0x556 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_line    0x0000000000013d9f      0x8ca _build_lpc40xx_freertos/objects/uart.o
- .debug_line    0x0000000000014669      0x6ee _build_lpc40xx_freertos/objects/main.o
+ .debug_line    0x0000000000014669      0x6f3 _build_lpc40xx_freertos/objects/main.o
 
 .debug_str      0x0000000000000000     0x6f8f
  .debug_str     0x0000000000000000      0x694 _build_lpc40xx_freertos/objects/entry_point.o
