@@ -10,6 +10,8 @@
 #include "queue.h"
 #include "acceleration.h"
 #include "event_groups.h"
+#define BIT_0	( 1 << 0 )
+#define BIT_1	( 1 << 1 )
 
 QueueHandle_t sd_card_Q;
 QueueHandle_t accel_data_Q;
@@ -201,8 +203,7 @@ void watchdog_task(void *params) {
     // We either should vTaskDelay, but for better robustness, we should
     // block on xEventGroupWaitBits() for slightly more than 100ms because
     // of the expected production rate of the producer() task and its check-in
-   EventBits_t uxBits 
-   uxBits = xEventGroupWaitBits(
+   Check_In = xEventGroupWaitBits(
             Check_In,   /* The event group being tested. */
             BIT_0 | BIT_1, /* The bits within the event group to wait for. */
             pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
