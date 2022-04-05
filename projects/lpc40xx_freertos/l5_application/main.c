@@ -12,7 +12,7 @@
 #include "task.h"
 
 QueueHandle_t sd_card_Q;
-QueueHandle_t accel_data_Q;
+// QueueHandle_t accel_data_Q;
 EventGroupHandle_t Check_In;
 char string[64];
 const char *filename = "file.txt";
@@ -68,7 +68,7 @@ static void producer_task(void *params) {
       - Write average value every 100ms (avg. of 100 samples) to the sensor
       queue
       - Use medium priority for this task
-      
+
       acceleration__axis_data_s accel_data[100];
       acceleration__axis_data_s accel_data_avg;
       int16_t x, y, z = 0;
@@ -89,34 +89,32 @@ static void producer_task(void *params) {
 
     }*/
 
-    
-      // Assume 100ms loop - vTaskDelay(100)
-      // Sample code:
-      // 1. get_sensor_value()
-      // 2. xQueueSend(&handle, &sensor_value, 0);
-      acceleration__axis_data_s accel_data[100];
-      acceleration__axis_data_s accel_data_avg;
-      int16_t x, y, z = 0;
+    // Assume 100ms loop - vTaskDelay(100)
+    // Sample code:
+    // 1. get_sensor_value()
+    // 2. xQueueSend(&handle, &sensor_value, 0);
+    acceleration__axis_data_s accel_data[100];
+    acceleration__axis_data_s accel_data_avg;
+    int16_t x, y, z = 0;
 
-      for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 100; i++) {
 
-        accel_data[i] = acceleration__get_data();
-        x += accel_data[i].x;
-        y += accel_data[i].y;
-        z += accel_data[i].z;
-        vTaskDelay(1);
-      }
-      accel_data_avg.x = x / 100;
-      accel_data_avg.y = x / 100;
-      accel_data_avg.z = x / 100;
+      accel_data[i] = acceleration__get_data();
+      x += accel_data[i].x;
+      y += accel_data[i].y;
+      z += accel_data[i].z;
+      vTaskDelay(1);
+    }
+    accel_data_avg.x = x / 100;
+    accel_data_avg.y = x / 100;
+    accel_data_avg.z = x / 100;
 
-      if (xQueueSend(sd_card_Q, &accel_data_avg, 0)) {
-      }
-      xEventGroupSetBits(Check_In, 1 << 0);
-      vTaskDelay(100);
-      // 3. xEventGroupSetBits(checkin)
-      // 4. vTaskDelay(100)
-    
+    if (xQueueSend(sd_card_Q, &accel_data_avg, 0)) {
+    }
+    xEventGroupSetBits(Check_In, 1 << 0);
+    vTaskDelay(100);
+    // 3. xEventGroupSetBits(checkin)
+    // 4. vTaskDelay(100)
   }
 }
 
@@ -138,7 +136,7 @@ static void consumer_task(void *params) {
       it) otherwise data on the SD card may be cached and the file may not get
       written
       - Use medium priority for this task
-      
+
       acceleration__axis_data_s accel_data_avg;
       xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
       int16_t time = xTaskGetTickCount();
@@ -148,24 +146,23 @@ static void consumer_task(void *params) {
     }
 
     else if (params == 1) {*/
-      // Assume 100ms loop
-      // No need to use vTaskDelay() because the consumer will consume as fast
-      // as production rate because we should block on xQueueReceive(&handle,
-      // &item, portMAX_DELAY); Sample code:
-      // 1. xQueueReceive(&handle, &sensor_value, portMAX_DELAY); // Wait
-      // forever for an item
-      // 2. xEventGroupSetBits(checkin)
-      acceleration__axis_data_s accel_data_avg;
+    // Assume 100ms loop
+    // No need to use vTaskDelay() because the consumer will consume as fast
+    // as production rate because we should block on xQueueReceive(&handle,
+    // &item, portMAX_DELAY); Sample code:
+    // 1. xQueueReceive(&handle, &sensor_value, portMAX_DELAY); // Wait
+    // forever for an item
+    // 2. xEventGroupSetBits(checkin)
+    acceleration__axis_data_s accel_data_avg;
 
-      if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) {
+    if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) {
 
-        int16_t time = xTaskGetTickCount();
-        sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
-                accel_data_avg.y, accel_data_avg.z);
-        write_file_using_fatfs_pi();
-        xEventGroupSetBits(Check_In, 1 << 1);
-      }
-    
+      int16_t time = xTaskGetTickCount();
+      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
+              accel_data_avg.y, accel_data_avg.z);
+      write_file_using_fatfs_pi();
+      xEventGroupSetBits(Check_In, 1 << 1);
+    }
   }
 }
 
@@ -198,9 +195,9 @@ void watchdog_task(void *params) {
         xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
 
     if (uxBits == 0x0) {
-      fprintf(stderr, "Task did not complete");
+      fprintf(stderr, "Task did not complete\n");
     } else if (uxBits == 0x3) {
-      fprintf(stderr, "Task completed");
+      fprintf(stderr, "Task completed\n");
     }
   }
 }
