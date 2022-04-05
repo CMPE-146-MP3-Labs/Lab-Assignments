@@ -160,6 +160,8 @@ static void consumer_task(void *params) {
     if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) {
 
       int16_t time = xTaskGetTickCount();
+      fprintf(stderr, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
+              accel_data_avg.y, accel_data_avg.z);
       sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
               accel_data_avg.y, accel_data_avg.z);
       write_file_using_fatfs_pi();
