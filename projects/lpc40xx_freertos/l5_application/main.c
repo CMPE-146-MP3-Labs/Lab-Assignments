@@ -205,7 +205,7 @@ void watchdog_task(void *params) {
     // of the expected production rate of the producer() task and its check-in
    Check_In = xEventGroupWaitBits(
             Check_In,   /* The event group being tested. */
-            BIT_0 | BIT_1, /* The bits within the event group to wait for. */
+            BIT_0 & BIT_1, /* The bits within the event group to wait for. */
             pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
             pdFALSE,       /* Don't wait for both bits, either bit will do. */
             200 );/* Wait a maximum of 100ms for either bit to be set. */
