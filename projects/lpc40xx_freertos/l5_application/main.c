@@ -34,6 +34,7 @@ int main(void) {
   create_watchdog_task();
   acceleration__init();
   Check_In = xEventGroupCreate();
+  sj2_cli__init();
 
   puts("Starting RTOS");
   vTaskStartScheduler(); // This function never returns unless RTOS scheduler
