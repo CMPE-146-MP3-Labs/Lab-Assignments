@@ -23,7 +23,7 @@ static void watchdog_task(void *params);
 void write_file_using_fatfs_pi(void);
 
 QueueHandle_t sd_card_Q;
-// QueueHandle_t accel_data_Q;
+// QueueHandle_t accel_data_Q; PART 0
 EventGroupHandle_t Check_In;
 char string[64];
 
@@ -57,7 +57,7 @@ static void create_watchdog_task() {
 static void producer_task(void *params) {
   while (1) {
     /*if (params == 0) {
-
+      PART 0
       Create a producer task that reads a sensor value every 1ms.
       - The sensor can be any input type, such as a light sensor, or an
       acceleration sensor
@@ -192,9 +192,13 @@ void watchdog_task(void *params) {
                                  xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
 
     if (uxBits == 0x0) {
-      fprintf(stderr, "Task did not complete\n");
+      fprintf(stderr, "Tasks did not complete: Producer and Consumer failed\n");
+    } else if (uxBits == 0x1) {
+    fprintf(stderr, "Tasks did not complete: Producer Succeeded, Conusmer Failed\n");
+    } else if (uxBits == 0x2) {
+    fprintf(stderr, "Tasks did not complete: Producer Failed, Conusmer Succeeded\n");
     } else if (uxBits == 0x3) {
-      fprintf(stderr, "Task completed\n");
+      fprintf(stderr, "Tasks completed\n");
     }
   }
 }
@@ -203,7 +207,7 @@ void write_file_using_fatfs_pi(void) {
   const char *filename = "file.txt";
   FIL file; // File handle
   UINT bytes_written = 0;
-  FRESULT result = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS));
+  FRESULT result = f_open(&file, filename, (FA_OPEN_APPEND | FA_WRITE | FA_CREATE_ALWAYS));
 
   if (FR_OK == result) {
     // char string[64];
@@ -218,87 +222,4 @@ void write_file_using_fatfs_pi(void) {
   }
 }
 
-//CLI Command
-//in cli_handlers.h
- 
-app_cli_status_e cli__suspend_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
-                                   app_cli__print_string_function cli_output);
- 
-app_cli_status_e cli__resume_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
-                                   app_cli__print_string_function cli_output);
- 
- 
- 
- 
- 
-// in sj2_cli.c
- 
- 
-// TODO: Declare your CLI handler struct, and add it at 'sj2_cli.c' inside the sj2_cli__init() function
-void sj2_cli__init(void) {
-  // ...
-  static app_cli__command_s suspend_struct = {.command_name = "suspend",
-                                               .help_message_for_command = "Suspend a task",
-                                               .app_cli_handler = cli__suspend_task};
- 
-  // TODO: Add the CLI handler:
-  app_cli__add_command_handler(&sj2_cli_struct, &suspend_struct);
- 
- 
- 
-  static app_cli__command_s resume_struct = {.command_name = "resume",
-                                               .help_message_for_command = "Resume a task",
-                                               .app_cli_handler = cli__resume_task};
- 
-  // TODO: Add the CLI handler:
-  app_cli__add_command_handler(&sj2_cli_struct, &resume_struct);
-}
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-// in handlers_general.c
- 
- 
-// TODO: Add your CLI handler function definition to 'handlers_general.c' (You can also create a new *.c file)
-app_cli_status_e cli__suspend_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
-                                   app_cli__print_string_function cli_output) {
-  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
- 
-  vTaskSuspend(argument);
- 
-  // Sample code to output data back to the CLI
-  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
-  // sl_string__printf(s, "Hello back to the CLI\n");
-  // cli_output(NULL, s);
- 
-  return APP_CLI_STATUS__SUCCESS;
-}
- 
-// TODO: Now, when you flash your board, you will see your 'taskcontrol' as a CLI command
- 
- 
- 
-// TODO: Add your CLI handler function definition to 'handlers_general.c' (You can also create a new *.c file)
-app_cli_status_e cli__resume_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
-                                   app_cli__print_string_function cli_output) {
-  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
- 
-  vTaskResume(argument);
- 
-  // Sample code to output data back to the CLI
-  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
-  // sl_string__printf(s, "Hello back to the CLI\n");
-  // cli_output(NULL, s);
- 
-  return APP_CLI_STATUS__SUCCESS;
-}
- 
-// TODO: Now, when you flash your board, you will see your 'taskcontrol' as a CLI command
+
