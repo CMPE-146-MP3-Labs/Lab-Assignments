@@ -30,7 +30,7 @@ int main(void) {
 }
 
 static void create_producer_task(void) {
-  xTaskCreateStatic(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
+  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
 }
 
 
