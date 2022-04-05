@@ -9,13 +9,14 @@
 #include "sj2_cli.h"
 #include "queue.h"
 #include "acceleration.h"
+#include "event_groups.h"
 
 QueueHandle_t sd_card_Q;
 QueueHandle_t accel_data_Q;
+EventGroupHandle_t Check_In;
 char string[64];
 const char *filename = "file.txt";
 FIL file; // File handle
-acceleration__axis_data_s* accel_data;
 
 // 'static' to make these functions 'private' to this file
 static void create_producer_task(int part);
@@ -95,14 +96,36 @@ static void producer_task(void *params) {
       // Sample code:
       // 1. get_sensor_value()
       // 2. xQueueSend(&handle, &sensor_value, 0);
+      acceleration__axis_data_s accel_data[100];
+      acceleration__axis_data_s accel_data_avg;
+      int16_t x, y, z = 0;
+    
+
+
+      for (int i = 0; i < 100; i++){
+
+        accel_data[i] = acceleration__get_data();
+        x += accel_data[i].x;
+        y += accel_data[i].y;
+        z += accel_data[i].z;
+        vTaskDelay(1);
+      
+      }
+      accel_data_avg.x = x/100;
+      accel_data_avg.y = x/100;
+      accel_data_avg.z = x/100;
+      xEventGroupSetBits(Check_In, 1);
+
+
+      if (xQueueSend(sd_card_Q, &accel_data_avg, 0)) {
+      }
+      vTaskDelay(1000);
       // 3. xEventGroupSetBits(checkin)
       // 4. vTaskDelay(100)
       int data_send;
     
       data_send = 99;
-      if (xQueueSend(sd_card_Q, &data_send, 0)) {
-      }
-      vTaskDelay(1000);
+
       
     }
 
@@ -130,6 +153,9 @@ static void consumer_task(void *params) {
       */
       acceleration__axis_data_s accel_data_avg;
       xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
+      int16_t time = xTaskGetTickCount();
+      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
+      write_file_using_fatfs_pi();
 
   }
     
@@ -188,8 +214,8 @@ void write_file_using_fatfs_pi(void) {
   FRESULT result = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS));
 
   if (FR_OK == result) {
-    char string[64];
-    sprintf(string, "Value,%i\n", 123);
+    // char string[64];
+    // sprintf(string, "Value,%i\n", 123);
     if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
     } else {
       printf("ERROR: Failed to write data to file\n");
