@@ -9,16 +9,10 @@
 #include "sj2_cli.h"
 #include "queue.h"
 
-
-// Part 0
 QueueHandle_t sd_card_Q;
 char string[64];
 const char *filename = "file.txt";
 FIL file; // File handle
-
-
-
-
 
 // 'static' to make these functions 'private' to this file
 static void create_producer_task(int part);
@@ -58,9 +52,8 @@ static void create_watchdog_task() {
 
 
 static void producer_task(void *params) {
-  if (params = 0)
     while(1) {
-    if (params = 0){
+    if (params == 0){
       /*
       Create a producer task that reads a sensor value every 1ms.
       - The sensor can be any input type, such as a light sensor, or an acceleration sensor
@@ -68,22 +61,23 @@ static void producer_task(void *params) {
       - Write average value every 100ms (avg. of 100 samples) to the sensor queue
       - Use medium priority for this task
       */
-      int data_send;
-      while (1) {
-        data_send = 99;
-        if (xQueueSend(sd_card_Q, &data_send, 0)) {
-        }
-        vTaskDelay(1000);
-      }
+
     }
 
-    else if (params = 1){
+    else if (params == 1){
       // Assume 100ms loop - vTaskDelay(100)
       // Sample code:
       // 1. get_sensor_value()
       // 2. xQueueSend(&handle, &sensor_value, 0);
       // 3. xEventGroupSetBits(checkin)
       // 4. vTaskDelay(100)
+      int data_send;
+    
+      data_send = 99;
+      if (xQueueSend(sd_card_Q, &data_send, 0)) {
+      }
+      vTaskDelay(1000);
+      
     }
 
     else{
@@ -96,7 +90,7 @@ static void producer_task(void *params) {
 
 static void consumer_task(void *params) {
     while(1) {
-    if (params = 0){
+    if (params == 0){
       /*
       Create a consumer task that pulls the data off the sensor queue
       - Use infinite timeout value during xQueueReceive API
@@ -108,24 +102,25 @@ static void consumer_task(void *params) {
       - Also, note that periodically you may have to "flush" the file (or close it) otherwise data on the SD card may be cached and the file may not get written
       - Use medium priority for this task
       */
-      int data_receive;
-      while (1) {
-        if (xQueueReceive(sd_card_Q, &data_receive, portMAX_DELAY)) {
-          sd_card_init(data_receive);
-        }
-        // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
-        f_close(&file);
-        vTaskSuspend(NULL);
-  }
-    }  
 
-    else if (params = 1){
+  }
+    
+
+    else if (params == 1){
       // Assume 100ms loop
       // No need to use vTaskDelay() because the consumer will consume as fast as production rate
       // because we should block on xQueueReceive(&handle, &item, portMAX_DELAY);
       // Sample code:
       // 1. xQueueReceive(&handle, &sensor_value, portMAX_DELAY); // Wait forever for an item
       // 2. xEventGroupSetBits(checkin)
+      int data_receive;
+    
+      if (xQueueReceive(sd_card_Q, &data_receive, portMAX_DELAY)) {
+        sd_card_init(data_receive);
+      }
+      // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
+      f_close(&file);
+      vTaskSuspend(NULL);
     }
 
     else{
