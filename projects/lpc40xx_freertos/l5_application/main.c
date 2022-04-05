@@ -10,8 +10,6 @@
 #include "queue.h"
 #include "acceleration.h"
 #include "event_groups.h"
-#define BIT_0	( 1 << 0 )
-#define BIT_1	( 1 << 1 )
 
 QueueHandle_t sd_card_Q;
 QueueHandle_t accel_data_Q;
