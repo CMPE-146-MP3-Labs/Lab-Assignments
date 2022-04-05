@@ -3,7 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/projects/**"
+                "${workspaceFolder}/projects/lpc40xx_freertos/**"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -17,7 +17,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/projects/**"
+                "${workspaceFolder}/projects/lpc40xx_freertos/**"
             ],
             "defines": [],
             "macFrameworkPath": [
