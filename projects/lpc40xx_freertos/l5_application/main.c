@@ -36,6 +36,7 @@ int main(void) {
   create_consumer_task(part);
   create_watchdog_task();
   acceleration__init();
+  Check_In = xEventGroupCreate;
 
 
   puts("Starting RTOS");
@@ -203,30 +204,22 @@ void watchdog_task(void *params) {
     // We either should vTaskDelay, but for better robustness, we should
     // block on xEventGroupWaitBits() for slightly more than 100ms because
     // of the expected production rate of the producer() task and its check-in
-   Check_In = xEventGroupWaitBits(
+   const TickType_t xTicksToWait = 200;
+   EventBits_t uxBits;
+   uxBits = xEventGroupWaitBits(
             Check_In,   /* The event group being tested. */
-            BIT_0 & BIT_1, /* The bits within the event group to wait for. */
-            pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
-            pdFALSE,       /* Don't wait for both bits, either bit will do. */
-            200 );/* Wait a maximum of 100ms for either bit to be set. */
+            0x3,        /* The bits within the event group to wait for. */
+            pdTRUE,     /* BIT_0 & BIT_1 should be cleared before returning. */
+            pdTRUE,      /* Don't wait for both bits, either bit will do. */
+            xTicksToWait );/* Wait a maximum of 100ms for either bit to be set. */
 
-  if( ( Check_In & ( BIT_0 | BIT_1 ) ) == ( BIT_0 | BIT_1 ) )
-  {
-      /* xEventGroupWaitBits() returned because both bits were set. */
+  if( uxBits == 0x0 ){
+      fprintf(stderr,"Task did not complete");
   }
-  else if( ( Check_In & BIT_0 ) != 0 )
-  {
-      /* xEventGroupWaitBits() returned because just BIT_0 was set. */
+  else if(uxBits == 0x3 ){
+      fprintf(stderr,"Task completed");
   }
-  else if( ( Check_In & BIT_1 ) != 0 )
-  {
-      /* xEventGroupWaitBits() returned because just BIT_1 was set. */
-  }
-  else
-  {
-      /* xEventGroupWaitBits() returned because xTicksToWait ticks passed
-      without either BIT_0 or BIT_1 becoming set. */
-  }
+
   }
 }
 
