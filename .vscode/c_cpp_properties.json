@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/projects/lpc40xx_freertos/**"
+                "${workspaceFolder}/projects/lpc40xx_freertos/**",
+                "${workspaceFolder}/site_scons/site_tools/unittest/throw_the_switch/unity/v2.5.0/src"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -17,7 +18,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/projects/lpc40xx_freertos/**"
+                "${workspaceFolder}/projects/lpc40xx_freertos/**",
+                "${workspaceFolder}/site_scons/site_tools/unittest/throw_the_switch/unity/v2.5.0/src"
             ],
             "defines": [],
             "macFrameworkPath": [
