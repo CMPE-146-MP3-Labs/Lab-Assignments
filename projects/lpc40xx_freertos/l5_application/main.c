@@ -94,7 +94,6 @@ static void producer_task(void *params) {
 }
 
 static void consumer_task(void *params) {
-  if (params = 0)
     while(1) {
     if (params = 0){
       /*
