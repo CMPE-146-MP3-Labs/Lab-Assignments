@@ -7,6 +7,7 @@
 #include "common_macros.h"
 #include "periodic_scheduler.h"
 #include "sj2_cli.h"
+#include "queue.h"
 
 
 // Part 0
