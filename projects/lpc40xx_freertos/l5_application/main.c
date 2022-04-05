@@ -172,7 +172,7 @@ static void consumer_task(void *params) {
         int16_t time = xTaskGetTickCount();
         sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
         write_file_using_fatfs_pi();
-        xEventGroupSetBits(Check_In, 0 << 0);
+        xEventGroupSetBits(Check_In, 1 << 1);
       }
 
     }
