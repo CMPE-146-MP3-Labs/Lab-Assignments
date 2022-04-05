@@ -10,13 +10,7 @@
 #include "queue.h"
 #include "sj2_cli.h"
 #include "task.h"
-
-QueueHandle_t sd_card_Q;
-// QueueHandle_t accel_data_Q;
-EventGroupHandle_t Check_In;
-char string[64];
-const char *filename = "file.txt";
-FIL file; // File handle
+#include <string.h>
 
 // 'static' to make these functions 'private' to this file
 static void create_producer_task(void);
@@ -28,7 +22,13 @@ static void watchdog_task(void *params);
 
 void write_file_using_fatfs_pi(void);
 
+QueueHandle_t sd_card_Q;
+// QueueHandle_t accel_data_Q;
+EventGroupHandle_t Check_In;
+char string[64];
+
 int main(void) {
+  sd_card_Q = xQueueCreate(10, sizeof(unsigned long));
   create_producer_task();
   create_consumer_task();
   create_watchdog_task();
@@ -43,24 +43,21 @@ int main(void) {
 }
 
 static void create_producer_task() {
-  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_MEDIUM, NULL);
+  xTaskCreate(producer_task, "Producer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
 }
 
 static void create_consumer_task() {
-  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_MEDIUM, NULL);
+  xTaskCreate(consumer_task, "Consumer", (512U * 8) / sizeof(void *), NULL, PRIORITY_MEDIUM, NULL);
 }
 
 static void create_watchdog_task() {
-  xTaskCreate(watchdog_task, "Watchdog", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_HIGH, NULL);
+  xTaskCreate(watchdog_task, "Watchdog", (512U * 8) / sizeof(void *), NULL, PRIORITY_HIGH, NULL);
 }
 
 static void producer_task(void *params) {
   while (1) {
     /*if (params == 0) {
-      /*
+
       Create a producer task that reads a sensor value every 1ms.
       - The sensor can be any input type, such as a light sensor, or an
       acceleration sensor
@@ -95,7 +92,9 @@ static void producer_task(void *params) {
     // 2. xQueueSend(&handle, &sensor_value, 0);
     acceleration__axis_data_s accel_data[100];
     acceleration__axis_data_s accel_data_avg;
-    int16_t x, y, z = 0;
+    int16_t x = 0;
+    int16_t y = 0;
+    int16_t z = 0;
 
     for (int i = 0; i < 100; i++) {
 
@@ -121,7 +120,7 @@ static void producer_task(void *params) {
 static void consumer_task(void *params) {
   while (1) {
     /*if (params == 0) {
-      /*
+
       Create a consumer task that pulls the data off the sensor queue
       - Use infinite timeout value during xQueueReceive API
       - Open a file (i.e.: sensor.txt), and append the data to an output file on
@@ -158,8 +157,7 @@ static void consumer_task(void *params) {
     if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) {
 
       int16_t time = xTaskGetTickCount();
-      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x,
-              accel_data_avg.y, accel_data_avg.z);
+      sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
       write_file_using_fatfs_pi();
       xEventGroupSetBits(Check_In, 1 << 1);
     }
@@ -187,12 +185,11 @@ void watchdog_task(void *params) {
     // of the expected production rate of the producer() task and its check-in
     const TickType_t xTicksToWait = 200;
     EventBits_t uxBits;
-    uxBits = xEventGroupWaitBits(
-        Check_In,      /* The event group being tested. */
-        0x3,           /* The bits within the event group to wait for. */
-        pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
-        pdTRUE,        /* Don't wait for both bits, either bit will do. */
-        xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
+    uxBits = xEventGroupWaitBits(Check_In,      /* The event group being tested. */
+                                 0x3,           /* The bits within the event group to wait for. */
+                                 pdTRUE,        /* BIT_0 & BIT_1 should be cleared before returning. */
+                                 pdTRUE,        /* Don't wait for both bits, either bit will do. */
+                                 xTicksToWait); /* Wait a maximum of 100ms for either bit to be set. */
 
     if (uxBits == 0x0) {
       fprintf(stderr, "Task did not complete\n");
@@ -220,3 +217,88 @@ void write_file_using_fatfs_pi(void) {
     printf("ERROR: Failed to open: %s\n", filename);
   }
 }
+
+//CLI Command
+//in cli_handlers.h
+ 
+app_cli_status_e cli__suspend_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
+                                   app_cli__print_string_function cli_output);
+ 
+app_cli_status_e cli__resume_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
+                                   app_cli__print_string_function cli_output);
+ 
+ 
+ 
+ 
+ 
+// in sj2_cli.c
+ 
+ 
+// TODO: Declare your CLI handler struct, and add it at 'sj2_cli.c' inside the sj2_cli__init() function
+void sj2_cli__init(void) {
+  // ...
+  static app_cli__command_s suspend_struct = {.command_name = "suspend",
+                                               .help_message_for_command = "Suspend a task",
+                                               .app_cli_handler = cli__suspend_task};
+ 
+  // TODO: Add the CLI handler:
+  app_cli__add_command_handler(&sj2_cli_struct, &suspend_struct);
+ 
+ 
+ 
+  static app_cli__command_s resume_struct = {.command_name = "resume",
+                                               .help_message_for_command = "Resume a task",
+                                               .app_cli_handler = cli__resume_task};
+ 
+  // TODO: Add the CLI handler:
+  app_cli__add_command_handler(&sj2_cli_struct, &resume_struct);
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+// in handlers_general.c
+ 
+ 
+// TODO: Add your CLI handler function definition to 'handlers_general.c' (You can also create a new *.c file)
+app_cli_status_e cli__suspend_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
+                                   app_cli__print_string_function cli_output) {
+  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
+ 
+  vTaskSuspend(argument);
+ 
+  // Sample code to output data back to the CLI
+  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
+  // sl_string__printf(s, "Hello back to the CLI\n");
+  // cli_output(NULL, s);
+ 
+  return APP_CLI_STATUS__SUCCESS;
+}
+ 
+// TODO: Now, when you flash your board, you will see your 'taskcontrol' as a CLI command
+ 
+ 
+ 
+// TODO: Add your CLI handler function definition to 'handlers_general.c' (You can also create a new *.c file)
+app_cli_status_e cli__resume_task(app_cli__argument_t argument, sl_string_t user_input_minus_command_name,
+                                   app_cli__print_string_function cli_output) {
+  // sl_string is a powerful string library, and you can utilize the sl_string.h API to parse parameters of a command
+ 
+  vTaskResume(argument);
+ 
+  // Sample code to output data back to the CLI
+  // sl_string_t s = user_input_minus_command_name; // Re-use a string to save memory
+  // sl_string__printf(s, "Hello back to the CLI\n");
+  // cli_output(NULL, s);
+ 
+  return APP_CLI_STATUS__SUCCESS;
+}
+ 
+// TODO: Now, when you flash your board, you will see your 'taskcontrol' as a CLI command
