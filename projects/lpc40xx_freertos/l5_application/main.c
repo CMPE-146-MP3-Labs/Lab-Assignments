@@ -155,7 +155,7 @@ static void consumer_task(void *params) {
       write_file_using_fatfs_pi();
     }
 
-  }
+  
     
 
     else if (params == 1){
@@ -167,20 +167,18 @@ static void consumer_task(void *params) {
       // 2. xEventGroupSetBits(checkin)
       acceleration__axis_data_s accel_data_avg;
     
-      if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)) 
+      if (xQueueReceive(sd_card_Q, &accel_data_avg, portMAX_DELAY)){ 
 
-        xQueueReceive(accel_data_Q, &accel_data_avg, portMAX_DELAY);
         int16_t time = xTaskGetTickCount();
         sprintf(string, "%i x: %i, y: %i z: %i\n", time, accel_data_avg.x, accel_data_avg.y, accel_data_avg.z);
         write_file_using_fatfs_pi();
         xEventGroupSetBits(Check_In, 0 << 0);
-      // TaskHandle_t task_handle = xTaskGetHandle("Consumer");
       }
 
     }
 
     else{
-
+      continue;
     }
 
   }
@@ -220,7 +218,8 @@ void write_file_using_fatfs_pi(void) {
     // char string[64];
     // sprintf(string, "Value,%i\n", 123);
     if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
-    } else {
+    } 
+    else {
       printf("ERROR: Failed to write data to file\n");
     }
     f_close(&file);
