@@ -71,11 +71,11 @@ static void reader_task(void *params) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
 
-    f_open();
+    f_open(FIL* fp, const TCHAR* path, BYTE mode);
     while (!file.end()) {
       read_from_file(bytes_512);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
-    f_close();
+    f_close(FIL* fp);
   }
 }
