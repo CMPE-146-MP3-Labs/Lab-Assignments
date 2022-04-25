@@ -22,7 +22,7 @@ QueueHandle_t Q_songdata;
 int main(void) {
   Q_songname = xQueueCreate(1, sizeof(songname_t));
   Q_songdata = xQueueCreate(1, 512);
-  create_reader_tasks();
+  create_reader_task();
   create_player_task();
   sj2_cli__init();
 
