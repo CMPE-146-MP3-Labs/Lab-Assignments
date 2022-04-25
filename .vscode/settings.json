@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "freertos.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "ff.h": "c"
     }
 }

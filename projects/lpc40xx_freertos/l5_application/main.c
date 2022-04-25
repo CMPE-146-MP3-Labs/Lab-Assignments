@@ -7,6 +7,7 @@
 #include "sj2_cli.h"
 #include "task.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
@@ -70,11 +71,11 @@ static void reader_task(void *params) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
 
-    open_file();
+    f_open();
     while (!file.end()) {
       read_from_file(bytes_512);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
-    close_file();
+    f_close();
   }
 }
