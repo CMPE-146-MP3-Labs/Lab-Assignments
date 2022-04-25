@@ -66,16 +66,18 @@ static void player_task(void *params) {
 static void reader_task(void *params) {
   songname_t name;
   char bytes_512[512];
+  UINT bytes_read;
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
+    FIL mp3_file;
 
-    f_open(FIL* fp, const TCHAR* path, BYTE mode);
-    while (!file.end()) {
-      read_from_file(bytes_512);
+    f_open(&mp3_file, &name, FA_OPEN_EXISTING);
+    while (!f_eof(&mp3_file)) {
+      f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
-    f_close(FIL* fp);
+    f_close(&mp3_file);
   }
 }
