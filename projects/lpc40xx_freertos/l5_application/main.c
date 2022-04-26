@@ -35,11 +35,15 @@ int main(void) {
 
 static void create_player_task(void) {
   // To avoid malloc, using xTaskCreateStatic() in place of xTaskCreate()
-  static StackType_t player_task_stack[512 / sizeof(StackType_t)];
-  static StaticTask_t player_task_struct;
+  xTaskCreate(player_task, "Player Task", (512U * 8) / sizeof(void *), NULL,
+              PRIORITY_LOW, NULL);
+  // static StackType_t player_task_stack[512 / sizeof(StackType_t)];
+  // static StaticTask_t player_task_struct;
 
-  xTaskCreateStatic(player_task, "Player Task", ARRAY_SIZE(player_task_stack),
-                    NULL, PRIORITY_LOW, player_task_stack, &player_task_struct);
+  //  xTaskCreateStatic(player_task, "Player Task",
+  //  ARRAY_SIZE(player_task_stack),
+  //                     NULL, PRIORITY_LOW, player_task_stack,
+  //                     &player_task_struct);
 }
 
 static void create_reader_task(void) {
@@ -54,12 +58,11 @@ static void player_task(void *params) {
   while (1) {
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     for (int i = 0; i < sizeof(bytes_512); i++) {
-      // while (!mp3_decoder_needs_data()) {
-      //  vTaskDelay(1);
-      //}
-
-      fprintf(stderr, bytes_512[i]);
+       while (bytes_512.size() != 512) {
+        vTaskDelay(1);
+      }
     }
+    fprintf(stderr, bytes_512[i]);
   }
 }
 
