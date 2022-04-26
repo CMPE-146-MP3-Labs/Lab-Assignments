@@ -1561,7 +1561,7 @@ END GROUP
                 0x0000000020000000                __base_ram_32k = ORIGIN (ram_32k)
                 0x0000000020008000                __top_ram_32k = (__base_ram_32k + LENGTH (ram_32k))
 
-.text           0x0000000000000000     0xd6f4
+.text           0x0000000000000000     0xd73c
  FILL mask 0xff
  *(.interrupt_vector_table)
  .interrupt_vector_table
@@ -2329,675 +2329,675 @@ END GROUP
                 0x00000000000058ec       0x7c _build_lpc40xx_freertos/objects/uart.o
                 0x00000000000058ec                uart__put
  .text.reader_task
-                0x0000000000005968       0x80 _build_lpc40xx_freertos/objects/main.o
+                0x0000000000005968       0x98 _build_lpc40xx_freertos/objects/main.o
  .text.player_task
-                0x00000000000059e8       0x58 _build_lpc40xx_freertos/objects/main.o
+                0x0000000000005a00       0x64 _build_lpc40xx_freertos/objects/main.o
  .text.startup.main
-                0x0000000000005a40       0x78 _build_lpc40xx_freertos/objects/main.o
-                0x0000000000005a40                main
- .text          0x0000000000005ab8      0x378 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
-                0x0000000000005ab8                __aeabi_drsub
-                0x0000000000005ac0                __subdf3
-                0x0000000000005ac0                __aeabi_dsub
-                0x0000000000005ac4                __aeabi_dadd
-                0x0000000000005ac4                __adddf3
-                0x0000000000005d3c                __aeabi_ui2d
-                0x0000000000005d3c                __floatunsidf
-                0x0000000000005d5c                __floatsidf
-                0x0000000000005d5c                __aeabi_i2d
-                0x0000000000005d80                __extendsfdf2
-                0x0000000000005d80                __aeabi_f2d
-                0x0000000000005dc4                __aeabi_ul2d
-                0x0000000000005dc4                __floatundidf
-                0x0000000000005dd4                __aeabi_l2d
-                0x0000000000005dd4                __floatdidf
- .text          0x0000000000005e30       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x0000000000005e30                __aeabi_uldivmod
- .text          0x0000000000005e60      0x2d0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x0000000000005e60                __udivmoddi4
- .text          0x0000000000006130        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x0000000000006130                __aeabi_ldiv0
-                0x0000000000006130                __aeabi_idiv0
- .text.fprintf  0x0000000000006134       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
-                0x0000000000006134                fprintf
-                0x0000000000006134                fiprintf
+                0x0000000000005a64       0x7c _build_lpc40xx_freertos/objects/main.o
+                0x0000000000005a64                main
+ .text          0x0000000000005ae0      0x378 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
+                0x0000000000005ae0                __aeabi_drsub
+                0x0000000000005ae8                __subdf3
+                0x0000000000005ae8                __aeabi_dsub
+                0x0000000000005aec                __aeabi_dadd
+                0x0000000000005aec                __adddf3
+                0x0000000000005d64                __aeabi_ui2d
+                0x0000000000005d64                __floatunsidf
+                0x0000000000005d84                __floatsidf
+                0x0000000000005d84                __aeabi_i2d
+                0x0000000000005da8                __extendsfdf2
+                0x0000000000005da8                __aeabi_f2d
+                0x0000000000005dec                __aeabi_ul2d
+                0x0000000000005dec                __floatundidf
+                0x0000000000005dfc                __aeabi_l2d
+                0x0000000000005dfc                __floatdidf
+ .text          0x0000000000005e58       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000005e58                __aeabi_uldivmod
+ .text          0x0000000000005e88      0x2d0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0000000000005e88                __udivmoddi4
+ .text          0x0000000000006158        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x0000000000006158                __aeabi_ldiv0
+                0x0000000000006158                __aeabi_idiv0
+ .text.fprintf  0x000000000000615c       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
+                0x000000000000615c                fprintf
+                0x000000000000615c                fiprintf
  .text._fputs_r
-                0x0000000000006158       0xcc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
-                0x0000000000006158                _fputs_r
- .text.fputs    0x0000000000006224       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
-                0x0000000000006224                fputs
- .text.getchar  0x0000000000006234       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
-                0x0000000000006234                getchar
+                0x0000000000006180       0xcc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
+                0x0000000000006180                _fputs_r
+ .text.fputs    0x000000000000624c       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
+                0x000000000000624c                fputs
+ .text.getchar  0x000000000000625c       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
+                0x000000000000625c                getchar
  .text.__retarget_lock_init_recursive
-                0x0000000000006258        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
-                0x0000000000006258                __retarget_lock_init_recursive
+                0x0000000000006280        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
+                0x0000000000006280                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x000000000000625a        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
-                0x000000000000625a                __retarget_lock_acquire_recursive
+                0x0000000000006282        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
+                0x0000000000006282                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x000000000000625c        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
-                0x000000000000625c                __retarget_lock_release_recursive
- *fill*         0x000000000000625e        0x2 ff
- .text.malloc   0x0000000000006260       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
-                0x0000000000006260                malloc
- .text.free     0x0000000000006270       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
-                0x0000000000006270                free
- .text.memcpy   0x0000000000006280       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
-                0x0000000000006280                memcpy
- .text.memmove  0x000000000000629c       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
-                0x000000000000629c                memmove
- .text.memset   0x00000000000062d0       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
-                0x00000000000062d0                memset
- .text._free_r  0x00000000000062e0       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
-                0x00000000000062e0                _free_r
+                0x0000000000006284        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
+                0x0000000000006284                __retarget_lock_release_recursive
+ *fill*         0x0000000000006286        0x2 ff
+ .text.malloc   0x0000000000006288       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
+                0x0000000000006288                malloc
+ .text.free     0x0000000000006298       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
+                0x0000000000006298                free
+ .text.memcpy   0x00000000000062a8       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000000000062a8                memcpy
+ .text.memmove  0x00000000000062c4       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
+                0x00000000000062c4                memmove
+ .text.memset   0x00000000000062f8       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
+                0x00000000000062f8                memset
+ .text._free_r  0x0000000000006308       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
+                0x0000000000006308                _free_r
  .text._malloc_r
-                0x000000000000637c       0xb4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
-                0x000000000000637c                _malloc_r
+                0x00000000000063a4       0xb4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
+                0x00000000000063a4                _malloc_r
  .text.__sfputc_r
-                0x0000000000006430       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000006458       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x000000000000645e       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
-                0x000000000000645e                __sfputs_r
- *fill*         0x0000000000006482        0x2 ff
+                0x0000000000006486       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+                0x0000000000006486                __sfputs_r
+ *fill*         0x00000000000064aa        0x2 ff
  .text._vfprintf_r
-                0x0000000000006484      0x250 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
-                0x0000000000006484                _vfiprintf_r
-                0x0000000000006484                _vfprintf_r
- .text.__cvt    0x00000000000066d4       0xba /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x00000000000066d4                __cvt
+                0x00000000000064ac      0x250 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+                0x00000000000064ac                _vfiprintf_r
+                0x00000000000064ac                _vfprintf_r
+ .text.__cvt    0x00000000000066fc       0xba /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x00000000000066fc                __cvt
  .text.__exponent
-                0x000000000000678e       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x000000000000678e                __exponent
- *fill*         0x00000000000067f2        0x2 ff
+                0x00000000000067b6       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x00000000000067b6                __exponent
+ *fill*         0x000000000000681a        0x2 ff
  .text._printf_float
-                0x00000000000067f4      0x454 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
-                0x00000000000067f4                _printf_float
+                0x000000000000681c      0x454 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x000000000000681c                _printf_float
  .text._printf_common
-                0x0000000000006c48       0xea /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000000006c48                _printf_common
- *fill*         0x0000000000006d32        0x2 ff
+                0x0000000000006c70       0xea /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000006c70                _printf_common
+ *fill*         0x0000000000006d5a        0x2 ff
  .text._printf_i
-                0x0000000000006d34      0x228 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000000006d34                _printf_i
+                0x0000000000006d5c      0x228 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000006d5c                _printf_i
  .text._scanf_float
-                0x0000000000006f5c      0x3c0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
-                0x0000000000006f5c                _scanf_float
- .text.printf   0x000000000000731c       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
-                0x000000000000731c                printf
-                0x000000000000731c                iprintf
- .text.putchar  0x000000000000734c       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
-                0x000000000000734c                putchar
- .text._puts_r  0x0000000000007374       0xdc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
-                0x0000000000007374                _puts_r
- .text.puts     0x0000000000007450       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
-                0x0000000000007450                puts
- .text._sbrk_r  0x0000000000007460       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
-                0x0000000000007460                _sbrk_r
- .text.setvbuf  0x0000000000007480      0x184 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
-                0x0000000000007480                setvbuf
- .text.nanf     0x0000000000007604        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
-                0x0000000000007604                nanf
- .text.sprintf  0x0000000000007610       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
-                0x0000000000007610                sprintf
-                0x0000000000007610                siprintf
+                0x0000000000006f84      0x3c0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
+                0x0000000000006f84                _scanf_float
+ .text.printf   0x0000000000007344       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
+                0x0000000000007344                printf
+                0x0000000000007344                iprintf
+ .text.putchar  0x0000000000007374       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
+                0x0000000000007374                putchar
+ .text._puts_r  0x000000000000739c       0xdc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
+                0x000000000000739c                _puts_r
+ .text.puts     0x0000000000007478       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
+                0x0000000000007478                puts
+ .text._sbrk_r  0x0000000000007488       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
+                0x0000000000007488                _sbrk_r
+ .text.setvbuf  0x00000000000074a8      0x184 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
+                0x00000000000074a8                setvbuf
+ .text.nanf     0x000000000000762c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
+                0x000000000000762c                nanf
+ .text.sprintf  0x0000000000007638       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
+                0x0000000000007638                sprintf
+                0x0000000000007638                siprintf
  .text.strcasecmp
-                0x0000000000007650       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
-                0x0000000000007650                strcasecmp
- .text.strchr   0x0000000000007688       0x1a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
-                0x0000000000007688                strchr
- .text          0x00000000000076a2       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strlen.o)
-                0x00000000000076a2                strlen
- *fill*         0x00000000000076b2        0x2 ff
+                0x0000000000007678       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
+                0x0000000000007678                strcasecmp
+ .text.strchr   0x00000000000076b0       0x1a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
+                0x00000000000076b0                strchr
+ .text          0x00000000000076ca       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strlen.o)
+                0x00000000000076ca                strlen
+ *fill*         0x00000000000076da        0x2 ff
  .text.strncasecmp
-                0x00000000000076b4       0x44 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
-                0x00000000000076b4                strncasecmp
- .text.strncmp  0x00000000000076f8       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
-                0x00000000000076f8                strncmp
- .text.strncpy  0x000000000000771c       0x26 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
-                0x000000000000771c                strncpy
- .text.strstr   0x0000000000007742       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
-                0x0000000000007742                strstr
- .text.sulp     0x0000000000007770       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x00000000000076dc       0x44 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
+                0x00000000000076dc                strncasecmp
+ .text.strncmp  0x0000000000007720       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
+                0x0000000000007720                strncmp
+ .text.strncpy  0x0000000000007744       0x26 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
+                0x0000000000007744                strncpy
+ .text.strstr   0x000000000000776a       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
+                0x000000000000776a                strstr
+ .text.sulp     0x0000000000007798       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
  .text._strtod_l
-                0x00000000000077a8      0xb98 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
-                0x00000000000077a8                _strtod_l
+                0x00000000000077d0      0xb98 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x00000000000077d0                _strtod_l
  .text._strtod_r
-                0x0000000000008340        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
-                0x0000000000008340                _strtod_r
+                0x0000000000008368        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x0000000000008368                _strtod_r
  .text._strtol_l.isra.0
-                0x000000000000834c       0xf0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
+                0x0000000000008374       0xf0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
  .text._strtol_r
-                0x000000000000843c        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
-                0x000000000000843c                _strtol_r
- .text.strtol   0x0000000000008440       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
-                0x0000000000008440                strtol
+                0x0000000000008464        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
+                0x0000000000008464                _strtol_r
+ .text.strtol   0x0000000000008468       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
+                0x0000000000008468                strtol
  .text._vsnprintf_r
-                0x0000000000008454       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
-                0x0000000000008454                _vsnprintf_r
-                0x0000000000008454                _vsniprintf_r
+                0x000000000000847c       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
+                0x000000000000847c                _vsnprintf_r
+                0x000000000000847c                _vsniprintf_r
  .text.vsnprintf
-                0x00000000000084ac       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
-                0x00000000000084ac                vsnprintf
-                0x00000000000084ac                vsniprintf
+                0x00000000000084d4       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
+                0x00000000000084d4                vsnprintf
+                0x00000000000084d4                vsniprintf
  .text._vsscanf_r
-                0x00000000000084c8       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
-                0x00000000000084c8                _vsiscanf_r
-                0x00000000000084c8                _vsscanf_r
- .text.vsscanf  0x0000000000008510       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
-                0x0000000000008510                vsscanf
-                0x0000000000008510                vsiscanf
+                0x00000000000084f0       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
+                0x00000000000084f0                _vsiscanf_r
+                0x00000000000084f0                _vsscanf_r
+ .text.vsscanf  0x0000000000008538       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
+                0x0000000000008538                vsscanf
+                0x0000000000008538                vsiscanf
  .text.__swbuf_r
-                0x0000000000008524       0xa4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
-                0x0000000000008524                __swbuf_r
+                0x000000000000854c       0xa4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
+                0x000000000000854c                __swbuf_r
  .text.__swsetup_r
-                0x00000000000085c8       0xdc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
-                0x00000000000085c8                __swsetup_r
- .text.quorem   0x00000000000086a4      0x112 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
- *fill*         0x00000000000087b6        0x2 ff
- .text._dtoa_r  0x00000000000087b8      0xb74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
-                0x00000000000087b8                _dtoa_r
+                0x00000000000085f0       0xdc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
+                0x00000000000085f0                __swsetup_r
+ .text.quorem   0x00000000000086cc      0x112 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
+ *fill*         0x00000000000087de        0x2 ff
+ .text._dtoa_r  0x00000000000087e0      0xb74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
+                0x00000000000087e0                _dtoa_r
  .text.__sflush_r
-                0x000000000000932c      0x10c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
-                0x000000000000932c                __sflush_r
+                0x0000000000009354      0x10c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
+                0x0000000000009354                __sflush_r
  .text._fflush_r
-                0x0000000000009438       0x78 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
-                0x0000000000009438                _fflush_r
- .text.fflush   0x00000000000094b0       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
-                0x00000000000094b0                fflush
- .text.std      0x00000000000094d4       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x0000000000009460       0x78 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
+                0x0000000000009460                _fflush_r
+ .text.fflush   0x00000000000094d8       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
+                0x00000000000094d8                fflush
+ .text.std      0x00000000000094fc       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x000000000000951c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x000000000000951c                _cleanup_r
+                0x0000000000009544        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x0000000000009544                _cleanup_r
  .text.__sfmoreglue
-                0x0000000000009528       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x0000000000009528                __sfmoreglue
+                0x0000000000009550       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x0000000000009550                __sfmoreglue
  .text.__sfp_lock_acquire
-                0x0000000000009554        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x0000000000009554                __sfp_lock_acquire
+                0x000000000000957c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x000000000000957c                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x0000000000009560        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x0000000000009560                __sfp_lock_release
+                0x0000000000009588        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x0000000000009588                __sfp_lock_release
  .text.__sinit_lock_acquire
-                0x000000000000956c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x000000000000956c                __sinit_lock_acquire
+                0x0000000000009594        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x0000000000009594                __sinit_lock_acquire
  .text.__sinit_lock_release
-                0x0000000000009578        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x0000000000009578                __sinit_lock_release
- .text.__sinit  0x0000000000009584       0x70 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x0000000000009584                __sinit
- .text.__sfp    0x00000000000095f4       0x8c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x00000000000095f4                __sfp
- .text._fwalk   0x0000000000009680       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
-                0x0000000000009680                _fwalk
+                0x00000000000095a0        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x00000000000095a0                __sinit_lock_release
+ .text.__sinit  0x00000000000095ac       0x70 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x00000000000095ac                __sinit
+ .text.__sfp    0x000000000000961c       0x8c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x000000000000961c                __sfp
+ .text._fwalk   0x00000000000096a8       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
+                0x00000000000096a8                _fwalk
  .text._fwalk_reent
-                0x00000000000096b8       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
-                0x00000000000096b8                _fwalk_reent
- .text.rshift   0x00000000000096f4       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
+                0x00000000000096e0       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
+                0x00000000000096e0                _fwalk_reent
+ .text.rshift   0x000000000000971c       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
  .text.__hexdig_fun
-                0x0000000000009768       0x2a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
-                0x0000000000009768                __hexdig_fun
- *fill*         0x0000000000009792        0x2 ff
+                0x0000000000009790       0x2a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
+                0x0000000000009790                __hexdig_fun
+ *fill*         0x00000000000097ba        0x2 ff
  .text.__gethex
-                0x0000000000009794      0x448 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
-                0x0000000000009794                __gethex
- .text.L_shift  0x0000000000009bdc       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
- .text.__match  0x0000000000009c00       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
-                0x0000000000009c00                __match
+                0x00000000000097bc      0x448 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
+                0x00000000000097bc                __gethex
+ .text.L_shift  0x0000000000009c04       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
+ .text.__match  0x0000000000009c28       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
+                0x0000000000009c28                __match
  .text.__hexnan
-                0x0000000000009c28      0x120 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
-                0x0000000000009c28                __hexnan
- .text._getc_r  0x0000000000009d48       0x80 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
-                0x0000000000009d48                _getc_r
+                0x0000000000009c50      0x120 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
+                0x0000000000009c50                __hexnan
+ .text._getc_r  0x0000000000009d70       0x80 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
+                0x0000000000009d70                _getc_r
  .text._localeconv_r
-                0x0000000000009dc8        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
-                0x0000000000009dc8                _localeconv_r
+                0x0000000000009df0        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
+                0x0000000000009df0                _localeconv_r
  .text.__swhatbuf_r
-                0x0000000000009dd0       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
-                0x0000000000009dd0                __swhatbuf_r
+                0x0000000000009df8       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
+                0x0000000000009df8                __swhatbuf_r
  .text.__smakebuf_r
-                0x0000000000009e18       0x80 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
-                0x0000000000009e18                __smakebuf_r
+                0x0000000000009e40       0x80 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
+                0x0000000000009e40                __smakebuf_r
  .text.__ascii_mbtowc
-                0x0000000000009e98       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
-                0x0000000000009e98                __ascii_mbtowc
- *fill*         0x0000000000009ebc        0x4 ff
- .text          0x0000000000009ec0       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memchr.o)
-                0x0000000000009ec0                memchr
+                0x0000000000009ec0       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
+                0x0000000000009ec0                __ascii_mbtowc
+ *fill*         0x0000000000009ee4        0xc ff
+ .text          0x0000000000009ef0       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memchr.o)
+                0x0000000000009ef0                memchr
  .text.__malloc_lock
-                0x0000000000009f60        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
-                0x0000000000009f60                __malloc_lock
+                0x0000000000009f90        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
+                0x0000000000009f90                __malloc_lock
  .text.__malloc_unlock
-                0x0000000000009f6c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
-                0x0000000000009f6c                __malloc_unlock
- .text._Balloc  0x0000000000009f78       0x68 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x0000000000009f78                _Balloc
- .text._Bfree   0x0000000000009fe0       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x0000000000009fe0                _Bfree
+                0x0000000000009f9c        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
+                0x0000000000009f9c                __malloc_unlock
+ .text._Balloc  0x0000000000009fa8       0x68 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x0000000000009fa8                _Balloc
+ .text._Bfree   0x000000000000a010       0x2e /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a010                _Bfree
  .text.__multadd
-                0x000000000000a00e       0x76 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a00e                __multadd
- .text.__s2b    0x000000000000a084       0x7c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a084                __s2b
+                0x000000000000a03e       0x76 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a03e                __multadd
+ .text.__s2b    0x000000000000a0b4       0x7c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a0b4                __s2b
  .text.__hi0bits
-                0x000000000000a100       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a100                __hi0bits
+                0x000000000000a130       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a130                __hi0bits
  .text.__lo0bits
-                0x000000000000a140       0x60 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a140                __lo0bits
- .text.__i2b    0x000000000000a1a0       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a1a0                __i2b
+                0x000000000000a170       0x60 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a170                __lo0bits
+ .text.__i2b    0x000000000000a1d0       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a1d0                __i2b
  .text.__multiply
-                0x000000000000a1b2      0x120 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a1b2                __multiply
- *fill*         0x000000000000a2d2        0x2 ff
+                0x000000000000a1e2      0x120 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a1e2                __multiply
+ *fill*         0x000000000000a302        0x2 ff
  .text.__pow5mult
-                0x000000000000a2d4       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a2d4                __pow5mult
+                0x000000000000a304       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a304                __pow5mult
  .text.__lshift
-                0x000000000000a370       0xa6 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a370                __lshift
- .text.__mcmp   0x000000000000a416       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a416                __mcmp
- .text.__mdiff  0x000000000000a44a       0xba /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a44a                __mdiff
- .text.__ulp    0x000000000000a504       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a504                __ulp
- .text.__b2d    0x000000000000a550       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a550                __b2d
- .text.__d2b    0x000000000000a5f0       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a5f0                __d2b
- .text.__ratio  0x000000000000a68c       0x66 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a68c                __ratio
+                0x000000000000a3a0       0xa6 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a3a0                __lshift
+ .text.__mcmp   0x000000000000a446       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a446                __mcmp
+ .text.__mdiff  0x000000000000a47a       0xba /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a47a                __mdiff
+ .text.__ulp    0x000000000000a534       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a534                __ulp
+ .text.__b2d    0x000000000000a580       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a580                __b2d
+ .text.__d2b    0x000000000000a620       0x9c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a620                __d2b
+ .text.__ratio  0x000000000000a6bc       0x66 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a6bc                __ratio
  .text.__copybits
-                0x000000000000a6f2       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a6f2                __copybits
+                0x000000000000a722       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a722                __copybits
  .text.__any_on
-                0x000000000000a726       0x42 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000a726                __any_on
+                0x000000000000a756       0x42 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000a756                __any_on
  .text._calloc_r
-                0x000000000000a768       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
-                0x000000000000a768                _calloc_r
+                0x000000000000a798       0x1c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
+                0x000000000000a798                _calloc_r
  .text._realloc_r
-                0x000000000000a784       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
-                0x000000000000a784                _realloc_r
+                0x000000000000a7b4       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
+                0x000000000000a7b4                _realloc_r
  .text.__ssputs_r
-                0x000000000000a7d0       0xb6 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
-                0x000000000000a7d0                __ssputs_r
- *fill*         0x000000000000a886        0x2 ff
+                0x000000000000a800       0xb6 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000000a800                __ssputs_r
+ *fill*         0x000000000000a8b6        0x2 ff
  .text._svfprintf_r
-                0x000000000000a888      0x1f0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
-                0x000000000000a888                _svfprintf_r
-                0x000000000000a888                _svfiprintf_r
+                0x000000000000a8b8      0x1f0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000000a8b8                _svfprintf_r
+                0x000000000000a8b8                _svfiprintf_r
  .text._sungetc_r
-                0x000000000000aa78       0x7a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
-                0x000000000000aa78                _sungetc_r
+                0x000000000000aaa8       0x7a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+                0x000000000000aaa8                _sungetc_r
  .text.__ssrefill_r
-                0x000000000000aaf2       0x3a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
-                0x000000000000aaf2                __ssrefill_r
+                0x000000000000ab22       0x3a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+                0x000000000000ab22                __ssrefill_r
  .text.__ssvfscanf_r
-                0x000000000000ab2c      0x290 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
-                0x000000000000ab2c                __ssvfscanf_r
-                0x000000000000ab2c                __ssvfiscanf_r
+                0x000000000000ab5c      0x290 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+                0x000000000000ab5c                __ssvfscanf_r
+                0x000000000000ab5c                __ssvfiscanf_r
  .text._scanf_chars
-                0x000000000000adbc       0xb0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
-                0x000000000000adbc                _scanf_chars
+                0x000000000000adec       0xb0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000000adec                _scanf_chars
  .text._scanf_i
-                0x000000000000ae6c      0x1e8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
-                0x000000000000ae6c                _scanf_i
- .text._putc_r  0x000000000000b054       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
-                0x000000000000b054                _putc_r
+                0x000000000000ae9c      0x1e8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000000ae9c                _scanf_i
+ .text._putc_r  0x000000000000b084       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
+                0x000000000000b084                _putc_r
  .text.__srget_r
-                0x000000000000b0e4       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
-                0x000000000000b0e4                __srget_r
- *fill*         0x000000000000b13c        0x4 ff
- .text.nan      0x000000000000b140       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
-                0x000000000000b140                nan
- .text.__sccl   0x000000000000b150       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
-                0x000000000000b150                __sccl
- .text.__sread  0x000000000000b1b4       0x22 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
-                0x000000000000b1b4                __sread
+                0x000000000000b114       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
+                0x000000000000b114                __srget_r
+ *fill*         0x000000000000b16c        0x4 ff
+ .text.nan      0x000000000000b170       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
+                0x000000000000b170                nan
+ .text.__sccl   0x000000000000b180       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
+                0x000000000000b180                __sccl
+ .text.__sread  0x000000000000b1e4       0x22 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+                0x000000000000b1e4                __sread
  .text.__seofread
-                0x000000000000b1d6        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
-                0x000000000000b1d6                __seofread
+                0x000000000000b206        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+                0x000000000000b206                __seofread
  .text.__swrite
-                0x000000000000b1da       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
-                0x000000000000b1da                __swrite
- .text.__sseek  0x000000000000b212       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
-                0x000000000000b212                __sseek
+                0x000000000000b20a       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+                0x000000000000b20a                __swrite
+ .text.__sseek  0x000000000000b242       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+                0x000000000000b242                __sseek
  .text.__sclose
-                0x000000000000b236        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
-                0x000000000000b236                __sclose
- *fill*         0x000000000000b23e        0x2 ff
+                0x000000000000b266        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+                0x000000000000b266                __sclose
+ *fill*         0x000000000000b26e        0x2 ff
  .text._strtoul_l.isra.0
-                0x000000000000b240       0xec /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
+                0x000000000000b270       0xec /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
  .text._strtoul_r
-                0x000000000000b32c        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
-                0x000000000000b32c                _strtoul_r
+                0x000000000000b35c        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
+                0x000000000000b35c                _strtoul_r
  .text.__submore
-                0x000000000000b330       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
-                0x000000000000b330                __submore
+                0x000000000000b360       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
+                0x000000000000b360                __submore
  .text.__ascii_wctomb
-                0x000000000000b3a4       0x1a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
-                0x000000000000b3a4                __ascii_wctomb
- *fill*         0x000000000000b3be        0x2 ff
+                0x000000000000b3d4       0x1a /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
+                0x000000000000b3d4                __ascii_wctomb
+ *fill*         0x000000000000b3ee        0x2 ff
  .text._write_r
-                0x000000000000b3c0       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
-                0x000000000000b3c0                _write_r
+                0x000000000000b3f0       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
+                0x000000000000b3f0                _write_r
  .text._close_r
-                0x000000000000b3e4       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
-                0x000000000000b3e4                _close_r
+                0x000000000000b414       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
+                0x000000000000b414                _close_r
  .text._fstat_r
-                0x000000000000b404       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
-                0x000000000000b404                _fstat_r
+                0x000000000000b434       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
+                0x000000000000b434                _fstat_r
  .text._isatty_r
-                0x000000000000b428       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
-                0x000000000000b428                _isatty_r
+                0x000000000000b458       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
+                0x000000000000b458                _isatty_r
  .text._lseek_r
-                0x000000000000b448       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
-                0x000000000000b448                _lseek_r
+                0x000000000000b478       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
+                0x000000000000b478                _lseek_r
  .text._malloc_usable_size_r
-                0x000000000000b46c       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
-                0x000000000000b46c                _malloc_usable_size_r
- .text._read_r  0x000000000000b47c       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
-                0x000000000000b47c                _read_r
- .text.lflush   0x000000000000b4a0       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
- *fill*         0x000000000000b4b2        0x2 ff
+                0x000000000000b49c       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
+                0x000000000000b49c                _malloc_usable_size_r
+ .text._read_r  0x000000000000b4ac       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
+                0x000000000000b4ac                _read_r
+ .text.lflush   0x000000000000b4d0       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
+ *fill*         0x000000000000b4e2        0x2 ff
  .text.__srefill_r
-                0x000000000000b4b4      0x118 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
-                0x000000000000b4b4                __srefill_r
- .text          0x000000000000b5cc      0x424 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
-                0x000000000000b5cc                __aeabi_dmul
-                0x000000000000b5cc                __muldf3
-                0x000000000000b820                __aeabi_ddiv
-                0x000000000000b820                __divdf3
- .text          0x000000000000b9f0      0x110 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
-                0x000000000000b9f0                __gedf2
-                0x000000000000b9f0                __gtdf2
-                0x000000000000b9f8                __ledf2
-                0x000000000000b9f8                __ltdf2
-                0x000000000000ba00                __cmpdf2
-                0x000000000000ba00                __eqdf2
-                0x000000000000ba00                __nedf2
-                0x000000000000ba7c                __aeabi_cdrcmple
-                0x000000000000ba8c                __aeabi_cdcmple
-                0x000000000000ba8c                __aeabi_cdcmpeq
-                0x000000000000ba9c                __aeabi_dcmpeq
-                0x000000000000bab0                __aeabi_dcmplt
-                0x000000000000bac4                __aeabi_dcmple
-                0x000000000000bad8                __aeabi_dcmpge
-                0x000000000000baec                __aeabi_dcmpgt
- .text          0x000000000000bb00       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
-                0x000000000000bb00                __aeabi_dcmpun
-                0x000000000000bb00                __unorddf2
- .text          0x000000000000bb2c       0x50 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
-                0x000000000000bb2c                __fixdfsi
-                0x000000000000bb2c                __aeabi_d2iz
- .text          0x000000000000bb7c       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
-                0x000000000000bb7c                __fixunsdfsi
-                0x000000000000bb7c                __aeabi_d2uiz
- .text          0x000000000000bbbc       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
-                0x000000000000bbbc                __aeabi_d2f
-                0x000000000000bbbc                __truncdfsf2
- .text          0x000000000000bc5c       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
-                0x000000000000bc5c                __aeabi_d2lz
-                0x000000000000bc5c                __fixdfdi
- .text          0x000000000000bc8c       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
-                0x000000000000bc8c                __aeabi_d2ulz
-                0x000000000000bc8c                __fixunsdfdi
+                0x000000000000b4e4      0x118 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
+                0x000000000000b4e4                __srefill_r
+ .text          0x000000000000b5fc      0x424 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
+                0x000000000000b5fc                __aeabi_dmul
+                0x000000000000b5fc                __muldf3
+                0x000000000000b850                __aeabi_ddiv
+                0x000000000000b850                __divdf3
+ .text          0x000000000000ba20      0x110 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
+                0x000000000000ba20                __gedf2
+                0x000000000000ba20                __gtdf2
+                0x000000000000ba28                __ledf2
+                0x000000000000ba28                __ltdf2
+                0x000000000000ba30                __cmpdf2
+                0x000000000000ba30                __eqdf2
+                0x000000000000ba30                __nedf2
+                0x000000000000baac                __aeabi_cdrcmple
+                0x000000000000babc                __aeabi_cdcmple
+                0x000000000000babc                __aeabi_cdcmpeq
+                0x000000000000bacc                __aeabi_dcmpeq
+                0x000000000000bae0                __aeabi_dcmplt
+                0x000000000000baf4                __aeabi_dcmple
+                0x000000000000bb08                __aeabi_dcmpge
+                0x000000000000bb1c                __aeabi_dcmpgt
+ .text          0x000000000000bb30       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
+                0x000000000000bb30                __aeabi_dcmpun
+                0x000000000000bb30                __unorddf2
+ .text          0x000000000000bb5c       0x50 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
+                0x000000000000bb5c                __fixdfsi
+                0x000000000000bb5c                __aeabi_d2iz
+ .text          0x000000000000bbac       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
+                0x000000000000bbac                __fixunsdfsi
+                0x000000000000bbac                __aeabi_d2uiz
+ .text          0x000000000000bbec       0xa0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
+                0x000000000000bbec                __aeabi_d2f
+                0x000000000000bbec                __truncdfsf2
+ .text          0x000000000000bc8c       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
+                0x000000000000bc8c                __aeabi_d2lz
+                0x000000000000bc8c                __fixdfdi
+ .text          0x000000000000bcbc       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
+                0x000000000000bcbc                __aeabi_d2ulz
+                0x000000000000bcbc                __fixunsdfdi
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.__FUNCTION__.8190
-                0x000000000000bcc8        0xc _build_lpc40xx_freertos/objects/entry_point.o
+                0x000000000000bcf8        0xc _build_lpc40xx_freertos/objects/entry_point.o
  .rodata.entry_point.str1.1
-                0x000000000000bcd4       0x80 _build_lpc40xx_freertos/objects/entry_point.o
+                0x000000000000bd04       0x80 _build_lpc40xx_freertos/objects/entry_point.o
  .rodata.halt.str1.1
-                0x000000000000bd54       0xb8 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
+                0x000000000000bd84       0xb8 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .rodata.str1.1
-                0x000000000000be0c       0x53 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
- *fill*         0x000000000000be5f        0x1 ff
+                0x000000000000be3c       0x53 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
+ *fill*         0x000000000000be8f        0x1 ff
  .rodata.table.8042
-                0x000000000000be60       0x40 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
+                0x000000000000be90       0x40 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .rodata.crash__report_if_occurred.str1.1
-                0x000000000000bea0      0x190 _build_lpc40xx_freertos/objects/crash.o
- .rodata.ExCvt  0x000000000000c030       0x80 _build_lpc40xx_freertos/objects/ff.o
+                0x000000000000bed0      0x190 _build_lpc40xx_freertos/objects/crash.o
+ .rodata.ExCvt  0x000000000000c060       0x80 _build_lpc40xx_freertos/objects/ff.o
  .rodata.LfnOfs
-                0x000000000000c0b0        0xd _build_lpc40xx_freertos/objects/ff.o
+                0x000000000000c0e0        0xd _build_lpc40xx_freertos/objects/ff.o
  .rodata.check_fs.str1.1
-                0x000000000000c0bd        0xa _build_lpc40xx_freertos/objects/ff.o
+                0x000000000000c0ed        0xa _build_lpc40xx_freertos/objects/ff.o
  .rodata.follow_path.str1.1
-                0x000000000000c0c7       0x10 _build_lpc40xx_freertos/objects/ff.o
- *fill*         0x000000000000c0d7        0x1 ff
+                0x000000000000c0f7       0x10 _build_lpc40xx_freertos/objects/ff.o
+ *fill*         0x000000000000c107        0x1 ff
  .rodata.cvt1.8022
-                0x000000000000c0d8      0x1f2 _build_lpc40xx_freertos/objects/ffunicode.o
+                0x000000000000c108      0x1f2 _build_lpc40xx_freertos/objects/ffunicode.o
  .rodata.cvt2.8023
-                0x000000000000c2ca       0xbc _build_lpc40xx_freertos/objects/ffunicode.o
- .rodata.uc437  0x000000000000c386      0x100 _build_lpc40xx_freertos/objects/ffunicode.o
+                0x000000000000c2fa       0xbc _build_lpc40xx_freertos/objects/ffunicode.o
+ .rodata.uc437  0x000000000000c3b6      0x100 _build_lpc40xx_freertos/objects/ffunicode.o
  .rodata._close.str1.1
-                0x000000000000c486       0x26 _build_lpc40xx_freertos/objects/system_calls.o
+                0x000000000000c4b6       0x26 _build_lpc40xx_freertos/objects/system_calls.o
  .rodata._read.str1.1
-                0x000000000000c4ac       0x32 _build_lpc40xx_freertos/objects/system_calls.o
+                0x000000000000c4dc       0x32 _build_lpc40xx_freertos/objects/system_calls.o
  .rodata._write.str1.1
-                0x000000000000c4de       0x33 _build_lpc40xx_freertos/objects/system_calls.o
+                0x000000000000c50e       0x33 _build_lpc40xx_freertos/objects/system_calls.o
  .rodata.app_cli__private_print_list_of_all_commands.str1.1
-                0x000000000000c511       0x6a _build_lpc40xx_freertos/objects/app_cli.o
+                0x000000000000c541       0x6a _build_lpc40xx_freertos/objects/app_cli.o
                                          0x73 (size before relaxing)
  .rodata.app_cli__process_input.str1.1
-                0x000000000000c57b       0x8d _build_lpc40xx_freertos/objects/app_cli.o
+                0x000000000000c5ab       0x8d _build_lpc40xx_freertos/objects/app_cli.o
                                          0x8f (size before relaxing)
  .rodata.sj2_cli__init.str1.1
-                0x000000000000c608       0x57 _build_lpc40xx_freertos/objects/sj2_cli.o
+                0x000000000000c638       0x57 _build_lpc40xx_freertos/objects/sj2_cli.o
  .rodata.sj2_cli__task.str1.1
-                0x000000000000c65f        0x5 _build_lpc40xx_freertos/objects/sj2_cli.o
+                0x000000000000c68f        0x5 _build_lpc40xx_freertos/objects/sj2_cli.o
  .rodata.str1.1
-                0x000000000000c65f      0x18f _build_lpc40xx_freertos/objects/sj2_cli.o
+                0x000000000000c68f      0x18f _build_lpc40xx_freertos/objects/sj2_cli.o
                                         0x195 (size before relaxing)
  .rodata.cli__i2c.str1.1
-                0x000000000000c7ee        0xb _build_lpc40xx_freertos/objects/handler_i2c.o
+                0x000000000000c81e        0xb _build_lpc40xx_freertos/objects/handler_i2c.o
  .rodata.cli__i2c_read.str1.1
-                0x000000000000c7f9       0xab _build_lpc40xx_freertos/objects/handler_i2c.o
+                0x000000000000c829       0xab _build_lpc40xx_freertos/objects/handler_i2c.o
  .rodata.cli__i2c_write.str1.1
-                0x000000000000c8a4       0xc1 _build_lpc40xx_freertos/objects/handler_i2c.o
+                0x000000000000c8d4       0xc1 _build_lpc40xx_freertos/objects/handler_i2c.o
  .rodata.cli__mp3_play.str1.1
-                0x000000000000c965       0x20 _build_lpc40xx_freertos/objects/handlers_general.o
+                0x000000000000c995       0x20 _build_lpc40xx_freertos/objects/handlers_general.o
  .rodata.cli__task_list.str1.1
-                0x000000000000c985       0x5e _build_lpc40xx_freertos/objects/handlers_general.o
+                0x000000000000c9b5       0x5e _build_lpc40xx_freertos/objects/handlers_general.o
  .rodata.cli__uart3_transmit.str1.1
-                0x000000000000c9e3       0x12 _build_lpc40xx_freertos/objects/handlers_general.o
+                0x000000000000ca13       0x12 _build_lpc40xx_freertos/objects/handlers_general.o
                                          0x15 (size before relaxing)
  .rodata.str1.1
-                0x000000000000c9f5       0x28 _build_lpc40xx_freertos/objects/handlers_general.o
- *fill*         0x000000000000ca1d        0x3 ff
+                0x000000000000ca25       0x28 _build_lpc40xx_freertos/objects/handlers_general.o
+ *fill*         0x000000000000ca4d        0x3 ff
  .rodata.task_status_table.8132
-                0x000000000000ca20       0x14 _build_lpc40xx_freertos/objects/handlers_general.o
+                0x000000000000ca50       0x14 _build_lpc40xx_freertos/objects/handlers_general.o
  .rodata.__FUNCTION__.9195
-                0x000000000000ca34       0x11 _build_lpc40xx_freertos/objects/peripherals_init.o
+                0x000000000000ca64       0x11 _build_lpc40xx_freertos/objects/peripherals_init.o
  .rodata.peripherals_init.str1.1
-                0x000000000000ca45       0xdd _build_lpc40xx_freertos/objects/peripherals_init.o
+                0x000000000000ca75       0xdd _build_lpc40xx_freertos/objects/peripherals_init.o
                                          0xde (size before relaxing)
  .rodata.configASSERT_callback.str1.1
-                0x000000000000cb22       0xf8 _build_lpc40xx_freertos/objects/rtos_hooks.o
+                0x000000000000cb52       0xf8 _build_lpc40xx_freertos/objects/rtos_hooks.o
  .rodata.vApplicationMallocFailedHook.str1.1
-                0x000000000000cc1a       0x3a _build_lpc40xx_freertos/objects/rtos_hooks.o
+                0x000000000000cc4a       0x3a _build_lpc40xx_freertos/objects/rtos_hooks.o
  .rodata.vApplicationStackOverflowHook.str1.1
-                0x000000000000cc54       0x1d _build_lpc40xx_freertos/objects/rtos_hooks.o
+                0x000000000000cc84       0x1d _build_lpc40xx_freertos/objects/rtos_hooks.o
  .rodata.sl_string__to_int.str1.1
-                0x000000000000cc71        0x3 _build_lpc40xx_freertos/objects/sl_string.o
+                0x000000000000cca1        0x3 _build_lpc40xx_freertos/objects/sl_string.o
  .rodata.prvTaskExitError.str1.1
-                0x000000000000cc74       0x1a _build_lpc40xx_freertos/objects/port.o
+                0x000000000000cca4       0x1a _build_lpc40xx_freertos/objects/port.o
  .rodata.vPortEnterCritical.str1.1
-                0x000000000000cc8e       0x35 _build_lpc40xx_freertos/objects/port.o
+                0x000000000000ccbe       0x35 _build_lpc40xx_freertos/objects/port.o
  .rodata.vPortExitCritical.str1.1
-                0x000000000000ccc3       0x12 _build_lpc40xx_freertos/objects/port.o
+                0x000000000000ccf3       0x12 _build_lpc40xx_freertos/objects/port.o
  .rodata.vPortValidateInterruptPriority.str1.1
-                0x000000000000ccd5       0x6c _build_lpc40xx_freertos/objects/port.o
+                0x000000000000cd05       0x6c _build_lpc40xx_freertos/objects/port.o
  .rodata.xPortStartScheduler.str1.1
-                0x000000000000cd41       0x89 _build_lpc40xx_freertos/objects/port.o
+                0x000000000000cd71       0x89 _build_lpc40xx_freertos/objects/port.o
  .rodata.uxQueueMessagesWaiting.str1.1
-                0x000000000000cdca       0x89 _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000cdfa       0x89 _build_lpc40xx_freertos/objects/queue.o
                                           0x7 (size before relaxing)
  .rodata.xQueueGenericCreateStatic.str1.1
-                0x000000000000cdca       0xc3 _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000cdfa       0xc3 _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueGenericReset.str1.1
-                0x000000000000ce8d        0x8 _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000cebd        0x8 _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueGenericSend.str1.1
-                0x000000000000ce95       0xed _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000cec5       0xed _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueGiveFromISR.str1.1
-                0x000000000000cf82       0x80 _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000cfb2       0x80 _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueReceive.str1.1
-                0x000000000000d002       0x5f _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000d032       0x5f _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueReceiveFromISR.str1.1
-                0x000000000000d061       0x4b _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000d091       0x4b _build_lpc40xx_freertos/objects/queue.o
  .rodata.xQueueSemaphoreTake.str1.1
-                0x000000000000d0ac       0x20 _build_lpc40xx_freertos/objects/queue.o
+                0x000000000000d0dc       0x20 _build_lpc40xx_freertos/objects/queue.o
  .rodata.eTaskGetState.str1.1
-                0x000000000000d0cc        0x6 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d0fc        0x6 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskDelayUntil.str1.1
-                0x000000000000d0d2       0x45 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d102       0x45 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskPlaceOnEventList.str1.1
-                0x000000000000d117        0xc _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d147        0xc _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskPriorityDisinheritAfterTimeout.str1.1
-                0x000000000000d123       0x16 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d153       0x16 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskSetTimeOutState.str1.1
-                0x000000000000d139        0xa _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d169        0xa _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskStartScheduler.str1.1
-                0x000000000000d143        0x5 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d173        0x5 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.vTaskSwitchContext.str1.1
-                0x000000000000d148       0x47 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d178       0x47 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskCheckForTimeOut.str1.1
-                0x000000000000d18f        0xe _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d1bf        0xe _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskCreateStatic.str1.1
-                0x000000000000d19d       0x45 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d1cd       0x45 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskIncrementTick.str1.1
-                0x000000000000d1e2       0x2b _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d212       0x2b _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskPriorityDisinherit.str1.1
-                0x000000000000d20d       0x2b _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d23d       0x2b _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskRemoveFromEventList.str1.1
-                0x000000000000d238        0xf _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d268        0xf _build_lpc40xx_freertos/objects/tasks.o
  .rodata.xTaskResumeAll.str1.1
-                0x000000000000d247       0x15 _build_lpc40xx_freertos/objects/tasks.o
+                0x000000000000d277       0x15 _build_lpc40xx_freertos/objects/tasks.o
  .rodata.gpio_memory_map
-                0x000000000000d25c       0x18 _build_lpc40xx_freertos/objects/gpio.o
+                0x000000000000d28c       0x18 _build_lpc40xx_freertos/objects/gpio.o
  .rodata.hw_timers
-                0x000000000000d274       0x30 _build_lpc40xx_freertos/objects/hw_timer.o
+                0x000000000000d2a4       0x30 _build_lpc40xx_freertos/objects/hw_timer.o
  .rodata.str1.1
-                0x000000000000d2a4       0x18 _build_lpc40xx_freertos/objects/hw_timer.o
- .rodata        0x000000000000d2bc        0xc _build_lpc40xx_freertos/objects/i2c.o
+                0x000000000000d2d4       0x18 _build_lpc40xx_freertos/objects/hw_timer.o
+ .rodata        0x000000000000d2ec        0xc _build_lpc40xx_freertos/objects/i2c.o
  .rodata.str1.1
-                0x000000000000d2c8        0xf _build_lpc40xx_freertos/objects/i2c.o
+                0x000000000000d2f8        0xf _build_lpc40xx_freertos/objects/i2c.o
  .rodata.lpc_peripheral_pconp_bit_map
-                0x000000000000d2d7       0x5a _build_lpc40xx_freertos/objects/lpc_peripherals.o
+                0x000000000000d307       0x5a _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .rodata.str1.1
-                0x000000000000d331       0x18 _build_lpc40xx_freertos/objects/uart.o
- *fill*         0x000000000000d349        0x3 ff
+                0x000000000000d361       0x18 _build_lpc40xx_freertos/objects/uart.o
+ *fill*         0x000000000000d379        0x3 ff
  .rodata.uart__isrs
-                0x000000000000d34c       0x10 _build_lpc40xx_freertos/objects/uart.o
+                0x000000000000d37c       0x10 _build_lpc40xx_freertos/objects/uart.o
  .rodata.uart_peripheral_ids
-                0x000000000000d35c        0x4 _build_lpc40xx_freertos/objects/uart.o
+                0x000000000000d38c        0x4 _build_lpc40xx_freertos/objects/uart.o
  .rodata.main.str1.1
-                0x000000000000d360       0x26 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000d390       0x26 _build_lpc40xx_freertos/objects/main.o
  .rodata.player_task.str1.1
-                0x000000000000d386        0x3 _build_lpc40xx_freertos/objects/main.o
+                0x000000000000d3b6        0x3 _build_lpc40xx_freertos/objects/main.o
  .rodata.reader_task.str1.1
-                0x000000000000d389       0x1e _build_lpc40xx_freertos/objects/main.o
+                0x000000000000d3b9       0x37 _build_lpc40xx_freertos/objects/main.o
  .rodata._ctype_
-                0x000000000000d3a7      0x101 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ctype_.o)
-                0x000000000000d3a7                _ctype_
+                0x000000000000d3f0      0x101 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ctype_.o)
+                0x000000000000d3f0                _ctype_
+ *fill*         0x000000000000d4f1        0x3 ff
  .rodata._global_impure_ptr
-                0x000000000000d4a8        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-impure.o)
-                0x000000000000d4a8                _global_impure_ptr
+                0x000000000000d4f4        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-impure.o)
+                0x000000000000d4f4                _global_impure_ptr
  .rodata._vfprintf_r.str1.1
-                0x000000000000d4ac       0x11 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+                0x000000000000d4f8       0x11 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
  .rodata._printf_float.str1.1
-                0x000000000000d4bd       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x000000000000d509       0x10 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
                                          0x12 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x000000000000d4cd       0x22 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000000000d519       0x22 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata._scanf_float.str1.1
-                0x000000000000d4ef        0x5 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
+                0x000000000000d53b        0x5 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
                                           0x6 (size before relaxing)
  .rodata._strtod_l.str1.1
-                0x000000000000d4f4        0x5 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x000000000000d540        0x5 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
                                           0xd (size before relaxing)
  .rodata.fpi.7522
-                0x000000000000d4f4       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x000000000000d540       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
  .rodata.fpinan.7558
-                0x000000000000d508       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
- *fill*         0x000000000000d51c        0x4 ff
+                0x000000000000d554       0x14 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
  .rodata.tinytens
-                0x000000000000d520       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+                0x000000000000d568       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
  .rodata._dtoa_r.str1.1
-                0x000000000000d548        0xd /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
+                0x000000000000d590        0xd /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
                                           0xf (size before relaxing)
- *fill*         0x000000000000d555        0x3 ff
+ *fill*         0x000000000000d59d        0x3 ff
  .rodata.__sf_fake_stderr
-                0x000000000000d558       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x000000000000d558                __sf_fake_stderr
+                0x000000000000d5a0       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x000000000000d5a0                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x000000000000d578       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x000000000000d578                __sf_fake_stdin
+                0x000000000000d5c0       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x000000000000d5c0                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x000000000000d598       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
-                0x000000000000d598                __sf_fake_stdout
+                0x000000000000d5e0       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+                0x000000000000d5e0                __sf_fake_stdout
  .rodata._C_numeric_locale
-                0x000000000000d5b8        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
-                0x000000000000d5b8                _C_numeric_locale
+                0x000000000000d600        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
+                0x000000000000d600                _C_numeric_locale
  .rodata.str1.1
-                0x000000000000d5c4        0xd /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
+                0x000000000000d60c        0xd /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
                                           0x3 (size before relaxing)
  .rodata._setlocale_r.str1.1
-                0x000000000000d5c4        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
+                0x000000000000d60c        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
                                           0x9 (size before relaxing)
  .rodata.str1.1
-                0x000000000000d5cc        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
- *fill*         0x000000000000d5cc        0x4 ff
+                0x000000000000d614        0x2 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
+ *fill*         0x000000000000d614        0x4 ff
  .rodata.__mprec_bigtens
-                0x000000000000d5d0       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000d5d0                __mprec_bigtens
+                0x000000000000d618       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000d618                __mprec_bigtens
  .rodata.__mprec_tens
-                0x000000000000d5f8       0xc8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
-                0x000000000000d5f8                __mprec_tens
+                0x000000000000d640       0xc8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000d640                __mprec_tens
  .rodata.p05.7444
-                0x000000000000d6c0        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+                0x000000000000d708        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
  .rodata._svfprintf_r.str1.1
-                0x000000000000d6cc       0x11 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000000d714       0x11 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.1
-                0x000000000000d6cc        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
- .rodata        0x000000000000d6cc        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000000d714        0x4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+ .rodata        0x000000000000d714        0xc /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata._scanf_i.str1.1
-                0x000000000000d6d8       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000000d720       0x12 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata.str1.1
-                0x000000000000d6ea        0x9 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
-                0x000000000000d6f4                . = ALIGN (0x4)
- *fill*         0x000000000000d6f3        0x1 ff
+                0x000000000000d732        0x9 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+                0x000000000000d73c                . = ALIGN (0x4)
+ *fill*         0x000000000000d73b        0x1 ff
 
-.glue_7         0x000000000000d6f4        0x0
- .glue_7        0x000000000000d6f4        0x0 linker stubs
+.glue_7         0x000000000000d73c        0x0
+ .glue_7        0x000000000000d73c        0x0 linker stubs
 
-.glue_7t        0x000000000000d6f4        0x0
- .glue_7t       0x000000000000d6f4        0x0 linker stubs
+.glue_7t        0x000000000000d73c        0x0
+ .glue_7t       0x000000000000d73c        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000d6f4        0x0
- .vfp11_veneer  0x000000000000d6f4        0x0 linker stubs
+.vfp11_veneer   0x000000000000d73c        0x0
+ .vfp11_veneer  0x000000000000d73c        0x0 linker stubs
 
-.v4_bx          0x000000000000d6f4        0x0
- .v4_bx         0x000000000000d6f4        0x0 linker stubs
+.v4_bx          0x000000000000d73c        0x0
+ .v4_bx         0x000000000000d73c        0x0 linker stubs
 
-.iplt           0x000000000000d6f4        0x0
- .iplt          0x000000000000d6f4        0x0 _build_lpc40xx_freertos/objects/entry_point.o
+.iplt           0x000000000000d73c        0x0
+ .iplt          0x000000000000d73c        0x0 _build_lpc40xx_freertos/objects/entry_point.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000000000d6f4                __exidx_start = .
+                0x000000000000d73c                __exidx_start = .
 
-.ARM.exidx      0x000000000000d6f4        0x8
+.ARM.exidx      0x000000000000d73c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000000000d6f4        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000000000d6fc                __exidx_end = .
-                0x000000000000d6fc                _etext = .
+ .ARM.exidx     0x000000000000d73c        0x8 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000000000d744                __exidx_end = .
+                0x000000000000d744                _etext = .
 
-.rel.dyn        0x000000000000d6fc        0x0
- .rel.iplt      0x000000000000d6fc        0x0 _build_lpc40xx_freertos/objects/entry_point.o
+.rel.dyn        0x000000000000d744        0x0
+ .rel.iplt      0x000000000000d744        0x0 _build_lpc40xx_freertos/objects/entry_point.o
 
-.data           0x0000000010000000      0x374 load address 0x000000000000d6fc
+.data           0x0000000010000000      0x374 load address 0x000000000000d744
  FILL mask 0xff
  *(vtable)
  *(.data*)
@@ -3037,10 +3037,10 @@ END GROUP
                 0x0000000010000374                . = ALIGN (0x4)
                 0x0000000010000374                PROVIDE (_data_end = .)
 
-.igot.plt       0x0000000010000374        0x0 load address 0x000000000000da70
+.igot.plt       0x0000000010000374        0x0 load address 0x000000000000dab8
  .igot.plt      0x0000000010000374        0x0 _build_lpc40xx_freertos/objects/entry_point.o
 
-.bss            0x0000000010000378     0x10b8 load address 0x000000000000da70
+.bss            0x0000000010000378     0x10b8 load address 0x000000000000dab8
                 0x0000000010000378                _bss_start = .
  *(.bss*)
  .bss.FatFs     0x0000000010000378        0x4 _build_lpc40xx_freertos/objects/ff.o
@@ -3187,11 +3187,11 @@ END GROUP
                 0x0000000020000028                PROVIDE (_heap_start = .)
                 0x0000000020008000                PROVIDE (_heap_end = __top_ram_32k)
                 0x0000000010010000                PROVIDE (_estack = DEFINED (__user_stack_top)?__user_stack_top:__top_ram_64k)
-                0x000000000000d6fc                PROVIDE (_bdata_lma = LOADADDR (.data))
+                0x000000000000d744                PROVIDE (_bdata_lma = LOADADDR (.data))
                 0x0000000010000000                PROVIDE (_bdata_vma = ADDR (.data))
 OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x254c0
+.debug_info     0x0000000000000000    0x25514
  .debug_info    0x0000000000000000      0xb13 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_info    0x0000000000000b13      0xd91 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_info    0x00000000000018a4      0x454 _build_lpc40xx_freertos/objects/clock.o
@@ -3231,9 +3231,9 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_info    0x00000000000218f3      0x978 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_info    0x000000000002226b      0xf3e _build_lpc40xx_freertos/objects/ssp2.o
  .debug_info    0x00000000000231a9     0x12d6 _build_lpc40xx_freertos/objects/uart.o
- .debug_info    0x000000000002447f     0x1041 _build_lpc40xx_freertos/objects/main.o
+ .debug_info    0x000000000002447f     0x1095 _build_lpc40xx_freertos/objects/main.o
 
-.debug_abbrev   0x0000000000000000     0x6794
+.debug_abbrev   0x0000000000000000     0x67b9
  .debug_abbrev  0x0000000000000000      0x24e _build_lpc40xx_freertos/objects/entry_point.o
  .debug_abbrev  0x000000000000024e      0x32a _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_abbrev  0x0000000000000578      0x138 _build_lpc40xx_freertos/objects/clock.o
@@ -3273,7 +3273,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_abbrev  0x0000000000005ad5      0x297 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_abbrev  0x0000000000005d6c      0x345 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_abbrev  0x00000000000060b1      0x3eb _build_lpc40xx_freertos/objects/uart.o
- .debug_abbrev  0x000000000000649c      0x2f8 _build_lpc40xx_freertos/objects/main.o
+ .debug_abbrev  0x000000000000649c      0x31d _build_lpc40xx_freertos/objects/main.o
 
 .debug_aranges  0x0000000000000000      0xfb0
  .debug_aranges
@@ -3399,7 +3399,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_ranges  0x0000000000001cf8       0xd8 _build_lpc40xx_freertos/objects/uart.o
  .debug_ranges  0x0000000000001dd0       0x70 _build_lpc40xx_freertos/objects/main.o
 
-.debug_line     0x0000000000000000    0x14a49
+.debug_line     0x0000000000000000    0x14a76
  .debug_line    0x0000000000000000      0x4d5 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_line    0x00000000000004d5      0x512 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_line    0x00000000000009e7      0x2b6 _build_lpc40xx_freertos/objects/clock.o
@@ -3439,7 +3439,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_line    0x00000000000131ca      0x465 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_line    0x000000000001362f      0x592 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_line    0x0000000000013bc1      0x906 _build_lpc40xx_freertos/objects/uart.o
- .debug_line    0x00000000000144c7      0x582 _build_lpc40xx_freertos/objects/main.o
+ .debug_line    0x00000000000144c7      0x5af _build_lpc40xx_freertos/objects/main.o
 
 .debug_str      0x0000000000000000     0x6c1a
  .debug_str     0x0000000000000000      0x6a2 _build_lpc40xx_freertos/objects/entry_point.o
@@ -3521,7 +3521,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_str     0x0000000000006847      0x354 _build_lpc40xx_freertos/objects/uart.o
                                         0xa1b (size before relaxing)
  .debug_str     0x0000000000006b9b       0x7f _build_lpc40xx_freertos/objects/main.o
-                                        0x88e (size before relaxing)
+                                        0x8ad (size before relaxing)
 
 .comment        0x0000000000000000       0x76
  .comment       0x0000000000000000       0x76 _build_lpc40xx_freertos/objects/entry_point.o
@@ -3819,7 +3819,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000001831       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
 
-.debug_frame    0x0000000000000000     0x47b0
+.debug_frame    0x0000000000000000     0x47b8
  .debug_frame   0x0000000000000000       0x28 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_frame   0x0000000000000028       0x54 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_frame   0x000000000000007c       0x40 _build_lpc40xx_freertos/objects/clock.o
@@ -3859,89 +3859,89 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_frame   0x0000000000002aa4       0x6c _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_frame   0x0000000000002b10       0x94 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_frame   0x0000000000002ba4      0x178 _build_lpc40xx_freertos/objects/uart.o
- .debug_frame   0x0000000000002d1c       0x6c _build_lpc40xx_freertos/objects/main.o
- .debug_frame   0x0000000000002d88       0xac /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x0000000000002e34       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000000000002e60       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000002e94       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
- .debug_frame   0x0000000000002ef8       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
- .debug_frame   0x0000000000002f34       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
- .debug_frame   0x0000000000002f7c       0xb0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
- .debug_frame   0x000000000000302c       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
- .debug_frame   0x000000000000305c       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000003084       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
- .debug_frame   0x00000000000030ac       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
- .debug_frame   0x00000000000030cc       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x0000000000003104       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000003134       0xac /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x00000000000031e0       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
- .debug_frame   0x0000000000003270       0x60 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00000000000032d0       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
- .debug_frame   0x0000000000003310       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
- .debug_frame   0x0000000000003384       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
- .debug_frame   0x00000000000033dc       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
- .debug_frame   0x0000000000003418       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000003444       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
- .debug_frame   0x000000000000347c       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
- .debug_frame   0x000000000000349c       0x6c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
- .debug_frame   0x0000000000003508       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
- .debug_frame   0x0000000000003534       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
- .debug_frame   0x0000000000003554       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
- .debug_frame   0x0000000000003580       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
- .debug_frame   0x00000000000035a8       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
- .debug_frame   0x00000000000035d0       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
- .debug_frame   0x0000000000003600      0x11c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
- .debug_frame   0x000000000000371c       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
- .debug_frame   0x0000000000003780       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
- .debug_frame   0x00000000000037cc       0x44 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
- .debug_frame   0x0000000000003810       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
- .debug_frame   0x0000000000003850       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
- .debug_frame   0x000000000000387c       0x6c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
- .debug_frame   0x00000000000038e8       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
- .debug_frame   0x0000000000003944      0x14c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
- .debug_frame   0x0000000000003a90       0x54 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
- .debug_frame   0x0000000000003ae4       0x70 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
- .debug_frame   0x0000000000003b54       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
- .debug_frame   0x0000000000003bc8       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
- .debug_frame   0x0000000000003c10       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
- .debug_frame   0x0000000000003c30       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
- .debug_frame   0x0000000000003c78       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
- .debug_frame   0x0000000000003cb8       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
- .debug_frame   0x0000000000003d10       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
- .debug_frame   0x0000000000003d58       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000003d88      0x244 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
- .debug_frame   0x0000000000003fcc       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
- .debug_frame   0x0000000000003ff8       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x0000000000004034       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x00000000000040c4       0x78 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
- .debug_frame   0x000000000000413c       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
- .debug_frame   0x00000000000041a0       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
- .debug_frame   0x00000000000041dc       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-reent.o)
- .debug_frame   0x0000000000004238       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
- .debug_frame   0x0000000000004274       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
- .debug_frame   0x0000000000004294       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
- .debug_frame   0x00000000000042c0       0x88 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
- .debug_frame   0x0000000000004348       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
- .debug_frame   0x00000000000043ac       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
- .debug_frame   0x0000000000004408       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
- .debug_frame   0x0000000000004444       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
- .debug_frame   0x0000000000004470       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
- .debug_frame   0x000000000000449c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
- .debug_frame   0x00000000000044c8       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
- .debug_frame   0x00000000000044f4       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
- .debug_frame   0x0000000000004520       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
- .debug_frame   0x0000000000004540       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
- .debug_frame   0x000000000000456c       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
- .debug_frame   0x00000000000045ac       0x50 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x00000000000045fc       0xc4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
- .debug_frame   0x00000000000046c0       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
- .debug_frame   0x00000000000046e0       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
- .debug_frame   0x0000000000004704       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
- .debug_frame   0x0000000000004728       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x000000000000474c       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
- .debug_frame   0x0000000000004784       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
+ .debug_frame   0x0000000000002d1c       0x74 _build_lpc40xx_freertos/objects/main.o
+ .debug_frame   0x0000000000002d90       0xac /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x0000000000002e3c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000002e68       0x34 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000002e9c       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
+ .debug_frame   0x0000000000002f00       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
+ .debug_frame   0x0000000000002f3c       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
+ .debug_frame   0x0000000000002f84       0xb0 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
+ .debug_frame   0x0000000000003034       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000003064       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000000000000308c       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
+ .debug_frame   0x00000000000030b4       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000000030d4       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000000000000310c       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x000000000000313c       0xac /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x00000000000031e8       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .debug_frame   0x0000000000003278       0x60 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x00000000000032d8       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
+ .debug_frame   0x0000000000003318       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
+ .debug_frame   0x000000000000338c       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
+ .debug_frame   0x00000000000033e4       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
+ .debug_frame   0x0000000000003420       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x000000000000344c       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
+ .debug_frame   0x0000000000003484       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
+ .debug_frame   0x00000000000034a4       0x6c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
+ .debug_frame   0x0000000000003510       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
+ .debug_frame   0x000000000000353c       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
+ .debug_frame   0x000000000000355c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
+ .debug_frame   0x0000000000003588       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
+ .debug_frame   0x00000000000035b0       0x28 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
+ .debug_frame   0x00000000000035d8       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
+ .debug_frame   0x0000000000003608      0x11c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+ .debug_frame   0x0000000000003724       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
+ .debug_frame   0x0000000000003788       0x4c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
+ .debug_frame   0x00000000000037d4       0x44 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
+ .debug_frame   0x0000000000003818       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x0000000000003858       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x0000000000003884       0x6c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
+ .debug_frame   0x00000000000038f0       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
+ .debug_frame   0x000000000000394c      0x14c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+ .debug_frame   0x0000000000003a98       0x54 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x0000000000003aec       0x70 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
+ .debug_frame   0x0000000000003b5c       0x74 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
+ .debug_frame   0x0000000000003bd0       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
+ .debug_frame   0x0000000000003c18       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
+ .debug_frame   0x0000000000003c38       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
+ .debug_frame   0x0000000000003c80       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
+ .debug_frame   0x0000000000003cc0       0x58 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x0000000000003d18       0x48 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
+ .debug_frame   0x0000000000003d60       0x30 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000003d90      0x244 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+ .debug_frame   0x0000000000003fd4       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
+ .debug_frame   0x0000000000004000       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x000000000000403c       0x90 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x00000000000040cc       0x78 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+ .debug_frame   0x0000000000004144       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+ .debug_frame   0x00000000000041a8       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
+ .debug_frame   0x00000000000041e4       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x0000000000004240       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
+ .debug_frame   0x000000000000427c       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
+ .debug_frame   0x000000000000429c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
+ .debug_frame   0x00000000000042c8       0x88 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+ .debug_frame   0x0000000000004350       0x64 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
+ .debug_frame   0x00000000000043b4       0x5c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
+ .debug_frame   0x0000000000004410       0x3c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
+ .debug_frame   0x000000000000444c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
+ .debug_frame   0x0000000000004478       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
+ .debug_frame   0x00000000000044a4       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
+ .debug_frame   0x00000000000044d0       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
+ .debug_frame   0x00000000000044fc       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x0000000000004528       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x0000000000004548       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
+ .debug_frame   0x0000000000004574       0x40 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
+ .debug_frame   0x00000000000045b4       0x50 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x0000000000004604       0xc4 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x00000000000046c8       0x20 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x00000000000046e8       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x000000000000470c       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_frame   0x0000000000004730       0x24 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x0000000000004754       0x38 /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
+ .debug_frame   0x000000000000478c       0x2c /Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
 
-.debug_loc      0x0000000000000000    0x13cb7
+.debug_loc      0x0000000000000000    0x13cd1
  .debug_loc     0x0000000000000000       0x4c _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_loc     0x000000000000004c       0x23 _build_lpc40xx_freertos/objects/clock.o
  .debug_loc     0x000000000000006f       0x3f _build_lpc40xx_freertos/objects/crash.o
@@ -3976,4 +3976,4 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_loc     0x0000000000012f27      0x221 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_loc     0x0000000000013148      0x232 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_loc     0x000000000001337a      0x8b4 _build_lpc40xx_freertos/objects/uart.o
- .debug_loc     0x0000000000013c2e       0x89 _build_lpc40xx_freertos/objects/main.o
+ .debug_loc     0x0000000000013c2e       0xa3 _build_lpc40xx_freertos/objects/main.o

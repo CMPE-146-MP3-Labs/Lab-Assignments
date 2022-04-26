@@ -51,11 +51,11 @@ static void create_player_task(void) {
 static void create_reader_task(void) {
 
   xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_LOW, NULL);
+              PRIORITY_MEDIUM, NULL);
 }
 
 static void player_task(void *params) {
-  char bytes_512[512];
+  char bytes_512[512] = {0};
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
@@ -78,16 +78,19 @@ static void reader_task(void *params) {
   songname_t name;
   char bytes_512[512];
   UINT bytes_read;
+  int result;
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     FIL mp3_file;
 
-    f_open(&mp3_file, &name, FA_OPEN_EXISTING);
+    result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING);
+    fprintf(stderr, "Result: %i", result);
+
     while (!f_eof(&mp3_file)) {
       f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
-      fprintf(stderr, "%i", bytes_read);
+      fprintf(stderr, "\nBytes read: %i\n", bytes_read);
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
