@@ -58,11 +58,12 @@ static void player_task(void *params) {
   while (1) {
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     for (int i = 0; i < sizeof(bytes_512); i++) {
-       while (bytes_512.size() != 512) {
-        vTaskDelay(1);
-      }
+      // while (bytes_512.size() != 512) {
+      // vTaskDelay(1);
+      //}
+      fprintf(stderr,"%X", bytes_512[i]);
     }
-    fprintf(stderr, bytes_512[i]);
+
   }
 }
 

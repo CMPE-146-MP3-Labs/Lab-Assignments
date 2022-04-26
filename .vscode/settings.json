@@ -2,6 +2,8 @@
     "files.associations": {
         "freertos.h": "c",
         "stdio.h": "c",
-        "ff.h": "c"
+        "ff.h": "c",
+        "cstdio": "c",
+        "*.def": "c"
     }
 }
