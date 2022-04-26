@@ -54,11 +54,11 @@ static void player_task(void *params) {
   while (1) {
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     for (int i = 0; i < sizeof(bytes_512); i++) {
-      while (!mp3_decoder_needs_data()) {
-        vTaskDelay(1);
-      }
+      //while (!mp3_decoder_needs_data()) {
+      //  vTaskDelay(1);
+      //}
 
-      spi_send_to_mp3_decoder(bytes_512[i]);
+      fprintf(stderr,bytes_512[i]);
     }
   }
 }
