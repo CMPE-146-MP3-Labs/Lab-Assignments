@@ -44,6 +44,8 @@ static void create_player_task(void) {
   //  ARRAY_SIZE(player_task_stack),
   //                     NULL, PRIORITY_LOW, player_task_stack,
   //                     &player_task_struct);
+
+  // vTaskDelay(2000);
 }
 
 static void create_reader_task(void) {
@@ -56,14 +58,19 @@ static void player_task(void *params) {
   char bytes_512[512];
 
   while (1) {
+    while (uxQueueMessagesWaiting(Q_songdata) == 0) {
+      vTaskDelay(1);
+    }
+
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
+
     for (int i = 0; i < sizeof(bytes_512); i++) {
       // while (bytes_512.size() != 512) {
       // vTaskDelay(1);
       //}
-      fprintf(stderr,"%X", bytes_512[i]);
+      fprintf(stderr, "%X", bytes_512[i]);
     }
-
+    vTaskDelay(2000);
   }
 }
 
@@ -80,6 +87,8 @@ static void reader_task(void *params) {
     f_open(&mp3_file, &name, FA_OPEN_EXISTING);
     while (!f_eof(&mp3_file)) {
       f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
+      fprintf(stderr, "%i", bytes_read);
+      vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
     f_close(&mp3_file);
