@@ -1087,6 +1087,37 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x38 _build_lpc40xx_freertos/objects/pwm1.o
  .ARM.attributes
                 0x0000000000000000       0x34 _build_lpc40xx_freertos/objects/pwm1.o
+ .text          0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/song_list.o
+ .data          0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/song_list.o
+ .bss           0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/song_list.o
+ .text.song_list__populate
+                0x0000000000000000       0x74 _build_lpc40xx_freertos/objects/song_list.o
+ .text.song_list__get_item_count
+                0x0000000000000000        0xc _build_lpc40xx_freertos/objects/song_list.o
+ .text.song_list__get_name_for_item
+                0x0000000000000000       0x20 _build_lpc40xx_freertos/objects/song_list.o
+ .bss.file_info.8300
+                0x0000000000000000       0x98 _build_lpc40xx_freertos/objects/song_list.o
+ .bss.list_of_songs
+                0x0000000000000000     0x1000 _build_lpc40xx_freertos/objects/song_list.o
+ .bss.number_of_songs
+                0x0000000000000000        0x4 _build_lpc40xx_freertos/objects/song_list.o
+ .rodata.song_list__get_name_for_item.str1.1
+                0x0000000000000000        0x1 _build_lpc40xx_freertos/objects/song_list.o
+ .rodata.song_list__populate.str1.1
+                0x0000000000000000        0x7 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_info    0x0000000000000000      0xf0a _build_lpc40xx_freertos/objects/song_list.o
+ .debug_abbrev  0x0000000000000000      0x32e _build_lpc40xx_freertos/objects/song_list.o
+ .debug_loc     0x0000000000000000       0xa7 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_aranges
+                0x0000000000000000       0x30 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_ranges  0x0000000000000000       0x38 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_line    0x0000000000000000      0x4c4 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_str     0x0000000000000000      0x966 _build_lpc40xx_freertos/objects/song_list.o
+ .comment       0x0000000000000000       0x77 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_frame   0x0000000000000000       0x58 _build_lpc40xx_freertos/objects/song_list.o
+ .ARM.attributes
+                0x0000000000000000       0x34 _build_lpc40xx_freertos/objects/song_list.o
  .text          0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/ssp2.o
  .data          0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/ssp2.o
  .bss           0x0000000000000000        0x0 _build_lpc40xx_freertos/objects/ssp2.o
@@ -1563,6 +1594,7 @@ LOAD _build_lpc40xx_freertos/objects/hw_timer.o
 LOAD _build_lpc40xx_freertos/objects/i2c.o
 LOAD _build_lpc40xx_freertos/objects/lpc_peripherals.o
 LOAD _build_lpc40xx_freertos/objects/pwm1.o
+LOAD _build_lpc40xx_freertos/objects/song_list.o
 LOAD _build_lpc40xx_freertos/objects/ssp2.o
 LOAD _build_lpc40xx_freertos/objects/uart.o
 LOAD _build_lpc40xx_freertos/objects/main.o
@@ -3216,7 +3248,7 @@ END GROUP
                 0x0000000010000000                PROVIDE (_bdata_vma = ADDR (.data))
 OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x257fc
+.debug_info     0x0000000000000000    0x2581a
  .debug_info    0x0000000000000000      0xb13 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_info    0x0000000000000b13      0xd91 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_info    0x00000000000018a4      0x454 _build_lpc40xx_freertos/objects/clock.o
@@ -3256,9 +3288,9 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_info    0x00000000000218f3      0x978 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_info    0x000000000002226b      0xf3e _build_lpc40xx_freertos/objects/ssp2.o
  .debug_info    0x00000000000231a9     0x12d6 _build_lpc40xx_freertos/objects/uart.o
- .debug_info    0x000000000002447f     0x137d _build_lpc40xx_freertos/objects/main.o
+ .debug_info    0x000000000002447f     0x139b _build_lpc40xx_freertos/objects/main.o
 
-.debug_abbrev   0x0000000000000000     0x6806
+.debug_abbrev   0x0000000000000000     0x6813
  .debug_abbrev  0x0000000000000000      0x24e _build_lpc40xx_freertos/objects/entry_point.o
  .debug_abbrev  0x000000000000024e      0x32a _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_abbrev  0x0000000000000578      0x138 _build_lpc40xx_freertos/objects/clock.o
@@ -3298,7 +3330,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_abbrev  0x0000000000005ad5      0x297 _build_lpc40xx_freertos/objects/lpc_peripherals.o
  .debug_abbrev  0x0000000000005d6c      0x345 _build_lpc40xx_freertos/objects/ssp2.o
  .debug_abbrev  0x00000000000060b1      0x3eb _build_lpc40xx_freertos/objects/uart.o
- .debug_abbrev  0x000000000000649c      0x36a _build_lpc40xx_freertos/objects/main.o
+ .debug_abbrev  0x000000000000649c      0x377 _build_lpc40xx_freertos/objects/main.o
 
 .debug_aranges  0x0000000000000000      0xfb8
  .debug_aranges
@@ -3466,7 +3498,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_line    0x0000000000013bc1      0x906 _build_lpc40xx_freertos/objects/uart.o
  .debug_line    0x00000000000144c7      0x668 _build_lpc40xx_freertos/objects/main.o
 
-.debug_str      0x0000000000000000     0x6c69
+.debug_str      0x0000000000000000     0x6c75
  .debug_str     0x0000000000000000      0x6a2 _build_lpc40xx_freertos/objects/entry_point.o
                                         0x764 (size before relaxing)
  .debug_str     0x00000000000006a2      0x16c _build_lpc40xx_freertos/objects/interrupt_vector_table.o
@@ -3545,8 +3577,8 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
                                         0xb6e (size before relaxing)
  .debug_str     0x0000000000006847      0x354 _build_lpc40xx_freertos/objects/uart.o
                                         0xa1b (size before relaxing)
- .debug_str     0x0000000000006b9b       0xce _build_lpc40xx_freertos/objects/main.o
-                                        0xa5d (size before relaxing)
+ .debug_str     0x0000000000006b9b       0xda _build_lpc40xx_freertos/objects/main.o
+                                        0xa70 (size before relaxing)
 
 .comment        0x0000000000000000       0x76
  .comment       0x0000000000000000       0x76 _build_lpc40xx_freertos/objects/entry_point.o

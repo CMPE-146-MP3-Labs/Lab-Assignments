@@ -25,16 +25,16 @@ Idx Name             Size      VMA       LMA       File off  Algn  Flags
   2 .data            00000374  10000000  0000d754  00020000  2**2  CONTENTS, ALLOC, LOAD, DATA
   3 .bss             00001324  10000378  0000dac8  00020378  2**3  ALLOC
   4 .persistent_ram2 00000028  20000000  20000000  00030000  2**2  ALLOC
-  5 .debug_info      000257fc  00000000  00000000  00020374  2**0  CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev    00006806  00000000  00000000  00045b70  2**0  CONTENTS, READONLY, DEBUGGING
-  7 .debug_aranges   00000fb8  00000000  00000000  0004c376  2**0  CONTENTS, READONLY, DEBUGGING
-  8 .debug_ranges    00001e78  00000000  00000000  0004d32e  2**0  CONTENTS, READONLY, DEBUGGING
-  9 .debug_line      00014b2f  00000000  00000000  0004f1a6  2**0  CONTENTS, READONLY, DEBUGGING
- 10 .debug_str       00006c69  00000000  00000000  00063cd5  2**0  CONTENTS, READONLY, DEBUGGING
- 11 .comment         00000076  00000000  00000000  0006a93e  2**0  CONTENTS, READONLY
- 12 .ARM.attributes  00000032  00000000  00000000  0006a9b4  2**0  CONTENTS, READONLY
- 13 .debug_frame     000047dc  00000000  00000000  0006a9e8  2**2  CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc       00013d72  00000000  00000000  0006f1c4  2**0  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info      0002581a  00000000  00000000  00020374  2**0  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev    00006813  00000000  00000000  00045b8e  2**0  CONTENTS, READONLY, DEBUGGING
+  7 .debug_aranges   00000fb8  00000000  00000000  0004c3a1  2**0  CONTENTS, READONLY, DEBUGGING
+  8 .debug_ranges    00001e78  00000000  00000000  0004d359  2**0  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line      00014b2f  00000000  00000000  0004f1d1  2**0  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str       00006c75  00000000  00000000  00063d00  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .comment         00000076  00000000  00000000  0006a975  2**0  CONTENTS, READONLY
+ 12 .ARM.attributes  00000032  00000000  00000000  0006a9eb  2**0  CONTENTS, READONLY
+ 13 .debug_frame     000047dc  00000000  00000000  0006aa20  2**2  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc       00013d72  00000000  00000000  0006f1fc  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
 0000d74c l    d  .ARM.exidx	00000000 .ARM.exidx
@@ -19716,7 +19716,7 @@ uart__put():
 
 00005968 <reader_task>:
 reader_task():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:103
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:104
     }
     vTaskDelay(2000);
   }
@@ -19724,7 +19724,7 @@ reader_task():
 
 static void reader_task(void *params) {
     5968:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:115
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:116
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     FIL mp3_file;
@@ -19732,82 +19732,82 @@ static void reader_task(void *params) {
     result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING);
     fprintf(stderr, "Result: %i", result);
     596c:	4c1e      	ldr	r4, [pc, #120]	; (59e8 <reader_task+0x80>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:110
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:111
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     596e:	4d1f      	ldr	r5, [pc, #124]	; (59ec <reader_task+0x84>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:103
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:104
 static void reader_task(void *params) {
     5970:	f5ad 6d88 	sub.w	sp, sp, #1088	; 0x440
     5974:	4626      	mov	r6, r4
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:110
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:111
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     5976:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
     597a:	a902      	add	r1, sp, #8
     597c:	6828      	ldr	r0, [r5, #0]
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:119
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:120
 
     while (!f_eof(&mp3_file)) {
       f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
     597e:	4f1c      	ldr	r7, [pc, #112]	; (59f0 <reader_task+0x88>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:121
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:122
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     5980:	f8df 8078 	ldr.w	r8, [pc, #120]	; 59fc <reader_task+0x94>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:110
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:111
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     5984:	f7fe f9a8 	bl	3cd8 <xQueueReceive>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:111
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:112
     printf("Received song to play: %s\n", name);
     5988:	a902      	add	r1, sp, #8
     598a:	481a      	ldr	r0, [pc, #104]	; (59f4 <reader_task+0x8c>)
     598c:	f001 fce2 	bl	7354 <iprintf>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:114
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:115
     result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING);
     5990:	2200      	movs	r2, #0
     5992:	a902      	add	r1, sp, #8
     5994:	a886      	add	r0, sp, #536	; 0x218
     5996:	f7fb fdc5 	bl	1524 <f_open>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:115
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:116
     fprintf(stderr, "Result: %i", result);
     599a:	6823      	ldr	r3, [r4, #0]
     599c:	4916      	ldr	r1, [pc, #88]	; (59f8 <reader_task+0x90>)
     599e:	4602      	mov	r2, r0
     59a0:	68d8      	ldr	r0, [r3, #12]
     59a2:	f000 fbe3 	bl	616c <fiprintf>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:117
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:118
     while (!f_eof(&mp3_file)) {
     59a6:	9a8b      	ldr	r2, [sp, #556]	; 0x22c
     59a8:	9b89      	ldr	r3, [sp, #548]	; 0x224
     59aa:	429a      	cmp	r2, r3
     59ac:	d103      	bne.n	59b6 <reader_task+0x4e>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:123
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:124
     }
     f_close(&mp3_file);
     59ae:	a886      	add	r0, sp, #536	; 0x218
     59b0:	f7fb ffad 	bl	190e <f_close>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:109
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:110
   while (1) {
     59b4:	e7df      	b.n	5976 <reader_task+0xe>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:118
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:119
       f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
     59b6:	ab01      	add	r3, sp, #4
     59b8:	a906      	add	r1, sp, #24
     59ba:	f44f 7200 	mov.w	r2, #512	; 0x200
     59be:	a886      	add	r0, sp, #536	; 0x218
     59c0:	f7fb fe96 	bl	16f0 <f_read>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:119
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:120
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
     59c4:	6833      	ldr	r3, [r6, #0]
     59c6:	9a01      	ldr	r2, [sp, #4]
     59c8:	68d8      	ldr	r0, [r3, #12]
     59ca:	4639      	mov	r1, r7
     59cc:	f000 fbce 	bl	616c <fiprintf>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:120
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:121
       vTaskDelay(10);
     59d0:	200a      	movs	r0, #10
     59d2:	f7fe fe7f 	bl	46d4 <vTaskDelay>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:121
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:122
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     59d6:	2300      	movs	r3, #0
     59d8:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
@@ -19824,59 +19824,59 @@ static void reader_task(void *params) {
 
 00005a00 <player_task>:
 player_task():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:83
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:84
 static void player_task(void *params) {
     5a00:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
     5a04:	f5ad 7d00 	sub.w	sp, sp, #512	; 0x200
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:84
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:85
   char bytes_512[512] = {0};
     5a08:	f44f 7200 	mov.w	r2, #512	; 0x200
     5a0c:	2100      	movs	r1, #0
     5a0e:	4668      	mov	r0, sp
     5a10:	f000 fc7a 	bl	6308 <memset>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:87
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:88
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
     5a14:	4d10      	ldr	r5, [pc, #64]	; (5a58 <player_task+0x58>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:97
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:98
       fprintf(stderr, "%X", bytes_512[i]);
     5a16:	4f11      	ldr	r7, [pc, #68]	; (5a5c <player_task+0x5c>)
     5a18:	f8df 8044 	ldr.w	r8, [pc, #68]	; 5a60 <player_task+0x60>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:87
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:88
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
     5a1c:	6828      	ldr	r0, [r5, #0]
     5a1e:	f7fe fb07 	bl	4030 <uxQueueMessagesWaiting>
     5a22:	b1a8      	cbz	r0, 5a50 <player_task+0x50>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:91
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:92
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     5a24:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
     5a28:	4669      	mov	r1, sp
     5a2a:	6828      	ldr	r0, [r5, #0]
     5a2c:	f7fe f954 	bl	3cd8 <xQueueReceive>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:93
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:94
     for (int i = 0; i < sizeof(bytes_512); i++) {
     5a30:	466e      	mov	r6, sp
     5a32:	2400      	movs	r4, #0
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:97 (discriminator 3)
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:98 (discriminator 3)
       fprintf(stderr, "%X", bytes_512[i]);
     5a34:	683b      	ldr	r3, [r7, #0]
     5a36:	f816 2b01 	ldrb.w	r2, [r6], #1
     5a3a:	68d8      	ldr	r0, [r3, #12]
     5a3c:	4641      	mov	r1, r8
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:93 (discriminator 3)
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:94 (discriminator 3)
     for (int i = 0; i < sizeof(bytes_512); i++) {
     5a3e:	3401      	adds	r4, #1
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:97 (discriminator 3)
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:98 (discriminator 3)
       fprintf(stderr, "%X", bytes_512[i]);
     5a40:	f000 fb94 	bl	616c <fiprintf>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:93 (discriminator 3)
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:94 (discriminator 3)
     for (int i = 0; i < sizeof(bytes_512); i++) {
     5a44:	f5b4 7f00 	cmp.w	r4, #512	; 0x200
     5a48:	d1f4      	bne.n	5a34 <player_task+0x34>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:99
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:100
     vTaskDelay(2000);
     5a4a:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
     5a4e:	e000      	b.n	5a52 <player_task+0x52>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:88
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:89
       vTaskDelay(1);
     5a50:	2001      	movs	r0, #1
     5a52:	f7fe fe3f 	bl	46d4 <vTaskDelay>
@@ -19887,50 +19887,50 @@ static void player_task(void *params) {
 
 00005a64 <main>:
 main():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:26
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:27
 int main(void) {
     5a64:	b513      	push	{r0, r1, r4, lr}
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:27
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:28
   Q_songname = xQueueCreate(1, sizeof(songname_t));
     5a66:	2200      	movs	r2, #0
     5a68:	2110      	movs	r1, #16
     5a6a:	2001      	movs	r0, #1
     5a6c:	f7fd ff9a 	bl	39a4 <xQueueGenericCreate>
     5a70:	4b17      	ldr	r3, [pc, #92]	; (5ad0 <main+0x6c>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:28
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
   Q_songdata = xQueueCreate(1, 512);
     5a72:	2200      	movs	r2, #0
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:27
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:28
   Q_songname = xQueueCreate(1, sizeof(songname_t));
     5a74:	6018      	str	r0, [r3, #0]
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:28
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
   Q_songdata = xQueueCreate(1, 512);
     5a76:	f44f 7100 	mov.w	r1, #512	; 0x200
     5a7a:	2001      	movs	r0, #1
     5a7c:	f7fd ff92 	bl	39a4 <xQueueGenericCreate>
     5a80:	4b14      	ldr	r3, [pc, #80]	; (5ad4 <main+0x70>)
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:30
   Q_sdcard = xQueueCreate(1, 64);
     5a82:	2200      	movs	r2, #0
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:28
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
   Q_songdata = xQueueCreate(1, 512);
     5a84:	6018      	str	r0, [r3, #0]
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:30
   Q_sdcard = xQueueCreate(1, 64);
     5a86:	2140      	movs	r1, #64	; 0x40
     5a88:	2001      	movs	r0, #1
     5a8a:	f7fd ff8b 	bl	39a4 <xQueueGenericCreate>
     5a8e:	4b12      	ldr	r3, [pc, #72]	; (5ad8 <main+0x74>)
 create_reader_task():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:79
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:80
   xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), NULL,
     5a90:	4912      	ldr	r1, [pc, #72]	; (5adc <main+0x78>)
 main():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:29
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:30
   Q_sdcard = xQueueCreate(1, 64);
     5a92:	6018      	str	r0, [r3, #0]
 create_reader_task():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:79
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:80
   xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), NULL,
     5a94:	2400      	movs	r4, #0
     5a96:	2302      	movs	r3, #2
@@ -19940,7 +19940,7 @@ create_reader_task():
     5aa2:	480f      	ldr	r0, [pc, #60]	; (5ae0 <main+0x7c>)
     5aa4:	f7fe fc68 	bl	4378 <xTaskCreate>
 create_player_task():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:64
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:65
   xTaskCreate(player_task, "Player Task", (512U * 8) / sizeof(void *), NULL,
     5aa8:	2301      	movs	r3, #1
     5aaa:	f44f 6280 	mov.w	r2, #1024	; 0x400
@@ -19951,17 +19951,17 @@ create_player_task():
     5ab6:	480c      	ldr	r0, [pc, #48]	; (5ae8 <main+0x84>)
     5ab8:	f7fe fc5e 	bl	4378 <xTaskCreate>
 main():
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:32
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:33
   sj2_cli__init();
     5abc:	f7fc fd54 	bl	2568 <sj2_cli__init>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:34
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:35
   puts("Starting RTOS");
     5ac0:	480a      	ldr	r0, [pc, #40]	; (5aec <main+0x88>)
     5ac2:	f001 fd29 	bl	7518 <puts>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:35
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:36
   vTaskStartScheduler(); // This function never returns unless RTOS scheduler
     5ac6:	f7fe fcbb 	bl	4440 <vTaskStartScheduler>
-/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:39
+/Users/neen/Documents/SJSU/Class Folders/Spring 2022/CMPE 146/Lab-Assignments/projects/lpc40xx_freertos/l5_application/main.c:40
 }
     5aca:	4620      	mov	r0, r4
     5acc:	b002      	add	sp, #8
