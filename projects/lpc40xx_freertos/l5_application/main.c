@@ -23,7 +23,6 @@ QueueHandle_t Q_songdata;
 int main(void) {
   Q_songname = xQueueCreate(1, sizeof(songname_t));
   Q_songdata = xQueueCreate(1, 512);
-  Q_sdcard = xQueueCreate(1, 64);
   create_reader_task();
   create_player_task();
   sj2_cli__init();
@@ -93,6 +92,9 @@ static void reader_task(void *params) {
     while (!f_eof(&mp3_file)) {
       f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
+      for (int i = 0; i < 512; i++){
+        printf(bytes_512[i]);
+      }
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
