@@ -18,10 +18,15 @@ typedef char songname_t[16];
 
 QueueHandle_t Q_songname;
 QueueHandle_t Q_songdata;
+QueueHandle_t Q_sdcard;
+char string[64];
+const char *filename = "foo.txt";
+FIL file;
 
 int main(void) {
   Q_songname = xQueueCreate(1, sizeof(songname_t));
   Q_songdata = xQueueCreate(1, 512);
+  Q_sdcard = xQueueCreate(1, 64);
   create_reader_task();
   create_player_task();
   sj2_cli__init();
@@ -31,6 +36,27 @@ int main(void) {
                          // runs out of memory and fails
 
   return 0;
+}
+
+void sd_card_init(int data) {
+
+  UINT bytes_written = 0;
+  FRESULT open_file = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS));
+  if (FR_OK == open_file) {
+    sprintf(string, "SD card open,%i\n", data); 
+    if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
+      fprintf(stderr, "Successfully write data to SD card\n");
+    } else {
+      fprintf(stderr, "ERROR: Failed to write data to file\n");
+    }
+    f_close(&file);
+  } else {
+    fprintf(stderr, "ERROR: Failed to open: %s\n", filename);
+  }
+  f_read(&file, &string, strlen(string), &bytes_written);
+  for (int i = 0; i < strlen(string); i++) {
+    fprintf(stderr, "%c", string[i]);
+  }
 }
 
 static void create_player_task(void) {
