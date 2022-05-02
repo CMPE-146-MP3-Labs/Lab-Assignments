@@ -19,10 +19,6 @@ typedef char songname_t[16];
 
 QueueHandle_t Q_songname;
 QueueHandle_t Q_songdata;
-QueueHandle_t Q_sdcard;
-char string[64];
-const char *filename = "foo.txt";
-FIL file;
 
 int main(void) {
   Q_songname = xQueueCreate(1, sizeof(songname_t));
@@ -37,27 +33,6 @@ int main(void) {
                          // runs out of memory and fails
 
   return 0;
-}
-
-void sd_card_init(int data) {
-
-  UINT bytes_written = 0;
-  FRESULT open_file = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS));
-  if (FR_OK == open_file) {
-    sprintf(string, "SD card open,%i\n", data);
-    if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
-      fprintf(stderr, "Successfully write data to SD card\n");
-    } else {
-      fprintf(stderr, "ERROR: Failed to write data to file\n");
-    }
-    f_close(&file);
-  } else {
-    fprintf(stderr, "ERROR: Failed to open: %s\n", filename);
-  }
-  f_read(&file, &string, strlen(string), &bytes_written);
-  for (int i = 0; i < strlen(string); i++) {
-    fprintf(stderr, "%c", string[i]);
-  }
 }
 
 static void create_player_task(void) {
@@ -124,10 +99,4 @@ static void reader_task(void *params) {
     f_close(&mp3_file);
   }
 
-  song_list__populate();
-  for (size_t song_number = 0; song_number < song_list__get_item_count();
-       song_number++) {
-    printf("Song %2d: %s\n", (1 + song_number),
-           song_list__get_name_for_item(song_number));
-  }
 }
