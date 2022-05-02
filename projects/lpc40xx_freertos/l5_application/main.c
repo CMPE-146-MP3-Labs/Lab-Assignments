@@ -43,7 +43,7 @@ void sd_card_init(int data) {
   UINT bytes_written = 0;
   FRESULT open_file = f_open(&file, filename, (FA_WRITE | FA_CREATE_ALWAYS));
   if (FR_OK == open_file) {
-    sprintf(string, "SD card open,%i\n", data); 
+    sprintf(string, "SD card open,%i\n", data);
     if (FR_OK == f_write(&file, string, strlen(string), &bytes_written)) {
       fprintf(stderr, "Successfully write data to SD card\n");
     } else {
