@@ -28,30 +28,26 @@ int main(void) {
   create_player_task();
   sj2_cli__init();
 
-  puts("Starting RTOS");
-  vTaskStartScheduler(); // This function never returns unless RTOS scheduler
-                         // runs out of memory and fails
+  puts("Starting RTOS\n");
+
+  song_list__populate();
+  for (size_t song_number = 0; song_number < song_list__get_item_count();
+       song_number++) {
+    printf("Song %2d: %s\n", (1 + song_number),
+           song_list__get_name_for_item(song_number));
+  }
+
+  vTaskStartScheduler();
 
   return 0;
 }
 
 static void create_player_task(void) {
-  // To avoid malloc, using xTaskCreateStatic() in place of xTaskCreate()
   xTaskCreate(player_task, "Player Task", (512U * 8) / sizeof(void *), NULL,
               PRIORITY_LOW, NULL);
-  // static StackType_t player_task_stack[512 / sizeof(StackType_t)];
-  // static StaticTask_t player_task_struct;
-
-  //  xTaskCreateStatic(player_task, "Player Task",
-  //  ARRAY_SIZE(player_task_stack),
-  //                     NULL, PRIORITY_LOW, player_task_stack,
-  //                     &player_task_struct);
-
-  // vTaskDelay(2000);
 }
 
 static void create_reader_task(void) {
-
   xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), NULL,
               PRIORITY_MEDIUM, NULL);
 }
@@ -68,9 +64,6 @@ static void player_task(void *params) {
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     fprintf(stderr, "Output: ");
     for (int i = 0; i < sizeof(bytes_512); i++) {
-      // while (bytes_512.size() != 512) {
-      // vTaskDelay(1);
-      // }
       fprintf(stderr, "%c", bytes_512[i]);
     }
     vTaskDelay(2000);
