@@ -64,12 +64,12 @@ static void player_task(void *params) {
     }
 
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
-
+    fprintf(stderr, "Output: ");
     for (int i = 0; i < sizeof(bytes_512); i++) {
       // while (bytes_512.size() != 512) {
       // vTaskDelay(1);
       //}
-      fprintf(stderr, "%X", bytes_512[i]);
+      fprintf(stderr, "%c", bytes_512[i]);
     }
     vTaskDelay(2000);
   }
@@ -79,26 +79,23 @@ static void reader_task(void *params) {
   songname_t name;
   char bytes_512[512];
   UINT bytes_read;
-  int result;
+  FRESULT result;
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     FIL mp3_file;
 
-    result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING);
-    fprintf(stderr, "Result: %i", result);
+    result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
+    fprintf(stderr, "Open Result: %i", result);
 
     while (!f_eof(&mp3_file)) {
-      f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
+      result = f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
+      fprintf(stderr, "Read Result: %i", result);
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
-      for (int i = 0; i < 512; i++){
-        printf(bytes_512[i]);
-      }
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
     f_close(&mp3_file);
   }
-
 }
