@@ -7,6 +7,7 @@
 #include "sj2_cli.h"
 #include "song_list.h"
 #include "task.h"
+#include "ssp2.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -57,6 +58,7 @@ static void create_reader_task(void) {
 
 static void player_task(void *params) {
   char bytes_512[512] = {0};
+  ssp2__initialize(400);
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
