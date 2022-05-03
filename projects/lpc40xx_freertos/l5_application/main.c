@@ -27,8 +27,16 @@ int main(void) {
   create_player_task();
   sj2_cli__init();
 
-  puts("Starting RTOS");
-  vTaskStartScheduler(); 
+  puts("Starting RTOS\n");
+
+  song_list__populate();
+  for (size_t song_number = 0; song_number < song_list__get_item_count();
+       song_number++) {
+    printf("Song %2d: %s\n", (1 + song_number),
+           song_list__get_name_for_item(song_number));
+  }
+
+  vTaskStartScheduler();
 
   return 0;
 }
@@ -82,12 +90,5 @@ static void reader_task(void *params) {
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
     f_close(&mp3_file);
-  }
-
-  song_list__populate();
-  for (size_t song_number = 0; song_number < song_list__get_item_count();
-       song_number++) {
-    printf("Song %2d: %s\n", (1 + song_number),
-           song_list__get_name_for_item(song_number));
   }
 }
