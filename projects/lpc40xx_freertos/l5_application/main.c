@@ -68,7 +68,7 @@ static void player_task(void *params) {
     for (int i = 0; i < sizeof(bytes_512); i++) {
       // while (bytes_512.size() != 512) {
       // vTaskDelay(1);
-      //}
+      // }
       fprintf(stderr, "%c", bytes_512[i]);
     }
     vTaskDelay(2000);
