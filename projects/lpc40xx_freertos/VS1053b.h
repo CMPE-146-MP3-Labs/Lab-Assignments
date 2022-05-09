@@ -20,22 +20,22 @@
 
 typedef struct
 {
-  __IO uint16_t MODE;                 // Mode control
-  __IO uint16_t STATUS;               // Status of VS1053b
-  __IO uint16_t BASS;                 // Built-in bass/treble control
-  __IO uint16_t CLOCKF;               // Clock freq + multiplier
-  __IO uint16_t DECODE_TIME;          // Decode time in seconds
-  __IO uint16_t AUDATA;               // Misc. audio data
-  __IO uint16_t WRAM;                 // RAM write/read
-  __IO uint16_t WRAMADDR;             // Base address for RAM write/read
-  __I  uint16_t HDAT0;                // Stream header data 0
-  __I  uint16_t HDAT1;                // Stream header data 1
-  __IO uint16_t AIADDR;               // Start address of application
-  __IO uint16_t VOL;                  // Volume control
-  __IO uint16_t AICTRL0;              // Application control register 0
-  __IO uint16_t AICTRL1;              // Application control register 1
-  __IO uint16_t AICTRL2;              // Application control register 2
-  __IO uint16_t AICTRL3;              // Application control register 3
+  __IO uint16_t SCI_MODE;                 // Mode control
+  __IO uint16_t SCI_STATUS;               // Status of VS1053b
+  __IO uint16_t SCI_BASS;                 // Built-in bass/treble control
+  __IO uint16_t SCI_CLOCKF;               // Clock freq + multiplier
+  __IO uint16_t SCI_DECODE_TIME;          // Decode time in seconds
+  __IO uint16_t SCI_AUDATA;               // Misc. audio data
+  __IO uint16_t SCI_WRAM;                 // RAM write/read
+  __IO uint16_t SCI_WRAMADDR;             // Base address for RAM write/read
+  __I  uint16_t SCI_HDAT0;                // Stream header data 0
+  __I  uint16_t SCI_HDAT1;                // Stream header data 1
+  __IO uint16_t SCI_AIADDR;               // Start address of application
+  __IO uint16_t SCI_VOL;                  // Volume control
+  __IO uint16_t SCI_AICTRL0;              // Application control register 0
+  __IO uint16_t SCI_AICTRL1;              // Application control register 1
+  __IO uint16_t SCI_AICTRL2;              // Application control register 2
+  __IO uint16_t SCI_AICTRL3;              // Application control register 3
 
 } VS_SCI_REG_TypeDef;
 
@@ -53,8 +53,8 @@ typedef struct
   __IO uint16_t SS_VER[4];            // Misc. audio data
   __IO uint16_t SS_APDOWN2;           // Analog driver powerdown
   __IO uint16_t SS_APDOWN1;           // Analog internal powerdown
-  __IO  uint16_t SS_AD_CLOCK;         // AD clock select, ’0’ = 6 MHz, ’1’ = 3 MHz
-  __IO  uint16_t SS_REFERENCE_SEL;    // Reference voltage selection, ’0’ = 1.23 V, ’1’ = 1.65 V
+  __IO uint16_t SS_AD_CLOCK;         // AD clock select, ’0’ = 6 MHz, ’1’ = 3 MHz
+  __IO uint16_t SS_REFERENCE_SEL;    // Reference voltage selection, ’0’ = 1.23 V, ’1’ = 1.65 V
 
 } VS_SCI_STATUS_TypeDef;
 
@@ -75,6 +75,23 @@ typedef struct
 
 } VS_SCI_CLOCKF_TypeDef;
 
+typedef struct
+{
+  __IO uint16_t SM_DIFF;              // Differential                   0 normal in-phase audio   1 left channel inverted
+  __IO uint16_t SM_LAYER12;           // Allow MPEG layers I & II       0 no                      1 yes
+  __IO uint16_t SM_RESET;             // Soft reset                     0 no reset                1 reset
+  __IO uint16_t SM_CANCEL;            // Cancel decoding current file   0 no                      1 yes
+  __IO uint16_t SM_EARSPEAKER_LO;     // EarSpeaker low setting         0 off                     1 active
+  __IO uint16_t SM_TESTS;             // Allow SDI tests                0 not allowed             1 allowed
+  __IO uint16_t SM_STREAM;            // Stream mode
+  __IO uint16_t SM_EARSPEAKER_HI;     // Allow MPEG layers I & II 
+  __IO uint16_t SM_DACT;              // DCLK active edge               0 rising                   1 falling
+  __IO uint16_t SM_CANCEL;            // Cancel decoding current file
+  __IO uint16_t SM_EARSPEAKER_LO;     // EarSpeaker low setting
+  __IO uint16_t SM_TESTS;             // Allow SDI tests
+  __IO uint16_t SM_STREAM;            // Stream mode
+
+} VS_SCI_MODE_TypeDef;
 
 
 
