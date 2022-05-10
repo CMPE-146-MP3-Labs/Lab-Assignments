@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "controls.h"
+#include <VS1053b.h>
 
 static uint32_t volume_control(int mosi)
 {
