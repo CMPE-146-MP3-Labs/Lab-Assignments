@@ -8,8 +8,6 @@
 * @author CMPE 146 - Team 8: 
 *           Aaron Rice, Gianine Dao, Aishwar Gupta, Ulysses Villegas 
 * 
-* Copyright(C) 2011, NXP Semiconductor
-* All rights reserved.
 *
 ***********************************************************************/
 
@@ -36,14 +34,15 @@ typedef struct
   __IO uint16_t SCI_AICTRL1;              // Application control register 1
   __IO uint16_t SCI_AICTRL2;              // Application control register 2
   __IO uint16_t SCI_AICTRL3;              // Application control register 3
+  __I  uint16_t SCI_CHANGE;               // Last SCI access address
 
 } VS_SCI_REG_TypeDef;
 
 /*
-*   SCI MODE is used to control the operation of VS1053b and defaults to 0x0800 (SM SDINEW set).
+*   SCI MODE is used to control the operation of VS1053b and defaults to and defaults to 0x4800 (SM_SDINEW set).
 */
 typedef struct
-{//Name                               //Function                        //Value/Description
+{//Name                               //Function                        //Value(Description)
   __IO uint16_t SM_DIFF;              // Differential                   0 normal in-phase audio   1 left channel inverted
   __IO uint16_t SM_LAYER12;           // Allow MPEG layers I & II       0 no                      1 yes
   __IO uint16_t SM_RESET;             // Soft reset                     0 no reset                1 reset
@@ -57,7 +56,7 @@ typedef struct
   __IO uint16_t SM_SDISHARE;          // Share SPI chip select          0 no                      1 yes
   __IO uint16_t SM_SDINEW;            // VS1002 native SPI modes        0 no                      1 yes
   __IO uint16_t SM_ADPCM;             // ADPCM recording active         0 no                      1 yes
-  __IO uint16_t reserved;             // reserved                       0 right                   1 wrong
+       uint16_t RESERVED;             // reserved                       0 right                   1 wrong
   __IO uint16_t SM_LINE1;             // MIC / LINE1 selector           0 MICP                    1 LINE1
   __IO uint16_t SM_CLK_RANGE;         // Input clock range              0 12..13 MHz              1 24..26 MHz
 
@@ -73,7 +72,7 @@ typedef struct
   __IO uint16_t SS_SWING[3];          // Set swing to +0 dB, +0.5 dB, .., or +3.5 dB
   __IO uint16_t SS_VCM_OVERLOAD;      // GBUF overload indicator ’1’ = overload
   __IO uint16_t SS_VCM_DISABLE;       // GBUF overload detection ’1’ = disable
-  __IO uint16_t reserved[2];          // reserved
+       uint16_t RESERVED[2];          // reserved
   __IO uint16_t SS_VER[4];            // Misc. audio data
   __IO uint16_t SS_APDOWN2;           // Analog driver powerdown
   __IO uint16_t SS_APDOWN1;           // Analog internal powerdown
@@ -108,12 +107,90 @@ typedef struct
 } VS_SCI_CLOCKF_TypeDef;
 
 
+typedef enum SC_MULT
+{ //CLKI          //MASK
+  XTALI     = 0,  //0x0000
+  XTALIx2_0 = 1,  //0x2000
+  XTALIx2_5 = 2,  //0x4000
+  XTALIx3_0 = 3,  //0x6000
+  XTALIx3_5 = 4,  //0x8000
+  XTALIx4_0 = 5,  //0xA000
+  XTALIx4_5 = 6,  //0xC000
+  XTALIx5_0 = 7,  //0xE000
+} SC_MULT_Type;
+
+typedef enum SC_ADD
+{ //CLKI          //MASK
+  XTALIxNM  = 0,  //0x0000 (No Modifictaion)
+  XTALIx1_0 = 1,  //0x0800
+  XTALIx1_5 = 2,  //0x1000
+  XTALIx2_0 = 3,  //0x1800
+} SC_ADD_Type;
 
 /*
-*   SC DECODE TIME activates the built-in clock multiplier. 
-*   This will multiply XTALI to create a higher CLKI.
+*   SCI_CHANGE contains the last SCI register that has been accessed through the SCI bus,
+*   as well as whether the access was a read or write operation.
 */
+typedef struct
+{
+       uint16_t RESERVED;
+  __I  uint16_t SCI_CH_WRITE;         // 1 if last access was a write cycle
+  __I  uint16_t SCI_CH_ADDR[4];       // SCI address of last access
 
+} VS_SCI_CHANGE_TypeDef;
 
+/******************************************************************************/
+/*                                X-memory map                                */
+/******************************************************************************/
+/* Base addresses                                                             */
+#define VBX_SYSTEM_RAM1_BASE       (0x0000U)
+#define VBX_USER_RAM_BASE          (0x1800U)
+#define VBX_STACK_BASE             (0x1880U)
+#define VBX_SYSTEM_RAM2_BASE       (0x1980U)
+#define VBX_ROM_32K_BASE           (0x4000U)
+#define VBX_PERIPHERALS_BASE       (0xC000U)
+#define VBX_ROM_15_75K_BASE        (0xC100U)
+/* SCI Registers                                                              */
+#define SCI_MODE_BASE              (VBX_PERIPHERALS_BASE + 0x0000)
+#define SCI_STATUS_BASE            (VBX_PERIPHERALS_BASE + 0x0001)
+#define SCI_BASS_BASE              (VBX_PERIPHERALS_BASE + 0x0002)
+#define SCI_CLOCKF_BASE            (VBX_PERIPHERALS_BASE + 0x0003)
+#define SCI_DECODE_TIME_BASE       (VBX_PERIPHERALS_BASE + 0x0004)
+#define SCI_AUDATA_BASE            (VBX_PERIPHERALS_BASE + 0x0005)
+#define SCI_WRAM_BASE              (VBX_PERIPHERALS_BASE + 0x0006)
+#define SCI_WRAMADDR_BASE          (VBX_PERIPHERALS_BASE + 0x0007)
+#define SCI_HDAT0_BASE             (VBX_PERIPHERALS_BASE + 0x0008)
+#define SCI_HDAT1_BASE             (VBX_PERIPHERALS_BASE + 0x0009)
+#define SCI_AIADDR_BASE            (VBX_PERIPHERALS_BASE + 0x000A)
+#define SCI_VOL_BASE               (VBX_PERIPHERALS_BASE + 0x000B)
+#define SCI_AICTRL0_BASE           (VBX_PERIPHERALS_BASE + 0x000C)
+#define SCI_AICTRL1_BASE           (VBX_PERIPHERALS_BASE + 0x000D)
+#define SCI_AICTRL2_BASE           (VBX_PERIPHERALS_BASE + 0x000E)
+#define SCI_AICTRL3_BASE           (VBX_PERIPHERALS_BASE + 0x000F)
+#define SCI_CHANGE_BASE            (VBX_PERIPHERALS_BASE + 0x0010)
 
+/* SDI Registers                                                              */
+#define SER_DATA_BASE              (VBX_PERIPHERALS_BASE + 0x0011)
+#define SER_DREQ_BASE              (VBX_PERIPHERALS_BASE + 0x0012)
+
+/******************************************************************************/
+/*                                Y-memory map                                */
+/******************************************************************************/
+/* Base addresses                                                             */
+#define VBY_SYSTEM_RAM1_BASE       (0x0000U)
+#define VBY_USER_RAM_BASE          (0x1800U)
+#define VBY_STACK_BASE             (0x1880U)
+#define VBY_SYSTEM_RAM2_BASE       (0x1980U)
+#define VBY_ROM_40K_BASE           (0x4000U)
+#define VBY_SYSTEM_RAM3_BASE       (0xE000U)
+
+/******************************************************************************/
+/*                                I-memory map                                */
+/******************************************************************************/
+/* Base addresses                                                             */
+#define VBI_SYSTEM_RAM_BASE        (0x0000U)
+#define VBI_USER_RAM_BASE          (0x0050U)
+#define VBI_RESERVED               (0x1000U)
+#define VBI_ROM_56K_BASE           (0x2000U) //Banked 2000-FFFF
+#define VBI_ROM4_16K_BASE          (0xC000U) //       C000-FFFF
 
