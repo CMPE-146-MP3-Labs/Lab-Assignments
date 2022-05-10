@@ -40,7 +40,31 @@ typedef struct
 } VS_SCI_REG_TypeDef;
 
 /*
-*   SCI_STATUS contains information on the current status of VS1053b. 
+*   SCI MODE is used to control the operation of VS1053b and defaults to 0x0800 (SM SDINEW set).
+*/
+typedef struct
+{//Name                               //Function                        //Value/Description
+  __IO uint16_t SM_DIFF;              // Differential                   0 normal in-phase audio   1 left channel inverted
+  __IO uint16_t SM_LAYER12;           // Allow MPEG layers I & II       0 no                      1 yes
+  __IO uint16_t SM_RESET;             // Soft reset                     0 no reset                1 reset
+  __IO uint16_t SM_CANCEL;            // Cancel decoding current file   0 no                      1 yes
+  __IO uint16_t SM_EARSPEAKER_LO;     // EarSpeaker low setting         0 off                     1 active
+  __IO uint16_t SM_TESTS;             // Allow SDI tests                0 not allowed             1 allowed
+  __IO uint16_t SM_STREAM;            // Stream mode                    0 no                      1 yes
+  __IO uint16_t SM_EARSPEAKER_HI;     // EarSpeaker high setting        0 off                     1 active      
+  __IO uint16_t SM_DACT;              // DCLK active edge               0 rising                  1 falling
+  __IO uint16_t SM_SDIORD;            // SDI bit order                  0 MSb first               1 MSb last
+  __IO uint16_t SM_SDISHARE;          // Share SPI chip select          0 no                      1 yes
+  __IO uint16_t SM_SDINEW;            // VS1002 native SPI modes        0 no                      1 yes
+  __IO uint16_t SM_ADPCM;             // ADPCM recording active         0 no                      1 yes
+  __IO uint16_t reserved;             // reserved                       0 right                   1 wrong
+  __IO uint16_t SM_LINE1;             // MIC / LINE1 selector           0 MICP                    1 LINE1
+  __IO uint16_t SM_CLK_RANGE;         // Input clock range              0 12..13 MHz              1 24..26 MHz
+
+} VS_SCI_MODE_TypeDef;
+
+/*
+*   SCI STATUS contains information on the current status of VS1053b.
 *   It also controls some low-level things that the user does not usually have to care about.
 */
 typedef struct
@@ -53,11 +77,15 @@ typedef struct
   __IO uint16_t SS_VER[4];            // Misc. audio data
   __IO uint16_t SS_APDOWN2;           // Analog driver powerdown
   __IO uint16_t SS_APDOWN1;           // Analog internal powerdown
-  __IO uint16_t SS_AD_CLOCK;         // AD clock select, ’0’ = 6 MHz, ’1’ = 3 MHz
-  __IO uint16_t SS_REFERENCE_SEL;    // Reference voltage selection, ’0’ = 1.23 V, ’1’ = 1.65 V
+  __IO uint16_t SS_AD_CLOCK;          // AD clock select, ’0’ = 6 MHz, ’1’ = 3 MHz
+  __IO uint16_t SS_REFERENCE_SEL;     // Reference voltage selection, ’0’ = 1.23 V, ’1’ = 1.65 V
 
 } VS_SCI_STATUS_TypeDef;
 
+/*
+*   The Bass Enhancer VSBE is a powerful bass boosting DSP algorithm, 
+*   which tries to take the most out of the users earphones without causing clipping.
+*/
 typedef struct
 {
   __IO uint16_t ST_AMPLITUDE[4];      // Header in decode, do not fast forward/rewind
@@ -67,6 +95,10 @@ typedef struct
 
 } VS_SCI_BASS_TypeDef;
 
+/*
+*   The operation of SCI CLOCKF has changed slightly in VS1053b compared to VS1003 and VS1033.
+*   Multiplier 1.5× and addition 0.5× have been removed to allow higher clocks to be configured.
+*/
 typedef struct
 {
   __IO uint16_t SC_MULT[3];           // Header in decode, do not fast forward/rewind
@@ -75,24 +107,12 @@ typedef struct
 
 } VS_SCI_CLOCKF_TypeDef;
 
-typedef struct
-{
-  __IO uint16_t SM_DIFF;              // Differential                   0 normal in-phase audio   1 left channel inverted
-  __IO uint16_t SM_LAYER12;           // Allow MPEG layers I & II       0 no                      1 yes
-  __IO uint16_t SM_RESET;             // Soft reset                     0 no reset                1 reset
-  __IO uint16_t SM_CANCEL;            // Cancel decoding current file   0 no                      1 yes
-  __IO uint16_t SM_EARSPEAKER_LO;     // EarSpeaker low setting         0 off                     1 active
-  __IO uint16_t SM_TESTS;             // Allow SDI tests                0 not allowed             1 allowed
-  __IO uint16_t SM_STREAM;            // Stream mode
-  __IO uint16_t SM_EARSPEAKER_HI;     // Allow MPEG layers I & II 
-  __IO uint16_t SM_DACT;              // DCLK active edge               0 rising                   1 falling
-  __IO uint16_t SM_CANCEL;            // Cancel decoding current file
-  __IO uint16_t SM_EARSPEAKER_LO;     // EarSpeaker low setting
-  __IO uint16_t SM_TESTS;             // Allow SDI tests
-  __IO uint16_t SM_STREAM;            // Stream mode
 
-} VS_SCI_MODE_TypeDef;
 
+/*
+*   SC DECODE TIME activates the built-in clock multiplier. 
+*   This will multiply XTALI to create a higher CLKI.
+*/
 
 
 
