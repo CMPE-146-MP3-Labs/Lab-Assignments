@@ -10,6 +10,7 @@
 #include "ssp2.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "controls.h"
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
