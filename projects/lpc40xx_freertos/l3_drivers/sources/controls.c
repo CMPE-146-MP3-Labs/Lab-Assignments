@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "controls.h"
-#include <VS1053b.h>
+#include "VS1053b.h"
 
 static uint32_t volume_control(int mosi)
 {
