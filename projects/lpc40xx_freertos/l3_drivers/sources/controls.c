@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "controls.h"
 #include <VS1053b.h>
 
