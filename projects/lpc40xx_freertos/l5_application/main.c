@@ -1,7 +1,6 @@
 #include "FreeRTOS.h"
 #include "board_io.h"
 #include "common_macros.h"
-#include "controls.h"
 #include "ff.h"
 #include "periodic_scheduler.h"
 #include "queue.h"
@@ -18,7 +17,6 @@ static void create_player_task(void);
 static void create_reader_task(void);
 static void player_task(void *params);
 static void reader_task(void *params);
-static void mp3decoder_init();
 typedef char songname_t[16];
 
 QueueHandle_t Q_songname;
@@ -31,15 +29,13 @@ int main(void) {
   create_player_task();
   sj2_cli__init();
 
-  puts("Starting RTOS\n");
-
   song_list__populate();
   for (size_t song_number = 0; song_number < song_list__get_item_count();
        song_number++) {
-    printf("Song %2d: %s\n", (1 + song_number),
-           song_list__get_name_for_item(song_number));
+    fprintf(stderr, "Song %2d: %s\n", (1 + song_number),
+            song_list__get_name_for_item(song_number));
   }
-
+  puts("Starting RTOS\n");
   vTaskStartScheduler();
 
   return 0;

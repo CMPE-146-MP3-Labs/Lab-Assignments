@@ -14,10 +14,6 @@
 #include "lpc40xx.h"
 #include "vs10xx_uc.h"
 
-void init_mp3decoder() {
-  int VSTestInitHardware(void);
-  int VSTestInitSoftware(void);
-}
 int VSTestInitHardware(void);
 int VSTestInitSoftware(void);
 int VSTestHandleFile(const char *fileName, int record);
@@ -35,7 +31,7 @@ u_int16 ReadSci(u_int8 addr) {
   gpio__set(VS_CS);
   ssp2__dma_read_block(&addr, 2);
   gpio__reset(VS_CS);
-  return (uint16_t)(LPC_SSP2->DR & 0xFF)
+  return (uint16_t)(LPC_SSP2->DR & 0xFF);
 }
 int WriteSdi(const u_int8 *data, u_int8 bytes) {
   LPC_SSP2->DR = data;
@@ -43,8 +39,8 @@ int WriteSdi(const u_int8 *data, u_int8 bytes) {
   ssp2__dma_write_block(&bytes, 1);
   gpio__reset(VS_CS);
 }
-void SaveUIState(void);
-void RestoreUIState(void);
-int GetUICommand(void);
+void SaveUIState(void) { return; }
+void RestoreUIState(void) { return; }
+int GetUICommand(void) { return 0; }
 
 #endif

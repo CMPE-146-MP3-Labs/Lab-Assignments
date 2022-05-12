@@ -236,7 +236,10 @@ enum PlayerStates {
 
 */
 void VS1053PlayFile(char *readFp) {
-  static u_int8 playBuf[FILE_BUFFER_SIZE] = readFp;
+  static u_int8 playBuf[FILE_BUFFER_SIZE];
+  for (int i = 0; i < FILE_BUFFER_SIZE; i++) {
+    playBuf[i] = readFp[i];
+  }
   u_int32 bytesInBuffer;                 // How many bytes in buffer left
   u_int32 pos = 0;                       // File position
   int endFillByte = 0;                   // What byte value to send after file
@@ -648,7 +651,8 @@ void VS1053RecordFile(FILE *writeFp) {
   WriteVS10xxMem(0xc01a, 0x2);
 
   /* Load the plugin */
-  LoadPlugin(encoderPlugin, sizeof(encoderPlugin) / sizeof(encoderPlugin[0]));
+  // LoadPlugin(encoderPlugin, sizeof(encoderPlugin) /
+  // sizeof(encoderPlugin[0]));
 
   /* Turn SCI_MODE bits. */
   WriteSci(SCI_MODE, ReadSci(SCI_MODE) | SM_ADPCM | SM_LINE1);
@@ -918,7 +922,9 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
+
 
 
 
@@ -944,7 +950,9 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
+
 
 
 
@@ -1005,7 +1013,7 @@ int VSTestInitSoftware(void) {
   WriteSci(SCI_VOL, 0x0c0c);
 
   /* Now it's time to load the proper patch set. */
-  LoadPlugin(plugin, sizeof(plugin) / sizeof(plugin[0]));
+  // LoadPlugin(plugin, sizeof(plugin) / sizeof(plugin[0]));
 
   /* We're ready to go. */
   return 0;
