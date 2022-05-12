@@ -25,16 +25,16 @@ Idx Name             Size      VMA       LMA       File off  Algn  Flags
   2 .data            000003a4  10000000  0000e084  00020000  2**2  CONTENTS, ALLOC, LOAD, DATA
   3 .bss             0000235c  100003a8  0000e428  000203a8  2**3  ALLOC
   4 .persistent_ram2 00000028  20000000  20000000  00030000  2**2  ALLOC
-  5 .debug_info      0002881c  00000000  00000000  000203a4  2**0  CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev    0000710e  00000000  00000000  00048bc0  2**0  CONTENTS, READONLY, DEBUGGING
-  7 .debug_aranges   00001098  00000000  00000000  0004fcce  2**0  CONTENTS, READONLY, DEBUGGING
-  8 .debug_ranges    00002060  00000000  00000000  00050d66  2**0  CONTENTS, READONLY, DEBUGGING
-  9 .debug_line      00015f02  00000000  00000000  00052dc6  2**0  CONTENTS, READONLY, DEBUGGING
- 10 .debug_str       00007120  00000000  00000000  00068cc8  2**0  CONTENTS, READONLY, DEBUGGING
- 11 .comment         00000076  00000000  00000000  0006fde8  2**0  CONTENTS, READONLY
- 12 .ARM.attributes  00000032  00000000  00000000  0006fe5e  2**0  CONTENTS, READONLY
- 13 .debug_frame     00004a64  00000000  00000000  0006fe90  2**2  CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc       00014ad4  00000000  00000000  000748f4  2**0  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info      0002880b  00000000  00000000  000203a4  2**0  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev    000070f9  00000000  00000000  00048baf  2**0  CONTENTS, READONLY, DEBUGGING
+  7 .debug_aranges   00001098  00000000  00000000  0004fca8  2**0  CONTENTS, READONLY, DEBUGGING
+  8 .debug_ranges    00002060  00000000  00000000  00050d40  2**0  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line      00015f12  00000000  00000000  00052da0  2**0  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str       00007120  00000000  00000000  00068cb2  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .comment         00000076  00000000  00000000  0006fdd2  2**0  CONTENTS, READONLY
+ 12 .ARM.attributes  00000032  00000000  00000000  0006fe48  2**0  CONTENTS, READONLY
+ 13 .debug_frame     00004a60  00000000  00000000  0006fe7c  2**2  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc       00014aee  00000000  00000000  000748dc  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 00000000 l    d  .text	00000000 .text
 0000e07c l    d  .ARM.exidx	00000000 .ARM.exidx
@@ -135,7 +135,7 @@ SYMBOL TABLE:
 00002948 l     F .text	00000104 cli__i2c_read
 00002a4c l     F .text	0000012c cli__i2c_write
 00000000 l    df *ABS*	00000000 handlers_general.c
-0000d23c l     O .text	00000014 task_status_table.8134
+0000d23c l     O .text	00000014 task_status_table.8139
 00000000 l    df *ABS*	00000000 delay.c
 00000000 l    df *ABS*	00000000 peripherals_init.c
 10000c70 l     O .bss	00000050 binary_semaphore_struct.9224
@@ -7384,7 +7384,7 @@ cli__i2c():
 
 00002be0 <cli__uart3_transmit>:
 cli__uart3_transmit():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:14
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:15
                                  app_cli__print_string_function cli_output);
 
 app_cli_status_e
@@ -7394,37 +7394,37 @@ cli__uart3_transmit(app_cli__argument_t argument,
     2be0:	b537      	push	{r0, r1, r2, r4, r5, lr}
     2be2:	466c      	mov	r4, sp
     2be4:	e884 0006 	stmia.w	r4, {r1, r2}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:15
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:16
   uart_puts(UART__3, sl_string__c_str(user_input_minus_command_name));
     2be8:	e894 0003 	ldmia.w	r4, {r0, r1}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:14
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:15
                     app_cli__print_string_function cli_output) {
     2bec:	461d      	mov	r5, r3
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:15
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:16
   uart_puts(UART__3, sl_string__c_str(user_input_minus_command_name));
     2bee:	f000 facd 	bl	318c <sl_string__c_str>
     2bf2:	4601      	mov	r1, r0
     2bf4:	2003      	movs	r0, #3
     2bf6:	f000 f9ee 	bl	2fd6 <uart_puts>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:17
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:18
 
   cli_output(NULL, "Output to UART3: ");
     2bfa:	4908      	ldr	r1, [pc, #32]	; (2c1c <cli__uart3_transmit+0x3c>)
     2bfc:	2000      	movs	r0, #0
     2bfe:	47a8      	blx	r5
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:18
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:19
   cli_output(NULL, sl_string__c_str(user_input_minus_command_name));
     2c00:	e894 0003 	ldmia.w	r4, {r0, r1}
     2c04:	f000 fac2 	bl	318c <sl_string__c_str>
     2c08:	4601      	mov	r1, r0
     2c0a:	2000      	movs	r0, #0
     2c0c:	47a8      	blx	r5
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:19
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:20
   cli_output(NULL, "\r\n");
     2c0e:	4904      	ldr	r1, [pc, #16]	; (2c20 <cli__uart3_transmit+0x40>)
     2c10:	2000      	movs	r0, #0
     2c12:	47a8      	blx	r5
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:22
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:23
 
   return APP_CLI_STATUS__SUCCESS;
 }
@@ -7437,51 +7437,48 @@ cli__uart3_transmit(app_cli__argument_t argument,
 
 00002c24 <cli__mp3_play>:
 cli__mp3_play():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:28
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:29
 
 extern QueueHandle_t Q_songname;
 
 app_cli_status_e cli__mp3_play(app_cli__argument_t argument,
                                sl_string_s *user_input_minus_command_name,
                                app_cli__print_string_function cli_output) {
-    2c24:	b538      	push	{r3, r4, r5, lr}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:31
+    2c24:	b510      	push	{r4, lr}
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:33
   // user_input_minus_command_name is actually a 'char *' pointer type
   // We tell the Queue to copy 32 bytes of songname from this location
-  xQueueSend(Q_songname,
-    2c26:	4b09      	ldr	r3, [pc, #36]	; (2c4c <cli__mp3_play+0x28>)
-    2c28:	4608      	mov	r0, r1
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:28
-                               app_cli__print_string_function cli_output) {
-    2c2a:	460c      	mov	r4, r1
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:31
-  xQueueSend(Q_songname,
-    2c2c:	681d      	ldr	r5, [r3, #0]
-    2c2e:	f003 f835 	bl	5c9c <song_list__get_name_for_item>
+  user_input_minus_command_name =
+      song_list__get_name_for_item(user_input_minus_command_name);
+    2c26:	4608      	mov	r0, r1
+    2c28:	f003 f838 	bl	5c9c <song_list__get_name_for_item>
+    2c2c:	4604      	mov	r4, r0
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:34
+  xQueueSend(Q_songname, user_input_minus_command_name, portMAX_DELAY);
+    2c2e:	4601      	mov	r1, r0
+    2c30:	4806      	ldr	r0, [pc, #24]	; (2c4c <cli__mp3_play+0x28>)
     2c32:	2300      	movs	r3, #0
     2c34:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
-    2c38:	4601      	mov	r1, r0
-    2c3a:	4628      	mov	r0, r5
-    2c3c:	f001 f880 	bl	3d40 <xQueueGenericSend>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:35
-             song_list__get_name_for_item(user_input_minus_command_name),
-             portMAX_DELAY);
+    2c38:	6800      	ldr	r0, [r0, #0]
+    2c3a:	f001 f881 	bl	3d40 <xQueueGenericSend>
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:36
 
   printf("Sent %s over to the Q_songname\n", user_input_minus_command_name);
-    2c40:	4621      	mov	r1, r4
-    2c42:	4803      	ldr	r0, [pc, #12]	; (2c50 <cli__mp3_play+0x2c>)
-    2c44:	f005 fbd2 	bl	83ec <iprintf>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:37
+    2c3e:	4621      	mov	r1, r4
+    2c40:	4803      	ldr	r0, [pc, #12]	; (2c50 <cli__mp3_play+0x2c>)
+    2c42:	f005 fbd3 	bl	83ec <iprintf>
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:38
   return APP_CLI_STATUS__SUCCESS;
 }
-    2c48:	2000      	movs	r0, #0
-    2c4a:	bd38      	pop	{r3, r4, r5, pc}
+    2c46:	2000      	movs	r0, #0
+    2c48:	bd10      	pop	{r4, pc}
+    2c4a:	bf00      	nop
     2c4c:	100026ec 	.word	0x100026ec
     2c50:	0000d181 	.word	0x0000d181
 
 00002c54 <cli__crash_me>:
 cli__crash_me():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:41
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:42
 
 app_cli_status_e cli__crash_me(app_cli__argument_t argument,
                                sl_string_s user_input_minus_command_name,
@@ -7489,13 +7486,13 @@ app_cli_status_e cli__crash_me(app_cli__argument_t argument,
     2c54:	b082      	sub	sp, #8
     2c56:	ab02      	add	r3, sp, #8
     2c58:	e903 0006 	stmdb	r3, {r1, r2}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:43
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:44
   uint32_t *bad_pointer = (uint32_t *)0x00000001;
   *bad_pointer = 0xDEADBEEF;
     2c5c:	2301      	movs	r3, #1
     2c5e:	4a02      	ldr	r2, [pc, #8]	; (2c68 <cli__crash_me+0x14>)
     2c60:	601a      	str	r2, [r3, #0]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:45
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:46
   return APP_CLI_STATUS__SUCCESS;
 }
     2c62:	2000      	movs	r0, #0
@@ -7505,7 +7502,7 @@ app_cli_status_e cli__crash_me(app_cli__argument_t argument,
 
 00002c6c <cli__task_list>:
 cli__task_list():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:49
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:50
 
 app_cli_status_e cli__task_list(app_cli__argument_t argument,
                                 sl_string_s user_input_minus_command_name,
@@ -7515,27 +7512,27 @@ app_cli_status_e cli__task_list(app_cli__argument_t argument,
     2c72:	af06      	add	r7, sp, #24
     2c74:	f107 0008 	add.w	r0, r7, #8
     2c78:	e880 0006 	stmia.w	r0, {r1, r2}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:50
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:51
   const int sleep_time = sl_string__to_int(user_input_minus_command_name);
     2c7c:	c803      	ldmia	r0, {r0, r1}
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:49
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:50
                                 app_cli__print_string_function cli_output) {
     2c7e:	4699      	mov	r9, r3
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:50
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:51
   const int sleep_time = sl_string__to_int(user_input_minus_command_name);
     2c80:	f000 fbd6 	bl	3430 <sl_string__to_int>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:51
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:52
   if (sleep_time > 0) {
     2c84:	1e04      	subs	r4, r0, #0
     2c86:	dd04      	ble.n	2c92 <cli__task_list+0x26>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:52
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:53
     vTaskResetRunTimeStats();
     2c88:	f002 f9be 	bl	5008 <vTaskResetRunTimeStats>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:53
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:54
     vTaskDelay(sleep_time);
     2c8c:	4620      	mov	r0, r4
     2c8e:	f001 fec9 	bl	4a24 <vTaskDelay>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:58
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:59
   }
 
   // re-use user_input_minus_command_name as 'output_string' to save memory:
@@ -7544,7 +7541,7 @@ app_cli_status_e cli__task_list(app_cli__argument_t argument,
     2c92:	68bb      	ldr	r3, [r7, #8]
     2c94:	61bb      	str	r3, [r7, #24]
 cli__task_list_print():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:74
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:75
   static const char *const task_status_table[] = {
       "running", " ready ", "blocked", "suspend", "deleted"};
 
@@ -7554,42 +7551,42 @@ cli__task_list_print():
     2c96:	b0da      	sub	sp, #360	; 0x168
     2c98:	68fb      	ldr	r3, [r7, #12]
     2c9a:	61fb      	str	r3, [r7, #28]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:75
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:76
   uint32_t total_cpu_runtime = 0;
     2c9c:	2500      	movs	r5, #0
     2c9e:	617d      	str	r5, [r7, #20]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:78
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:79
   uint32_t total_tasks_runtime = 0;
 
   const uint32_t total_run_time = portGET_RUN_TIME_COUNTER_VALUE();
     2ca0:	f000 fa16 	bl	30d0 <freertos_hooks__get_run_time_counter_value>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:74
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:75
   TaskStatus_t status[max_tasks];
     2ca4:	f10d 0b18 	add.w	fp, sp, #24
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:78
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:79
   const uint32_t total_run_time = portGET_RUN_TIME_COUNTER_VALUE();
     2ca8:	6078      	str	r0, [r7, #4]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:80
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:81
   const unsigned portBASE_TYPE task_count =
       uxTaskGetSystemState(&status[0], max_tasks, &total_cpu_runtime);
     2caa:	f107 0214 	add.w	r2, r7, #20
     2cae:	210a      	movs	r1, #10
     2cb0:	4658      	mov	r0, fp
     2cb2:	f002 f849 	bl	4d48 <uxTaskGetSystemState>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:82
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:83
 
   sl_string__printf(output_string,
     2cb6:	f107 0418 	add.w	r4, r7, #24
     2cba:	4b2a      	ldr	r3, [pc, #168]	; (2d64 <cli__task_list+0xf8>)
     2cbc:	4a2a      	ldr	r2, [pc, #168]	; (2d68 <cli__task_list+0xfc>)
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:80
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:81
       uxTaskGetSystemState(&status[0], max_tasks, &total_cpu_runtime);
     2cbe:	6038      	str	r0, [r7, #0]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:82
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:83
   sl_string__printf(output_string,
     2cc0:	e894 0003 	ldmia.w	r4, {r0, r1}
     2cc4:	f000 fa8a 	bl	31dc <sl_string__printf>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:84
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:85
                     "%10s  Status Pr Stack CPU%%          Time\n", "Name");
   cli_output(unused_cli_param, sl_string__c_str(output_string));
     2cc8:	e894 0003 	ldmia.w	r4, {r0, r1}
@@ -7597,65 +7594,65 @@ cli__task_list_print():
     2cd0:	4601      	mov	r1, r0
     2cd2:	4628      	mov	r0, r5
     2cd4:	47c8      	blx	r9
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:86
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:87
 
   for (unsigned priority_number = 0; priority_number < configMAX_PRIORITIES;
     2cd6:	46a8      	mov	r8, r5
     2cd8:	465e      	mov	r6, fp
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:89
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:90
        priority_number++) {
     /* Print in sorted priority order */
     for (unsigned i = 0; i < task_count; i++) {
     2cda:	f04f 0a00 	mov.w	sl, #0
     2cde:	e026      	b.n	2d2e <cli__task_list+0xc2>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:91
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:92
       const TaskStatus_t *task = &status[i];
       if (task->uxBasePriority == priority_number) {
     2ce0:	6973      	ldr	r3, [r6, #20]
     2ce2:	4543      	cmp	r3, r8
     2ce4:	d120      	bne.n	2d28 <cli__task_list+0xbc>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:92
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:93
         total_tasks_runtime += task->ulRunTimeCounter;
     2ce6:	69b2      	ldr	r2, [r6, #24]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:95
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:96
 
         const unsigned cpu_percent =
             (0 == total_cpu_runtime)
     2ce8:	697b      	ldr	r3, [r7, #20]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:92
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:93
         total_tasks_runtime += task->ulRunTimeCounter;
     2cea:	4415      	add	r5, r2
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:97
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:98
                 ? 0
                 : task->ulRunTimeCounter / (total_cpu_runtime / 100);
     2cec:	b123      	cbz	r3, 2cf8 <cli__task_list+0x8c>
     2cee:	2164      	movs	r1, #100	; 0x64
     2cf0:	fbb3 f3f1 	udiv	r3, r3, r1
     2cf4:	fbb2 f3f3 	udiv	r3, r2, r3
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:102
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:103
         const unsigned time_us = task->ulRunTimeCounter;
         const unsigned stack_in_bytes =
             (sizeof(void *) * task->usStackHighWaterMark);
 
         sl_string__printf(output_string, "%10s %s %2u %5u %4u %10u us\n",
     2cf8:	e9cd 3203 	strd	r3, r2, [sp, #12]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:100
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:101
             (sizeof(void *) * task->usStackHighWaterMark);
     2cfc:	8c33      	ldrh	r3, [r6, #32]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:102
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:103
         sl_string__printf(output_string, "%10s %s %2u %5u %4u %10u us\n",
     2cfe:	4a1b      	ldr	r2, [pc, #108]	; (2d6c <cli__task_list+0x100>)
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:99
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:100
         const unsigned stack_in_bytes =
     2d00:	009b      	lsls	r3, r3, #2
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:102
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:103
         sl_string__printf(output_string, "%10s %s %2u %5u %4u %10u us\n",
     2d02:	e9cd 8301 	strd	r8, r3, [sp, #4]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:104
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:105
                           task->pcTaskName,
                           task_status_table[task->eCurrentState],
     2d06:	7b33      	ldrb	r3, [r6, #12]
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:102
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:103
         sl_string__printf(output_string, "%10s %s %2u %5u %4u %10u us\n",
     2d08:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
     2d0c:	9300      	str	r3, [sp, #0]
@@ -7663,7 +7660,7 @@ cli__task_list_print():
     2d10:	4a17      	ldr	r2, [pc, #92]	; (2d70 <cli__task_list+0x104>)
     2d12:	e894 0003 	ldmia.w	r4, {r0, r1}
     2d16:	f000 fa61 	bl	31dc <sl_string__printf>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:107
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:108
                           (unsigned)task->uxBasePriority, stack_in_bytes,
                           cpu_percent, time_us);
         cli_output(unused_cli_param, sl_string__c_str(output_string));
@@ -7672,21 +7669,21 @@ cli__task_list_print():
     2d22:	4601      	mov	r1, r0
     2d24:	2000      	movs	r0, #0
     2d26:	47c8      	blx	r9
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:89
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:90
     for (unsigned i = 0; i < task_count; i++) {
     2d28:	f10a 0a01 	add.w	sl, sl, #1
     2d2c:	3624      	adds	r6, #36	; 0x24
     2d2e:	683b      	ldr	r3, [r7, #0]
     2d30:	4553      	cmp	r3, sl
     2d32:	d1d5      	bne.n	2ce0 <cli__task_list+0x74>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:87
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:88
        priority_number++) {
     2d34:	f108 0801 	add.w	r8, r8, #1
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:86
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:87
   for (unsigned priority_number = 0; priority_number < configMAX_PRIORITIES;
     2d38:	f1b8 0f0a 	cmp.w	r8, #10
     2d3c:	d1cc      	bne.n	2cd8 <cli__task_list+0x6c>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:112
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:113
       }
     }
   }
@@ -7697,7 +7694,7 @@ cli__task_list_print():
     2d42:	1b5b      	subs	r3, r3, r5
     2d44:	e894 0003 	ldmia.w	r4, {r0, r1}
     2d48:	f000 fa48 	bl	31dc <sl_string__printf>
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:114
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:115
                     (unsigned)(total_run_time - total_tasks_runtime));
   cli_output(unused_cli_param, sl_string__c_str(output_string));
     2d4c:	e894 0003 	ldmia.w	r4, {r0, r1}
@@ -7706,7 +7703,7 @@ cli__task_list_print():
     2d56:	2000      	movs	r0, #0
     2d58:	47c8      	blx	r9
 cli__task_list():
-/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:61
+/Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/projects/lpc40xx_freertos/l4_io/cli/handlers/handlers_general.c:62
 }
     2d5a:	2000      	movs	r0, #0
     2d5c:	3724      	adds	r7, #36	; 0x24
@@ -26678,7 +26675,7 @@ __fixunsdfdi():
     d222:	6b636f6c 73006465 65707375 6400646e     locked.suspend.d
     d232:	74656c65 ff006465                        eleted....
 
-0000d23c <task_status_table.8134>:
+0000d23c <task_status_table.8139>:
     d23c:	0000d211 0000d219 0000d221 0000d229     ........!...)...
     d24c:	0000d231                                1...
 

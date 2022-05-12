@@ -2949,7 +2949,7 @@ END GROUP
  .rodata.str1.1
                 0x000000000000d211       0x28 _build_lpc40xx_freertos/objects/handlers_general.o
  *fill*         0x000000000000d239        0x3 ff
- .rodata.task_status_table.8134
+ .rodata.task_status_table.8139
                 0x000000000000d23c       0x14 _build_lpc40xx_freertos/objects/handlers_general.o
  .rodata.__FUNCTION__.9195
                 0x000000000000d250       0x11 _build_lpc40xx_freertos/objects/peripherals_init.o
@@ -3359,7 +3359,7 @@ END GROUP
                 0x0000000010000000                PROVIDE (_bdata_vma = ADDR (.data))
 OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x2881c
+.debug_info     0x0000000000000000    0x2880b
  .debug_info    0x0000000000000000      0xb13 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_info    0x0000000000000b13      0xd91 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_info    0x00000000000018a4      0x454 _build_lpc40xx_freertos/objects/clock.o
@@ -3378,32 +3378,32 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_info    0x000000000000babb     0x1364 _build_lpc40xx_freertos/objects/app_cli.o
  .debug_info    0x000000000000ce1f     0x1122 _build_lpc40xx_freertos/objects/sj2_cli.o
  .debug_info    0x000000000000df41      0x7ad _build_lpc40xx_freertos/objects/handler_i2c.o
- .debug_info    0x000000000000e6ee      0x924 _build_lpc40xx_freertos/objects/handlers_general.o
- .debug_info    0x000000000000f012      0x21d _build_lpc40xx_freertos/objects/delay.o
- .debug_info    0x000000000000f22f     0x1395 _build_lpc40xx_freertos/objects/peripherals_init.o
- .debug_info    0x00000000000105c4      0x37d _build_lpc40xx_freertos/objects/ssp2_mutex.o
- .debug_info    0x0000000000010941      0x337 _build_lpc40xx_freertos/objects/sys_time.o
- .debug_info    0x0000000000010c78      0xd3c _build_lpc40xx_freertos/objects/uart_printf.o
- .debug_info    0x00000000000119b4      0x896 _build_lpc40xx_freertos/objects/rtos_hooks.o
- .debug_info    0x000000000001224a     0x395e _build_lpc40xx_freertos/objects/sl_string.o
- .debug_info    0x0000000000015ba8      0x128 _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
- .debug_info    0x0000000000015cd0      0xa5a _build_lpc40xx_freertos/objects/heap_selector.o
- .debug_info    0x000000000001672a      0x5f1 _build_lpc40xx_freertos/objects/port.o
- .debug_info    0x0000000000016d1b      0xb9c _build_lpc40xx_freertos/objects/list.o
- .debug_info    0x00000000000178b7     0x2ead _build_lpc40xx_freertos/objects/queue.o
- .debug_info    0x000000000001a764     0x3cce _build_lpc40xx_freertos/objects/tasks.o
- .debug_info    0x000000000001e432      0x646 _build_lpc40xx_freertos/objects/board_io.o
- .debug_info    0x000000000001ea78     0x1289 _build_lpc40xx_freertos/objects/gpio.o
- .debug_info    0x000000000001fd01      0x538 _build_lpc40xx_freertos/objects/hw_timer.o
- .debug_info    0x0000000000020239     0x16ec _build_lpc40xx_freertos/objects/i2c.o
- .debug_info    0x0000000000021925      0x978 _build_lpc40xx_freertos/objects/lpc_peripherals.o
- .debug_info    0x000000000002229d     0x21b9 _build_lpc40xx_freertos/objects/player1053.o
- .debug_info    0x0000000000024456      0xf0a _build_lpc40xx_freertos/objects/song_list.o
- .debug_info    0x0000000000025360      0xf3e _build_lpc40xx_freertos/objects/ssp2.o
- .debug_info    0x000000000002629e     0x12d6 _build_lpc40xx_freertos/objects/uart.o
- .debug_info    0x0000000000027574     0x12a8 _build_lpc40xx_freertos/objects/main.o
+ .debug_info    0x000000000000e6ee      0x913 _build_lpc40xx_freertos/objects/handlers_general.o
+ .debug_info    0x000000000000f001      0x21d _build_lpc40xx_freertos/objects/delay.o
+ .debug_info    0x000000000000f21e     0x1395 _build_lpc40xx_freertos/objects/peripherals_init.o
+ .debug_info    0x00000000000105b3      0x37d _build_lpc40xx_freertos/objects/ssp2_mutex.o
+ .debug_info    0x0000000000010930      0x337 _build_lpc40xx_freertos/objects/sys_time.o
+ .debug_info    0x0000000000010c67      0xd3c _build_lpc40xx_freertos/objects/uart_printf.o
+ .debug_info    0x00000000000119a3      0x896 _build_lpc40xx_freertos/objects/rtos_hooks.o
+ .debug_info    0x0000000000012239     0x395e _build_lpc40xx_freertos/objects/sl_string.o
+ .debug_info    0x0000000000015b97      0x128 _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
+ .debug_info    0x0000000000015cbf      0xa5a _build_lpc40xx_freertos/objects/heap_selector.o
+ .debug_info    0x0000000000016719      0x5f1 _build_lpc40xx_freertos/objects/port.o
+ .debug_info    0x0000000000016d0a      0xb9c _build_lpc40xx_freertos/objects/list.o
+ .debug_info    0x00000000000178a6     0x2ead _build_lpc40xx_freertos/objects/queue.o
+ .debug_info    0x000000000001a753     0x3cce _build_lpc40xx_freertos/objects/tasks.o
+ .debug_info    0x000000000001e421      0x646 _build_lpc40xx_freertos/objects/board_io.o
+ .debug_info    0x000000000001ea67     0x1289 _build_lpc40xx_freertos/objects/gpio.o
+ .debug_info    0x000000000001fcf0      0x538 _build_lpc40xx_freertos/objects/hw_timer.o
+ .debug_info    0x0000000000020228     0x16ec _build_lpc40xx_freertos/objects/i2c.o
+ .debug_info    0x0000000000021914      0x978 _build_lpc40xx_freertos/objects/lpc_peripherals.o
+ .debug_info    0x000000000002228c     0x21b9 _build_lpc40xx_freertos/objects/player1053.o
+ .debug_info    0x0000000000024445      0xf0a _build_lpc40xx_freertos/objects/song_list.o
+ .debug_info    0x000000000002534f      0xf3e _build_lpc40xx_freertos/objects/ssp2.o
+ .debug_info    0x000000000002628d     0x12d6 _build_lpc40xx_freertos/objects/uart.o
+ .debug_info    0x0000000000027563     0x12a8 _build_lpc40xx_freertos/objects/main.o
 
-.debug_abbrev   0x0000000000000000     0x710e
+.debug_abbrev   0x0000000000000000     0x70f9
  .debug_abbrev  0x0000000000000000      0x24e _build_lpc40xx_freertos/objects/entry_point.o
  .debug_abbrev  0x000000000000024e      0x32a _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_abbrev  0x0000000000000578      0x138 _build_lpc40xx_freertos/objects/clock.o
@@ -3422,30 +3422,30 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_abbrev  0x0000000000001edf      0x423 _build_lpc40xx_freertos/objects/app_cli.o
  .debug_abbrev  0x0000000000002302      0x37f _build_lpc40xx_freertos/objects/sj2_cli.o
  .debug_abbrev  0x0000000000002681      0x215 _build_lpc40xx_freertos/objects/handler_i2c.o
- .debug_abbrev  0x0000000000002896      0x31e _build_lpc40xx_freertos/objects/handlers_general.o
- .debug_abbrev  0x0000000000002bb4      0x124 _build_lpc40xx_freertos/objects/delay.o
- .debug_abbrev  0x0000000000002cd8      0x365 _build_lpc40xx_freertos/objects/peripherals_init.o
- .debug_abbrev  0x000000000000303d      0x150 _build_lpc40xx_freertos/objects/ssp2_mutex.o
- .debug_abbrev  0x000000000000318d      0x194 _build_lpc40xx_freertos/objects/sys_time.o
- .debug_abbrev  0x0000000000003321      0x2cb _build_lpc40xx_freertos/objects/uart_printf.o
- .debug_abbrev  0x00000000000035ec      0x243 _build_lpc40xx_freertos/objects/rtos_hooks.o
- .debug_abbrev  0x000000000000382f      0x4cd _build_lpc40xx_freertos/objects/sl_string.o
- .debug_abbrev  0x0000000000003cfc       0xaf _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
- .debug_abbrev  0x0000000000003dab      0x295 _build_lpc40xx_freertos/objects/heap_selector.o
- .debug_abbrev  0x0000000000004040      0x2c6 _build_lpc40xx_freertos/objects/port.o
- .debug_abbrev  0x0000000000004306      0x236 _build_lpc40xx_freertos/objects/list.o
- .debug_abbrev  0x000000000000453c      0x48c _build_lpc40xx_freertos/objects/queue.o
- .debug_abbrev  0x00000000000049c8      0x5f1 _build_lpc40xx_freertos/objects/tasks.o
- .debug_abbrev  0x0000000000004fb9      0x212 _build_lpc40xx_freertos/objects/board_io.o
- .debug_abbrev  0x00000000000051cb      0x2fd _build_lpc40xx_freertos/objects/gpio.o
- .debug_abbrev  0x00000000000054c8      0x1b3 _build_lpc40xx_freertos/objects/hw_timer.o
- .debug_abbrev  0x000000000000567b      0x46f _build_lpc40xx_freertos/objects/i2c.o
- .debug_abbrev  0x0000000000005aea      0x297 _build_lpc40xx_freertos/objects/lpc_peripherals.o
- .debug_abbrev  0x0000000000005d81      0x5f0 _build_lpc40xx_freertos/objects/player1053.o
- .debug_abbrev  0x0000000000006371      0x32e _build_lpc40xx_freertos/objects/song_list.o
- .debug_abbrev  0x000000000000669f      0x345 _build_lpc40xx_freertos/objects/ssp2.o
- .debug_abbrev  0x00000000000069e4      0x3eb _build_lpc40xx_freertos/objects/uart.o
- .debug_abbrev  0x0000000000006dcf      0x33f _build_lpc40xx_freertos/objects/main.o
+ .debug_abbrev  0x0000000000002896      0x309 _build_lpc40xx_freertos/objects/handlers_general.o
+ .debug_abbrev  0x0000000000002b9f      0x124 _build_lpc40xx_freertos/objects/delay.o
+ .debug_abbrev  0x0000000000002cc3      0x365 _build_lpc40xx_freertos/objects/peripherals_init.o
+ .debug_abbrev  0x0000000000003028      0x150 _build_lpc40xx_freertos/objects/ssp2_mutex.o
+ .debug_abbrev  0x0000000000003178      0x194 _build_lpc40xx_freertos/objects/sys_time.o
+ .debug_abbrev  0x000000000000330c      0x2cb _build_lpc40xx_freertos/objects/uart_printf.o
+ .debug_abbrev  0x00000000000035d7      0x243 _build_lpc40xx_freertos/objects/rtos_hooks.o
+ .debug_abbrev  0x000000000000381a      0x4cd _build_lpc40xx_freertos/objects/sl_string.o
+ .debug_abbrev  0x0000000000003ce7       0xaf _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
+ .debug_abbrev  0x0000000000003d96      0x295 _build_lpc40xx_freertos/objects/heap_selector.o
+ .debug_abbrev  0x000000000000402b      0x2c6 _build_lpc40xx_freertos/objects/port.o
+ .debug_abbrev  0x00000000000042f1      0x236 _build_lpc40xx_freertos/objects/list.o
+ .debug_abbrev  0x0000000000004527      0x48c _build_lpc40xx_freertos/objects/queue.o
+ .debug_abbrev  0x00000000000049b3      0x5f1 _build_lpc40xx_freertos/objects/tasks.o
+ .debug_abbrev  0x0000000000004fa4      0x212 _build_lpc40xx_freertos/objects/board_io.o
+ .debug_abbrev  0x00000000000051b6      0x2fd _build_lpc40xx_freertos/objects/gpio.o
+ .debug_abbrev  0x00000000000054b3      0x1b3 _build_lpc40xx_freertos/objects/hw_timer.o
+ .debug_abbrev  0x0000000000005666      0x46f _build_lpc40xx_freertos/objects/i2c.o
+ .debug_abbrev  0x0000000000005ad5      0x297 _build_lpc40xx_freertos/objects/lpc_peripherals.o
+ .debug_abbrev  0x0000000000005d6c      0x5f0 _build_lpc40xx_freertos/objects/player1053.o
+ .debug_abbrev  0x000000000000635c      0x32e _build_lpc40xx_freertos/objects/song_list.o
+ .debug_abbrev  0x000000000000668a      0x345 _build_lpc40xx_freertos/objects/ssp2.o
+ .debug_abbrev  0x00000000000069cf      0x3eb _build_lpc40xx_freertos/objects/uart.o
+ .debug_abbrev  0x0000000000006dba      0x33f _build_lpc40xx_freertos/objects/main.o
 
 .debug_aranges  0x0000000000000000     0x1098
  .debug_aranges
@@ -3577,7 +3577,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_ranges  0x0000000000001ee8       0xd8 _build_lpc40xx_freertos/objects/uart.o
  .debug_ranges  0x0000000000001fc0       0xa0 _build_lpc40xx_freertos/objects/main.o
 
-.debug_line     0x0000000000000000    0x15f02
+.debug_line     0x0000000000000000    0x15f12
  .debug_line    0x0000000000000000      0x4d5 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_line    0x00000000000004d5      0x512 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_line    0x00000000000009e7      0x2b6 _build_lpc40xx_freertos/objects/clock.o
@@ -3596,30 +3596,30 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_line    0x0000000000007d06      0x5cc _build_lpc40xx_freertos/objects/app_cli.o
  .debug_line    0x00000000000082d2      0x547 _build_lpc40xx_freertos/objects/sj2_cli.o
  .debug_line    0x0000000000008819      0x5f8 _build_lpc40xx_freertos/objects/handler_i2c.o
- .debug_line    0x0000000000008e11      0x6ed _build_lpc40xx_freertos/objects/handlers_general.o
- .debug_line    0x00000000000094fe      0x321 _build_lpc40xx_freertos/objects/delay.o
- .debug_line    0x000000000000981f      0x5f5 _build_lpc40xx_freertos/objects/peripherals_init.o
- .debug_line    0x0000000000009e14      0x311 _build_lpc40xx_freertos/objects/ssp2_mutex.o
- .debug_line    0x000000000000a125      0x2d2 _build_lpc40xx_freertos/objects/sys_time.o
- .debug_line    0x000000000000a3f7      0x54d _build_lpc40xx_freertos/objects/uart_printf.o
- .debug_line    0x000000000000a944      0x450 _build_lpc40xx_freertos/objects/rtos_hooks.o
- .debug_line    0x000000000000ad94     0x1f73 _build_lpc40xx_freertos/objects/sl_string.o
- .debug_line    0x000000000000cd07       0xef _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
- .debug_line    0x000000000000cdf6      0x424 _build_lpc40xx_freertos/objects/heap_selector.o
- .debug_line    0x000000000000d21a      0x6bf _build_lpc40xx_freertos/objects/port.o
- .debug_line    0x000000000000d8d9      0x4ff _build_lpc40xx_freertos/objects/list.o
- .debug_line    0x000000000000ddd8     0x171c _build_lpc40xx_freertos/objects/queue.o
- .debug_line    0x000000000000f4f4     0x2502 _build_lpc40xx_freertos/objects/tasks.o
- .debug_line    0x00000000000119f6      0x42d _build_lpc40xx_freertos/objects/board_io.o
- .debug_line    0x0000000000011e23      0x58d _build_lpc40xx_freertos/objects/gpio.o
- .debug_line    0x00000000000123b0      0x3d7 _build_lpc40xx_freertos/objects/hw_timer.o
- .debug_line    0x0000000000012787      0xa87 _build_lpc40xx_freertos/objects/i2c.o
- .debug_line    0x000000000001320e      0x465 _build_lpc40xx_freertos/objects/lpc_peripherals.o
- .debug_line    0x0000000000013673      0xed0 _build_lpc40xx_freertos/objects/player1053.o
- .debug_line    0x0000000000014543      0x4c4 _build_lpc40xx_freertos/objects/song_list.o
- .debug_line    0x0000000000014a07      0x592 _build_lpc40xx_freertos/objects/ssp2.o
- .debug_line    0x0000000000014f99      0x906 _build_lpc40xx_freertos/objects/uart.o
- .debug_line    0x000000000001589f      0x663 _build_lpc40xx_freertos/objects/main.o
+ .debug_line    0x0000000000008e11      0x6fd _build_lpc40xx_freertos/objects/handlers_general.o
+ .debug_line    0x000000000000950e      0x321 _build_lpc40xx_freertos/objects/delay.o
+ .debug_line    0x000000000000982f      0x5f5 _build_lpc40xx_freertos/objects/peripherals_init.o
+ .debug_line    0x0000000000009e24      0x311 _build_lpc40xx_freertos/objects/ssp2_mutex.o
+ .debug_line    0x000000000000a135      0x2d2 _build_lpc40xx_freertos/objects/sys_time.o
+ .debug_line    0x000000000000a407      0x54d _build_lpc40xx_freertos/objects/uart_printf.o
+ .debug_line    0x000000000000a954      0x450 _build_lpc40xx_freertos/objects/rtos_hooks.o
+ .debug_line    0x000000000000ada4     0x1f73 _build_lpc40xx_freertos/objects/sl_string.o
+ .debug_line    0x000000000000cd17       0xef _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
+ .debug_line    0x000000000000ce06      0x424 _build_lpc40xx_freertos/objects/heap_selector.o
+ .debug_line    0x000000000000d22a      0x6bf _build_lpc40xx_freertos/objects/port.o
+ .debug_line    0x000000000000d8e9      0x4ff _build_lpc40xx_freertos/objects/list.o
+ .debug_line    0x000000000000dde8     0x171c _build_lpc40xx_freertos/objects/queue.o
+ .debug_line    0x000000000000f504     0x2502 _build_lpc40xx_freertos/objects/tasks.o
+ .debug_line    0x0000000000011a06      0x42d _build_lpc40xx_freertos/objects/board_io.o
+ .debug_line    0x0000000000011e33      0x58d _build_lpc40xx_freertos/objects/gpio.o
+ .debug_line    0x00000000000123c0      0x3d7 _build_lpc40xx_freertos/objects/hw_timer.o
+ .debug_line    0x0000000000012797      0xa87 _build_lpc40xx_freertos/objects/i2c.o
+ .debug_line    0x000000000001321e      0x465 _build_lpc40xx_freertos/objects/lpc_peripherals.o
+ .debug_line    0x0000000000013683      0xed0 _build_lpc40xx_freertos/objects/player1053.o
+ .debug_line    0x0000000000014553      0x4c4 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_line    0x0000000000014a17      0x592 _build_lpc40xx_freertos/objects/ssp2.o
+ .debug_line    0x0000000000014fa9      0x906 _build_lpc40xx_freertos/objects/uart.o
+ .debug_line    0x00000000000158af      0x663 _build_lpc40xx_freertos/objects/main.o
 
 .debug_str      0x0000000000000000     0x7120
  .debug_str     0x0000000000000000      0x6a2 _build_lpc40xx_freertos/objects/entry_point.o
@@ -4009,7 +4009,7 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000001899       0x34 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
 
-.debug_frame    0x0000000000000000     0x4a64
+.debug_frame    0x0000000000000000     0x4a60
  .debug_frame   0x0000000000000000       0x28 _build_lpc40xx_freertos/objects/entry_point.o
  .debug_frame   0x0000000000000028       0x54 _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_frame   0x000000000000007c       0x40 _build_lpc40xx_freertos/objects/clock.o
@@ -4028,112 +4028,112 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_frame   0x0000000000000c84       0xac _build_lpc40xx_freertos/objects/app_cli.o
  .debug_frame   0x0000000000000d30       0x6c _build_lpc40xx_freertos/objects/sj2_cli.o
  .debug_frame   0x0000000000000d9c       0x98 _build_lpc40xx_freertos/objects/handler_i2c.o
- .debug_frame   0x0000000000000e34       0x94 _build_lpc40xx_freertos/objects/handlers_general.o
- .debug_frame   0x0000000000000ec8       0x40 _build_lpc40xx_freertos/objects/delay.o
- .debug_frame   0x0000000000000f08       0x30 _build_lpc40xx_freertos/objects/peripherals_init.o
- .debug_frame   0x0000000000000f38       0x50 _build_lpc40xx_freertos/objects/ssp2_mutex.o
- .debug_frame   0x0000000000000f88       0x7c _build_lpc40xx_freertos/objects/sys_time.o
- .debug_frame   0x0000000000001004       0xe8 _build_lpc40xx_freertos/objects/uart_printf.o
- .debug_frame   0x00000000000010ec       0xb8 _build_lpc40xx_freertos/objects/rtos_hooks.o
- .debug_frame   0x00000000000011a4      0x950 _build_lpc40xx_freertos/objects/sl_string.o
- .debug_frame   0x0000000000001af4       0x40 _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
- .debug_frame   0x0000000000001b34       0x48 _build_lpc40xx_freertos/objects/heap_selector.o
- .debug_frame   0x0000000000001b7c      0x124 _build_lpc40xx_freertos/objects/port.o
- .debug_frame   0x0000000000001ca0       0x6c _build_lpc40xx_freertos/objects/list.o
- .debug_frame   0x0000000000001d0c      0x34c _build_lpc40xx_freertos/objects/queue.o
- .debug_frame   0x0000000000002058      0x688 _build_lpc40xx_freertos/objects/tasks.o
- .debug_frame   0x00000000000026e0       0xe4 _build_lpc40xx_freertos/objects/board_io.o
- .debug_frame   0x00000000000027c4      0x118 _build_lpc40xx_freertos/objects/gpio.o
- .debug_frame   0x00000000000028dc       0x80 _build_lpc40xx_freertos/objects/hw_timer.o
- .debug_frame   0x000000000000295c      0x14c _build_lpc40xx_freertos/objects/i2c.o
- .debug_frame   0x0000000000002aa8       0x6c _build_lpc40xx_freertos/objects/lpc_peripherals.o
- .debug_frame   0x0000000000002b14      0x244 _build_lpc40xx_freertos/objects/player1053.o
- .debug_frame   0x0000000000002d58       0x58 _build_lpc40xx_freertos/objects/song_list.o
- .debug_frame   0x0000000000002db0       0x94 _build_lpc40xx_freertos/objects/ssp2.o
- .debug_frame   0x0000000000002e44      0x178 _build_lpc40xx_freertos/objects/uart.o
- .debug_frame   0x0000000000002fbc       0x80 _build_lpc40xx_freertos/objects/main.o
- .debug_frame   0x000000000000303c       0xac /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00000000000030e8       0x50 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x0000000000003138       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000000000003164       0x34 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000003198       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
- .debug_frame   0x00000000000031f4      0x14c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
- .debug_frame   0x0000000000003340       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
- .debug_frame   0x00000000000033a4       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
- .debug_frame   0x00000000000033e0       0x54 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
- .debug_frame   0x0000000000003434       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
- .debug_frame   0x000000000000347c       0xb0 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
- .debug_frame   0x000000000000352c       0x58 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
- .debug_frame   0x0000000000003584       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
- .debug_frame   0x00000000000035b4       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000000000035dc       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
- .debug_frame   0x0000000000003604       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
- .debug_frame   0x0000000000003624       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x000000000000365c       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x000000000000368c       0xac /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x0000000000003738       0x90 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
- .debug_frame   0x00000000000037c8       0x60 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x0000000000003828       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
- .debug_frame   0x0000000000003868       0x74 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
- .debug_frame   0x00000000000038dc       0x58 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
- .debug_frame   0x0000000000003934       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
- .debug_frame   0x0000000000003970       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-reent.o)
- .debug_frame   0x00000000000039cc       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00000000000039f8       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
- .debug_frame   0x0000000000003a30       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
- .debug_frame   0x0000000000003a50       0x6c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
- .debug_frame   0x0000000000003abc       0x88 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
- .debug_frame   0x0000000000003b44       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
- .debug_frame   0x0000000000003b70       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
- .debug_frame   0x0000000000003b90       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
- .debug_frame   0x0000000000003bbc       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
- .debug_frame   0x0000000000003be4       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
- .debug_frame   0x0000000000003c0c       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
- .debug_frame   0x0000000000003c3c      0x11c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
- .debug_frame   0x0000000000003d58       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
- .debug_frame   0x0000000000003dbc       0x4c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
- .debug_frame   0x0000000000003e08       0x44 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
- .debug_frame   0x0000000000003e4c       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
- .debug_frame   0x0000000000003e8c       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
- .debug_frame   0x0000000000003eb8       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
- .debug_frame   0x0000000000003ee4       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
- .debug_frame   0x0000000000003f10       0x6c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
- .debug_frame   0x0000000000003f7c       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
- .debug_frame   0x0000000000003fa8       0x70 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
- .debug_frame   0x0000000000004018       0x74 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
- .debug_frame   0x000000000000408c       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
- .debug_frame   0x00000000000040d4       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
- .debug_frame   0x0000000000004100       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
- .debug_frame   0x0000000000004120       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
- .debug_frame   0x0000000000004168       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
- .debug_frame   0x00000000000041a8       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
- .debug_frame   0x00000000000041d4       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
- .debug_frame   0x000000000000421c       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x000000000000424c      0x244 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
- .debug_frame   0x0000000000004490       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
- .debug_frame   0x00000000000044bc       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00000000000044f8       0x90 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x0000000000004588       0x78 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
- .debug_frame   0x0000000000004600       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
- .debug_frame   0x0000000000004664       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
- .debug_frame   0x00000000000046a0       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
- .debug_frame   0x00000000000046cc       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
- .debug_frame   0x0000000000004708       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
- .debug_frame   0x0000000000004728       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
- .debug_frame   0x0000000000004754       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
- .debug_frame   0x00000000000047b8       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
- .debug_frame   0x0000000000004814       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
- .debug_frame   0x0000000000004850       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
- .debug_frame   0x0000000000004870       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
- .debug_frame   0x00000000000048b0       0xc4 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
- .debug_frame   0x0000000000004974       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
- .debug_frame   0x0000000000004994       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
- .debug_frame   0x00000000000049b8       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
- .debug_frame   0x00000000000049dc       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x0000000000004a00       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
- .debug_frame   0x0000000000004a38       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
+ .debug_frame   0x0000000000000e34       0x90 _build_lpc40xx_freertos/objects/handlers_general.o
+ .debug_frame   0x0000000000000ec4       0x40 _build_lpc40xx_freertos/objects/delay.o
+ .debug_frame   0x0000000000000f04       0x30 _build_lpc40xx_freertos/objects/peripherals_init.o
+ .debug_frame   0x0000000000000f34       0x50 _build_lpc40xx_freertos/objects/ssp2_mutex.o
+ .debug_frame   0x0000000000000f84       0x7c _build_lpc40xx_freertos/objects/sys_time.o
+ .debug_frame   0x0000000000001000       0xe8 _build_lpc40xx_freertos/objects/uart_printf.o
+ .debug_frame   0x00000000000010e8       0xb8 _build_lpc40xx_freertos/objects/rtos_hooks.o
+ .debug_frame   0x00000000000011a0      0x950 _build_lpc40xx_freertos/objects/sl_string.o
+ .debug_frame   0x0000000000001af0       0x40 _build_lpc40xx_freertos/objects/freertos_interrupt_handlers.o
+ .debug_frame   0x0000000000001b30       0x48 _build_lpc40xx_freertos/objects/heap_selector.o
+ .debug_frame   0x0000000000001b78      0x124 _build_lpc40xx_freertos/objects/port.o
+ .debug_frame   0x0000000000001c9c       0x6c _build_lpc40xx_freertos/objects/list.o
+ .debug_frame   0x0000000000001d08      0x34c _build_lpc40xx_freertos/objects/queue.o
+ .debug_frame   0x0000000000002054      0x688 _build_lpc40xx_freertos/objects/tasks.o
+ .debug_frame   0x00000000000026dc       0xe4 _build_lpc40xx_freertos/objects/board_io.o
+ .debug_frame   0x00000000000027c0      0x118 _build_lpc40xx_freertos/objects/gpio.o
+ .debug_frame   0x00000000000028d8       0x80 _build_lpc40xx_freertos/objects/hw_timer.o
+ .debug_frame   0x0000000000002958      0x14c _build_lpc40xx_freertos/objects/i2c.o
+ .debug_frame   0x0000000000002aa4       0x6c _build_lpc40xx_freertos/objects/lpc_peripherals.o
+ .debug_frame   0x0000000000002b10      0x244 _build_lpc40xx_freertos/objects/player1053.o
+ .debug_frame   0x0000000000002d54       0x58 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_frame   0x0000000000002dac       0x94 _build_lpc40xx_freertos/objects/ssp2.o
+ .debug_frame   0x0000000000002e40      0x178 _build_lpc40xx_freertos/objects/uart.o
+ .debug_frame   0x0000000000002fb8       0x80 _build_lpc40xx_freertos/objects/main.o
+ .debug_frame   0x0000000000003038       0xac /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000000000030e4       0x50 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x0000000000003134       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000003160       0x34 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000003194       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fflush.o)
+ .debug_frame   0x00000000000031f0      0x14c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-findfp.o)
+ .debug_frame   0x000000000000333c       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fprintf.o)
+ .debug_frame   0x00000000000033a0       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fputs.o)
+ .debug_frame   0x00000000000033dc       0x54 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x0000000000003430       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getchar.o)
+ .debug_frame   0x0000000000003478       0xb0 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lock.o)
+ .debug_frame   0x0000000000003528       0x58 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x0000000000003580       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-malloc.o)
+ .debug_frame   0x00000000000035b0       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000000000035d8       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memmove.o)
+ .debug_frame   0x0000000000003600       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000003620       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x0000000000003658       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000003688       0xac /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x0000000000003734       0x90 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_float.o)
+ .debug_frame   0x00000000000037c4       0x60 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000000000003824       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_float.o)
+ .debug_frame   0x0000000000003864       0x74 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-printf.o)
+ .debug_frame   0x00000000000038d8       0x58 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putchar.o)
+ .debug_frame   0x0000000000003930       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-puts.o)
+ .debug_frame   0x000000000000396c       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x00000000000039c8       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000000000039f4       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-setvbuf.o)
+ .debug_frame   0x0000000000003a2c       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sf_nan.o)
+ .debug_frame   0x0000000000003a4c       0x6c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sprintf.o)
+ .debug_frame   0x0000000000003ab8       0x88 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-stdio.o)
+ .debug_frame   0x0000000000003b40       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strcasecmp.o)
+ .debug_frame   0x0000000000003b6c       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strchr.o)
+ .debug_frame   0x0000000000003b8c       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncasecmp.o)
+ .debug_frame   0x0000000000003bb8       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncmp.o)
+ .debug_frame   0x0000000000003be0       0x28 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strncpy.o)
+ .debug_frame   0x0000000000003c08       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strstr.o)
+ .debug_frame   0x0000000000003c38      0x11c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtod.o)
+ .debug_frame   0x0000000000003d54       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtol.o)
+ .debug_frame   0x0000000000003db8       0x4c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsnprintf.o)
+ .debug_frame   0x0000000000003e04       0x44 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-vsscanf.o)
+ .debug_frame   0x0000000000003e48       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x0000000000003e88       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-writer.o)
+ .debug_frame   0x0000000000003eb4       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x0000000000003ee0       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-closer.o)
+ .debug_frame   0x0000000000003f0c       0x6c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-dtoa.o)
+ .debug_frame   0x0000000000003f78       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-fstatr.o)
+ .debug_frame   0x0000000000003fa4       0x70 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-gethex.o)
+ .debug_frame   0x0000000000004014       0x74 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-gdtoa-hexnan.o)
+ .debug_frame   0x0000000000004088       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-getc.o)
+ .debug_frame   0x00000000000040d0       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-isattyr.o)
+ .debug_frame   0x00000000000040fc       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lnumeric.o)
+ .debug_frame   0x000000000000411c       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-locale.o)
+ .debug_frame   0x0000000000004164       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-localeconv.o)
+ .debug_frame   0x00000000000041a4       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x00000000000041d0       0x48 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mbtowc_r.o)
+ .debug_frame   0x0000000000004218       0x30 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000004248      0x244 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-mprec.o)
+ .debug_frame   0x000000000000448c       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-callocr.o)
+ .debug_frame   0x00000000000044b8       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00000000000044f4       0x90 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x0000000000004584       0x78 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-svfscanf.o)
+ .debug_frame   0x00000000000045fc       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-vfscanf_i.o)
+ .debug_frame   0x0000000000004660       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-putc.o)
+ .debug_frame   0x000000000000469c       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-readr.o)
+ .debug_frame   0x00000000000046c8       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-rget.o)
+ .debug_frame   0x0000000000004704       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-s_nan.o)
+ .debug_frame   0x0000000000004724       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-sccl.o)
+ .debug_frame   0x0000000000004750       0x64 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-strtoul.o)
+ .debug_frame   0x00000000000047b4       0x5c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-ungetc.o)
+ .debug_frame   0x0000000000004810       0x3c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-wctomb_r.o)
+ .debug_frame   0x000000000000484c       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x000000000000486c       0x40 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libg_nano.a(lib_a-refill.o)
+ .debug_frame   0x00000000000048ac       0xc4 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x0000000000004970       0x20 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x0000000000004990       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00000000000049b4       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_frame   0x00000000000049d8       0x24 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00000000000049fc       0x38 /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixdfdi.o)
+ .debug_frame   0x0000000000004a34       0x2c /Users/aaronrice/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Lab-Assignments/toolchains/mac/gcc-arm-none-eabi-8-2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7e-m+fp/hard/libgcc.a(_fixunsdfdi.o)
 
-.debug_loc      0x0000000000000000    0x14ad4
+.debug_loc      0x0000000000000000    0x14aee
  .debug_loc     0x0000000000000000       0x4c _build_lpc40xx_freertos/objects/interrupt_vector_table.o
  .debug_loc     0x000000000000004c       0x23 _build_lpc40xx_freertos/objects/clock.o
  .debug_loc     0x000000000000006f       0x3f _build_lpc40xx_freertos/objects/crash.o
@@ -4149,25 +4149,25 @@ OUTPUT(_build_lpc40xx_freertos/lpc40xx_freertos.elf elf32-littlearm)
  .debug_loc     0x000000000000829d      0x447 _build_lpc40xx_freertos/objects/app_cli.o
  .debug_loc     0x00000000000086e4       0xe0 _build_lpc40xx_freertos/objects/sj2_cli.o
  .debug_loc     0x00000000000087c4      0x192 _build_lpc40xx_freertos/objects/handler_i2c.o
- .debug_loc     0x0000000000008956      0x327 _build_lpc40xx_freertos/objects/handlers_general.o
- .debug_loc     0x0000000000008c7d       0xfb _build_lpc40xx_freertos/objects/delay.o
- .debug_loc     0x0000000000008d78      0x107 _build_lpc40xx_freertos/objects/peripherals_init.o
- .debug_loc     0x0000000000008e7f      0x160 _build_lpc40xx_freertos/objects/sys_time.o
- .debug_loc     0x0000000000008fdf      0x302 _build_lpc40xx_freertos/objects/uart_printf.o
- .debug_loc     0x00000000000092e1       0xb8 _build_lpc40xx_freertos/objects/rtos_hooks.o
- .debug_loc     0x0000000000009399     0x36d0 _build_lpc40xx_freertos/objects/sl_string.o
- .debug_loc     0x000000000000ca69       0x93 _build_lpc40xx_freertos/objects/heap_selector.o
- .debug_loc     0x000000000000cafc       0xf8 _build_lpc40xx_freertos/objects/port.o
- .debug_loc     0x000000000000cbf4       0xbd _build_lpc40xx_freertos/objects/list.o
- .debug_loc     0x000000000000ccb1     0x2390 _build_lpc40xx_freertos/objects/queue.o
- .debug_loc     0x000000000000f041     0x27b5 _build_lpc40xx_freertos/objects/tasks.o
- .debug_loc     0x00000000000117f6       0x59 _build_lpc40xx_freertos/objects/board_io.o
- .debug_loc     0x000000000001184f      0x53a _build_lpc40xx_freertos/objects/gpio.o
- .debug_loc     0x0000000000011d89      0x19b _build_lpc40xx_freertos/objects/hw_timer.o
- .debug_loc     0x0000000000011f24     0x1003 _build_lpc40xx_freertos/objects/i2c.o
- .debug_loc     0x0000000000012f27      0x221 _build_lpc40xx_freertos/objects/lpc_peripherals.o
- .debug_loc     0x0000000000013148      0xd71 _build_lpc40xx_freertos/objects/player1053.o
- .debug_loc     0x0000000000013eb9       0xa7 _build_lpc40xx_freertos/objects/song_list.o
- .debug_loc     0x0000000000013f60      0x232 _build_lpc40xx_freertos/objects/ssp2.o
- .debug_loc     0x0000000000014192      0x8b4 _build_lpc40xx_freertos/objects/uart.o
- .debug_loc     0x0000000000014a46       0x8e _build_lpc40xx_freertos/objects/main.o
+ .debug_loc     0x0000000000008956      0x341 _build_lpc40xx_freertos/objects/handlers_general.o
+ .debug_loc     0x0000000000008c97       0xfb _build_lpc40xx_freertos/objects/delay.o
+ .debug_loc     0x0000000000008d92      0x107 _build_lpc40xx_freertos/objects/peripherals_init.o
+ .debug_loc     0x0000000000008e99      0x160 _build_lpc40xx_freertos/objects/sys_time.o
+ .debug_loc     0x0000000000008ff9      0x302 _build_lpc40xx_freertos/objects/uart_printf.o
+ .debug_loc     0x00000000000092fb       0xb8 _build_lpc40xx_freertos/objects/rtos_hooks.o
+ .debug_loc     0x00000000000093b3     0x36d0 _build_lpc40xx_freertos/objects/sl_string.o
+ .debug_loc     0x000000000000ca83       0x93 _build_lpc40xx_freertos/objects/heap_selector.o
+ .debug_loc     0x000000000000cb16       0xf8 _build_lpc40xx_freertos/objects/port.o
+ .debug_loc     0x000000000000cc0e       0xbd _build_lpc40xx_freertos/objects/list.o
+ .debug_loc     0x000000000000cccb     0x2390 _build_lpc40xx_freertos/objects/queue.o
+ .debug_loc     0x000000000000f05b     0x27b5 _build_lpc40xx_freertos/objects/tasks.o
+ .debug_loc     0x0000000000011810       0x59 _build_lpc40xx_freertos/objects/board_io.o
+ .debug_loc     0x0000000000011869      0x53a _build_lpc40xx_freertos/objects/gpio.o
+ .debug_loc     0x0000000000011da3      0x19b _build_lpc40xx_freertos/objects/hw_timer.o
+ .debug_loc     0x0000000000011f3e     0x1003 _build_lpc40xx_freertos/objects/i2c.o
+ .debug_loc     0x0000000000012f41      0x221 _build_lpc40xx_freertos/objects/lpc_peripherals.o
+ .debug_loc     0x0000000000013162      0xd71 _build_lpc40xx_freertos/objects/player1053.o
+ .debug_loc     0x0000000000013ed3       0xa7 _build_lpc40xx_freertos/objects/song_list.o
+ .debug_loc     0x0000000000013f7a      0x232 _build_lpc40xx_freertos/objects/ssp2.o
+ .debug_loc     0x00000000000141ac      0x8b4 _build_lpc40xx_freertos/objects/uart.o
+ .debug_loc     0x0000000000014a60       0x8e _build_lpc40xx_freertos/objects/main.o
