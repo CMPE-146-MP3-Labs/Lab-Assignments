@@ -11,12 +11,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "controls.h"
+#include "VS1053b.h"  
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
 static void create_reader_task(void);
 static void player_task(void *params);
 static void reader_task(void *params);
+static void mp3decoder_init();
 typedef char songname_t[16];
 
 QueueHandle_t Q_songname;
@@ -55,7 +57,7 @@ static void create_reader_task(void) {
 
 static void player_task(void *params) {
   char bytes_512[512] = {0};
-  ssp2__initialize(400);
+  mp3decoder_init();
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
@@ -95,3 +97,4 @@ static void reader_task(void *params) {
     f_close(&mp3_file);
   }
 }
+
