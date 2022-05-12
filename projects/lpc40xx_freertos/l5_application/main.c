@@ -61,9 +61,10 @@ static void player_task(void *params) {
     }
 
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
-    fprintf(stderr, "Output: ");
+
     while (!gpio__get(VS_DREQ)) {
       vTaskDelay(3);
+      fprintf(stderr, "DREQ: NOT READY");
     }
     VS1053PlayFile(&bytes_512);
   }
