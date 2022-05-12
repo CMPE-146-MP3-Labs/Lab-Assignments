@@ -5,3 +5,4 @@ projects/.DS_Store
 site_scons/.DS_Store
 toolchains/.DS_Store
 toolchains/windows/.DS_Store
+.DS_Store
