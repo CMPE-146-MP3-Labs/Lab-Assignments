@@ -274,8 +274,8 @@ enum PlayerStates {
   - Returns any other for user input. For supported commands, see code.
 
 */
-void VS1053PlayFile(FILE *readFp) {
-  static u_int8 playBuf[FILE_BUFFER_SIZE];
+void VS1053PlayFile(char *readFp) {
+  static u_int8 playBuf[FILE_BUFFER_SIZE] = readFp;
   u_int32 bytesInBuffer;        // How many bytes in buffer left
   u_int32 pos=0;                // File position
   int endFillByte = 0;          // What byte value to send after file
@@ -301,8 +301,7 @@ void VS1053PlayFile(FILE *readFp) {
 
   /* Main playback loop */
 
-  while ((bytesInBuffer = fread(playBuf, 1, FILE_BUFFER_SIZE, readFp)) > 0 &&
-         playerState != psStopped) {
+  while (playerState != psStopped) {
     u_int8 *bufP = playBuf;
 
     while (bytesInBuffer && playerState != psStopped) {

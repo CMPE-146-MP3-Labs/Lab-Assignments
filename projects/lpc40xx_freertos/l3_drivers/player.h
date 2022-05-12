@@ -36,7 +36,12 @@ u_int16 ReadSci(u_int8 addr){
   gpio__reset(VS_CS);
   return (uint16_t)(LPC_SSP2->DR & 0xFF)
 }
-int WriteSdi(const u_int8 *data, u_int8 bytes);
+int WriteSdi(const u_int8 *data, u_int8 bytes){
+  LPC_SSP2->DR = data;
+  gpio__set(VS_CS);
+  ssp2__dma_write_block(&bytes, 1);
+  gpio__reset(VS_CS);
+}
 void SaveUIState(void);
 void RestoreUIState(void);
 int GetUICommand(void);
