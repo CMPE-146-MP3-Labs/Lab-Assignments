@@ -57,7 +57,7 @@ static void create_reader_task(void) {
 
 static void player_task(void *params) {
   char bytes_512[512] = {0};
-  mp3decoder_init();
+  init_mp3decoder();
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {

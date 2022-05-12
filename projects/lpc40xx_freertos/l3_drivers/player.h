@@ -13,10 +13,17 @@
 
 #include "vs10xx_uc.h"
 
+void init_mp3decoder(){
+  int VSTestInitHardware(void);
+  int VSTestInitSoftware(void);
+}
 int VSTestInitHardware(void);
 int VSTestInitSoftware(void);
 int VSTestHandleFile(const char *fileName, int record);
-
+void init_mp3decoder(){
+  int VSTestInitHardware(void);
+  int VSTestInitSoftware(void);
+}
 void WriteSci(u_int8 addr, u_int16 data){
   LPC_SSP2->DR = data;
   gpio__set(VS_CS);
