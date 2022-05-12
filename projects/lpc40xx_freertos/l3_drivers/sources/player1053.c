@@ -16,7 +16,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "gpio.h"
 #include "player.h"
+
 /* Download the latest VS1053a Patches package and its
    vs1053b-patches-flac.plg. If you want to use the smaller patch set
    which doesn't contain the FLAC decoder, use vs1053b-patches.plg instead.
@@ -1012,6 +1014,10 @@ int VSTestInitHardware(void) {
   /* Write here your microcontroller code which puts VS10xx in hardware
      reset anc back (set xRESET to 0 for at least a few clock cycles,
      then to 1). */
+    gpio__reset(VS_XRESET);
+    vtaskdelay(2);
+    gpio__set(VS_XRESET);
+
   return 0;
 }
 

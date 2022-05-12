@@ -11,7 +11,11 @@
 
 */
 
-
+/* NXP LPC 408X_7X Bridge
+*/
+#define VS_XRESET gpio__construct_as_output(GPIO__PORT_2, 5)
+#define VS_CS gpio__construct_as_output(GPIO__PORT_2, 2)
+#define VS_DREQ gpio__construct_as_output(GPIO__PORT_2, 4)
 
 /* If these typedefs create clashed with what you get from other files
    with your compiler, make sure that they are compatible (they probably

@@ -18,7 +18,9 @@ int VSTestInitSoftware(void);
 int VSTestHandleFile(const char *fileName, int record);
 
 void WriteSci(u_int8 addr, u_int16 data);
-u_int16 ReadSci(u_int8 addr);
+u_int16 ReadSci(u_int8 addr){
+  return 
+}
 int WriteSdi(const u_int8 *data, u_int8 bytes);
 void SaveUIState(void);
 void RestoreUIState(void);
