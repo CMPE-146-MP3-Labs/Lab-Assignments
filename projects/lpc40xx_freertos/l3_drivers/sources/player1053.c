@@ -23,28 +23,28 @@
    vs1053b-patches-flac.plg. If you want to use the smaller patch set
    which doesn't contain the FLAC decoder, use vs1053b-patches.plg instead.
    The patches package is available at
-   http://www.vlsi.fi/en/support/software/vs10xxpatches.html */
+   http://www.vlsi.fi/en/support/software/vs10xxpatches.html
 #include "vs1053b-patches-flac.plg"
-
+*/
 /* We also want to have the VS1053b Ogg Vorbis Encoder plugin. To get more
    than one plugin included, we'll have to include it in a slightly more
    tricky way. To get the plugin included below, download the latest version
    of the VS1053 Ogg Vorbis Encoder Application from
-   http://www.vlsi.fi/en/support/software/vs10xxapplications.html */
+   http://www.vlsi.fi/en/support/software/vs10xxapplications.html
 #define SKIP_PLUGIN_VARNAME
 const u_int16 encoderPlugin[] = {
 #include "venc44k2q05.plg"
 };
 #undef SKIP_PLUGIN_VARNAME
-
+*/
 /* VS1053b IMA ADPCM Encoder Fix, available at
-   http://www.vlsi.fi/en/support/software/vs10xxpatches.html */
+   http://www.vlsi.fi/en/support/software/vs10xxpatches.html
 #define SKIP_PLUGIN_VARNAME
 const u_int16 imaFix[] = {
 #include "imafix.plg"
 };
 #undef SKIP_PLUGIN_VARNAME
-
+*/
 #define FILE_BUFFER_SIZE 512
 #define SDI_MAX_TRANSFER_SIZE 32
 #define SDI_END_FILL_BYTES_FLAC 12288
@@ -918,7 +918,10 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
+
+
 */
 int VSTestInitHardware(void) {
   /* Write here your microcontroller code which puts VS10xx in hardware
@@ -941,7 +944,10 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
+
+
 */
 int VSTestInitSoftware(void) {
   u_int16 ssVer;

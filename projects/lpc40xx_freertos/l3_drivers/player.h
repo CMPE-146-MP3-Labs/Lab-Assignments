@@ -11,6 +11,7 @@
 #ifndef PLAYER_RECORDER_H
 #define PLAYER_RECORDER_H
 
+#include "lpc40xx.h"
 #include "vs10xx_uc.h"
 
 void init_mp3decoder() {
