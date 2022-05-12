@@ -1,9 +1,2 @@
-
-_build_lpc40xx_freertos/.DS_Store
-doc/.DS_Store
-projects/.DS_Store
-site_scons/.DS_Store
-toolchains/.DS_Store
-toolchains/windows/.DS_Store
-**/.DS_Store*
+**/.DS_Store
 
