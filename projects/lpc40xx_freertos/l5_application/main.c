@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "controls.h"
-#include "VS1053b.h"  
+#include "vs10xx_uc.h"  
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
