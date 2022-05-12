@@ -28,7 +28,9 @@ app_cli_status_e cli__mp3_play(app_cli__argument_t argument,
                                app_cli__print_string_function cli_output) {
   // user_input_minus_command_name is actually a 'char *' pointer type
   // We tell the Queue to copy 32 bytes of songname from this location
-  xQueueSend(Q_songname, song_list__get_name_for_item(user_input_minus_command_name), portMAX_DELAY);
+  xQueueSend(Q_songname,
+             song_list__get_name_for_item(user_input_minus_command_name),
+             portMAX_DELAY);
 
   printf("Sent %s over to the Q_songname\n", user_input_minus_command_name);
   return APP_CLI_STATUS__SUCCESS;
