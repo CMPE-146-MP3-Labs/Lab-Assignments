@@ -12,12 +12,12 @@
 
 */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include "gpio.h"
 #include "player.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* Download the latest VS1053a Patches package and its
    vs1053b-patches-flac.plg. If you want to use the smaller patch set
@@ -25,7 +25,6 @@
    The patches package is available at
    http://www.vlsi.fi/en/support/software/vs10xxpatches.html */
 #include "vs1053b-patches-flac.plg"
-
 
 /* We also want to have the VS1053b Ogg Vorbis Encoder plugin. To get more
    than one plugin included, we'll have to include it in a slightly more
@@ -38,7 +37,6 @@ const u_int16 encoderPlugin[] = {
 };
 #undef SKIP_PLUGIN_VARNAME
 
-
 /* VS1053b IMA ADPCM Encoder Fix, available at
    http://www.vlsi.fi/en/support/software/vs10xxpatches.html */
 #define SKIP_PLUGIN_VARNAME
@@ -47,13 +45,11 @@ const u_int16 imaFix[] = {
 };
 #undef SKIP_PLUGIN_VARNAME
 
-
 #define FILE_BUFFER_SIZE 512
 #define SDI_MAX_TRANSFER_SIZE 32
 #define SDI_END_FILL_BYTES_FLAC 12288
-#define SDI_END_FILL_BYTES       2050
+#define SDI_END_FILL_BYTES 2050
 #define REC_BUFFER_SIZE 512
-
 
 /* How many transferred bytes between collecting data.
    A value between 1-8 KiB is typically a good value.
@@ -77,10 +73,7 @@ const u_int16 imaFix[] = {
 #define RECORDER_USER_INTERFACE
 #endif
 
-
-#define min(a,b) (((a)<(b))?(a):(b))
-
-
+#define min(a, b) (((a) < (b)) ? (a) : (b))
 
 enum AudioFormat {
   afUnknown,
@@ -98,20 +91,9 @@ enum AudioFormat {
 } audioFormat = afUnknown;
 
 const char *afName[] = {
-  "unknown",
-  "RIFF",
-  "Ogg",
-  "MP1",
-  "MP2",
-  "MP3",
-  "AAC MP4",
-  "AAC ADTS",
-  "AAC ADIF",
-  "FLAC",
-  "WMA",
-  "MIDI",
+    "unknown", "RIFF",     "Ogg",      "MP1",  "MP2", "MP3",
+    "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
 };
-
 
 /*
   Read 32-bit increasing counter value from addr.
@@ -122,7 +104,7 @@ u_int32 ReadVS10xxMem32Counter(u_int16 addr) {
   u_int16 msbV1, lsb, msbV2;
   u_int32 res;
 
-  WriteSci(SCI_WRAMADDR, addr+1);
+  WriteSci(SCI_WRAMADDR, addr + 1);
   msbV1 = ReadSci(SCI_WRAM);
   WriteSci(SCI_WRAMADDR, addr);
   lsb = ReadSci(SCI_WRAM);
@@ -131,10 +113,9 @@ u_int32 ReadVS10xxMem32Counter(u_int16 addr) {
     msbV1 = msbV2;
   }
   res = ((u_int32)msbV1 << 16) | lsb;
-  
+
   return res;
 }
-
 
 /*
   Read 32-bit non-changing value from addr.
@@ -146,7 +127,6 @@ u_int32 ReadVS10xxMem32(u_int16 addr) {
   return lsb | ((u_int32)ReadSci(SCI_WRAM) << 16);
 }
 
-
 /*
   Read 16-bit value from addr.
 */
@@ -154,7 +134,6 @@ u_int16 ReadVS10xxMem(u_int16 addr) {
   WriteSci(SCI_WRAMADDR, addr);
   return ReadSci(SCI_WRAM);
 }
-
 
 /*
   Write 16-bit value to given VS10xx address
@@ -170,11 +149,8 @@ void WriteVS10xxMem(u_int16 addr, u_int16 data) {
 void WriteVS10xxMem32(u_int16 addr, u_int32 data) {
   WriteSci(SCI_WRAMADDR, addr);
   WriteSci(SCI_WRAM, (u_int16)data);
-  WriteSci(SCI_WRAM, (u_int16)(data>>16));
+  WriteSci(SCI_WRAM, (u_int16)(data >> 16));
 }
-
-
-
 
 static const u_int16 linToDBTab[5] = {36781, 41285, 46341, 52016, 58386};
 
@@ -189,23 +165,20 @@ static const u_int16 linToDBTab[5] = {36781, 41285, 46341, 52016, 58386};
 static u_int16 LinToDB(unsigned short n) {
   int res = 96, i;
 
-  if (!n)               /* No signal should return minus infinity */
+  if (!n) /* No signal should return minus infinity */
     return 0;
 
-  while (n < 32768U) {  /* Amplify weak signals */
+  while (n < 32768U) { /* Amplify weak signals */
     res -= 6;
     n <<= 1;
   }
 
-  for (i=0; i<5; i++)   /* Find exact scale */
+  for (i = 0; i < 5; i++) /* Find exact scale */
     if (n >= linToDBTab[i])
       res++;
 
   return res;
 }
-
-
-
 
 /*
 
@@ -218,7 +191,7 @@ static u_int16 LinToDB(unsigned short n) {
 void LoadPlugin(const u_int16 *d, u_int16 len) {
   int i = 0;
 
-  while (i<len) {
+  while (i < len) {
     unsigned short addr, n, val;
     addr = d[i++];
     n = d[i++];
@@ -228,7 +201,7 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
       while (n--) {
         WriteSci(addr, val);
       }
-    } else {           /* Copy run, copy n samples */
+    } else { /* Copy run, copy n samples */
       while (n--) {
         val = d[i++];
         WriteSci(addr, val);
@@ -237,24 +210,12 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
   }
 }
 
-
-
-
-
-
-
-
-
 enum PlayerStates {
   psPlayback = 0,
   psUserRequestedCancel,
   psCancelSentToVS10xx,
   psStopped
 } playerState;
-
-
-
-
 
 /*
 
@@ -276,28 +237,27 @@ enum PlayerStates {
 */
 void VS1053PlayFile(char *readFp) {
   static u_int8 playBuf[FILE_BUFFER_SIZE] = readFp;
-  u_int32 bytesInBuffer;        // How many bytes in buffer left
-  u_int32 pos=0;                // File position
-  int endFillByte = 0;          // What byte value to send after file
+  u_int32 bytesInBuffer;                 // How many bytes in buffer left
+  u_int32 pos = 0;                       // File position
+  int endFillByte = 0;                   // What byte value to send after file
   int endFillBytes = SDI_END_FILL_BYTES; // How many of those to send
   int playMode = ReadVS10xxMem(PAR_PLAY_MODE);
-  long nextReportPos=0; // File pointer where to next collect/report
+  long nextReportPos = 0; // File pointer where to next collect/report
   int i;
 #ifdef PLAYER_USER_INTERFACE
-  static int earSpeaker = 0;    // 0 = off, other values strength
+  static int earSpeaker = 0;              // 0 = off, other values strength
   int volLevel = ReadSci(SCI_VOL) & 0xFF; // Assume both channels at same level
   int c;
-  static int rateTune = 0;      // Samplerate fine tuning in ppm
-#endif /* PLAYER_USER_INTERFACE */
+  static int rateTune = 0; // Samplerate fine tuning in ppm
+#endif                     /* PLAYER_USER_INTERFACE */
 
 #ifdef PLAYER_USER_INTERFACE
   SaveUIState();
 #endif /* PLAYER_USER_INTERFACE */
 
-  playerState = psPlayback;             // Set state to normal playback
+  playerState = psPlayback; // Set state to normal playback
 
-  WriteSci(SCI_DECODE_TIME, 0);         // Reset DECODE_TIME
-
+  WriteSci(SCI_DECODE_TIME, 0); // Reset DECODE_TIME
 
   /* Main playback loop */
 
@@ -337,7 +297,6 @@ void VS1053PlayFile(char *readFp) {
         }
       }
 
-
       /* If playback is going on as normal, see if we need to collect and
          possibly report */
       if (playerState == psPlayback && pos >= nextReportPos) {
@@ -347,8 +306,9 @@ void VS1053PlayFile(char *readFp) {
         u_int16 h1 = ReadSci(SCI_HDAT1);
 #endif
 
-        nextReportPos += (audioFormat == afMidi || audioFormat == afUnknown) ?
-          REPORT_INTERVAL_MIDI : REPORT_INTERVAL;
+        nextReportPos += (audioFormat == afMidi || audioFormat == afUnknown)
+                             ? REPORT_INTERVAL_MIDI
+                             : REPORT_INTERVAL;
         /* It is important to collect endFillByte while still in normal
            playback. If we need to later cancel playback or run into any
            trouble with e.g. a broken file, we need to be able to repeatedly
@@ -406,19 +366,14 @@ void VS1053PlayFile(char *readFp) {
                "%1ds %1.1f"
                "kb/s %dHz %s %s"
                " %04x   ",
-               pos/1024,
-               ReadSci(SCI_DECODE_TIME),
-               byteRate * (8.0/1000.0),
+               pos / 1024, ReadSci(SCI_DECODE_TIME), byteRate * (8.0 / 1000.0),
                sampleRate & 0xFFFE, (sampleRate & 1) ? "stereo" : "mono",
-               afName[audioFormat], h1
-               );
-          
+               afName[audioFormat], h1);
+
         fflush(stdout);
 #endif /* REPORT_ON_SCREEN */
       }
     } /* if (playerState == psPlayback && pos >= nextReportPos) */
-  
-
 
     /* User interface. This can of course be completely removed and
        basic playback would still work. */
@@ -432,36 +387,30 @@ void VS1053PlayFile(char *readFp) {
     case '-':
       if (volLevel < 255) {
         volLevel++;
-        WriteSci(SCI_VOL, volLevel*0x101);
+        WriteSci(SCI_VOL, volLevel * 0x101);
       }
       break;
     case '+':
       if (volLevel) {
         volLevel--;
-        WriteSci(SCI_VOL, volLevel*0x101);
+        WriteSci(SCI_VOL, volLevel * 0x101);
       }
       break;
 
       /* Show some interesting registers */
-    case '_':
-      {
-        u_int32 mSec = ReadVS10xxMem32Counter(PAR_POSITION_MSEC);
-        printf("\nvol %1.1fdB, MODE %04x, ST %04x, "
-               "HDAT1 %04x HDAT0 %04x\n",
-               -0.5*volLevel,
-               ReadSci(SCI_MODE),
-               ReadSci(SCI_STATUS),
-               ReadSci(SCI_HDAT1),
-               ReadSci(SCI_HDAT0));
-        printf("  sampleCounter %lu, ",
-               ReadVS10xxMem32Counter(0x1800));
-        if (mSec != 0xFFFFFFFFU) {
-          printf("positionMSec %lu, ", mSec);
-        }
-        printf("config1 0x%04x", ReadVS10xxMem(PAR_CONFIG1));
-        printf("\n");
+    case '_': {
+      u_int32 mSec = ReadVS10xxMem32Counter(PAR_POSITION_MSEC);
+      printf("\nvol %1.1fdB, MODE %04x, ST %04x, "
+             "HDAT1 %04x HDAT0 %04x\n",
+             -0.5 * volLevel, ReadSci(SCI_MODE), ReadSci(SCI_STATUS),
+             ReadSci(SCI_HDAT1), ReadSci(SCI_HDAT0));
+      printf("  sampleCounter %lu, ", ReadVS10xxMem32Counter(0x1800));
+      if (mSec != 0xFFFFFFFFU) {
+        printf("positionMSec %lu, ", mSec);
       }
-      break;
+      printf("config1 0x%04x", ReadVS10xxMem(PAR_CONFIG1));
+      printf("\n");
+    } break;
 
       /* Adjust play speed between 1x - 4x */
     case '1':
@@ -469,8 +418,8 @@ void VS1053PlayFile(char *readFp) {
     case '3':
     case '4':
       /* FF speed */
-      printf("\nSet playspeed to %dX\n", c-'0');
-      WriteVS10xxMem(PAR_PLAY_SPEED, c-'0');
+      printf("\nSet playspeed to %dX\n", c - '0');
+      WriteVS10xxMem(PAR_PLAY_SPEED, c - '0');
       break;
 
       /* Ask player nicely to stop playing the song. */
@@ -488,9 +437,9 @@ void VS1053PlayFile(char *readFp) {
 
       /* EarSpeaker spatial processing adjustment. */
     case 'e':
-      earSpeaker = (earSpeaker+1) & 3;
+      earSpeaker = (earSpeaker + 1) & 3;
       {
-        u_int16 t = ReadSci(SCI_MODE) & ~(SM_EARSPEAKER_LO|SM_EARSPEAKER_HI);
+        u_int16 t = ReadSci(SCI_MODE) & ~(SM_EARSPEAKER_LO | SM_EARSPEAKER_HI);
         if (earSpeaker & 1)
           t |= SM_EARSPEAKER_LO;
         if (earSpeaker & 2)
@@ -509,25 +458,23 @@ void VS1053PlayFile(char *readFp) {
       break;
 
       /* Toggle differential mode */
-    case 'd':
-      {
-        u_int16 t = ReadSci(SCI_MODE) ^ SM_DIFF;
-        printf("\nDifferential mode %s\n", (t & SM_DIFF) ? "on" : "off");
-        WriteSci(SCI_MODE, t);
-      }
-      break;
+    case 'd': {
+      u_int16 t = ReadSci(SCI_MODE) ^ SM_DIFF;
+      printf("\nDifferential mode %s\n", (t & SM_DIFF) ? "on" : "off");
+      WriteSci(SCI_MODE, t);
+    } break;
 
       /* Adjust playback samplerate finetuning, this function comes from
          the VS1053b Patches package. Note that the scale is different
          in VS1053b and VS1063a! */
     case 'r':
       if (rateTune >= 0) {
-        rateTune = (rateTune*0.95);
+        rateTune = (rateTune * 0.95);
       } else {
-        rateTune = (rateTune*1.05);
+        rateTune = (rateTune * 1.05);
       }
       rateTune -= 1;
-     if (rateTune < -160000)
+      if (rateTune < -160000)
         rateTune = -160000;
       WriteVS10xxMem(0x5b1c, 0);                 /* From VS105b Patches doc */
       WriteSci(SCI_AUDATA, ReadSci(SCI_AUDATA)); /* From VS105b Patches doc */
@@ -536,9 +483,9 @@ void VS1053PlayFile(char *readFp) {
       break;
     case 'R':
       if (rateTune <= 0) {
-        rateTune = (rateTune*0.95);
+        rateTune = (rateTune * 0.95);
       } else {
-        rateTune = (rateTune*1.05);
+        rateTune = (rateTune * 1.05);
       }
       rateTune += 1;
       if (rateTune > 160000)
@@ -550,8 +497,8 @@ void VS1053PlayFile(char *readFp) {
       break;
     case '/':
       rateTune = 0;
-      WriteVS10xxMem(SCI_WRAMADDR, 0x5b1c);      /* From VS105b Patches doc */
-      WriteVS10xxMem(0x5b1c, 0);                 /* From VS105b Patches doc */
+      WriteVS10xxMem(SCI_WRAMADDR, 0x5b1c); /* From VS105b Patches doc */
+      WriteVS10xxMem(0x5b1c, 0);            /* From VS105b Patches doc */
       WriteVS10xxMem32(PAR_RATE_TUNE, rateTune);
       printf("\nrateTune off\n");
       break;
@@ -567,8 +514,7 @@ void VS1053PlayFile(char *readFp) {
              "r R\tR rateTune down / up\n"
              "/\tRateTune off\n"
              "m\tToggle Mono\n"
-             "d\tToggle Differential\n"
-             );
+             "d\tToggle Differential\n");
       break;
 
       /* Unknown commands or no command at all */
@@ -583,12 +529,10 @@ void VS1053PlayFile(char *readFp) {
         printf("\nUnknown char '%c' (%d)\n", isprint(c) ? c : '.', c);
       }
       break;
-    } /* switch (c) */
+    }  /* switch (c) */
 #endif /* PLAYER_USER_INTERFACE */
   } /* while ((bytesInBuffer = fread(...)) > 0 && playerState != psStopped) */
 
-
-  
 #ifdef PLAYER_USER_INTERFACE
   RestoreUIState();
 #endif /* PLAYER_USER_INTERFACE */
@@ -600,7 +544,7 @@ void VS1053PlayFile(char *readFp) {
      broken, or if a cancel playback command has been given, write
      lots of endFillBytes. */
   memset(playBuf, endFillByte, sizeof(playBuf));
-  for (i=0; i<endFillBytes; i+=SDI_MAX_TRANSFER_SIZE) {
+  for (i = 0; i < endFillBytes; i += SDI_MAX_TRANSFER_SIZE) {
     WriteSdi(playBuf, SDI_MAX_TRANSFER_SIZE);
   }
 
@@ -621,54 +565,36 @@ void VS1053PlayFile(char *readFp) {
   printf("ok\n");
 }
 
+u_int8 adpcmHeader[60] = {'R',  'I',  'F',  'F',  0xFF, 0xFF, 0xFF, 0xFF,
+                          'W',  'A',  'V',  'E',  'f',  'm',  't',  ' ',
+                          0x14, 0,    0,    0,    /* 20 */
+                          0x11, 0,                /* IMA ADPCM */
+                          0x1,  0,                /* chan */
+                          0x0,  0x0,  0x0,  0x0,  /* sampleRate */
+                          0x0,  0x0,  0x0,  0x0,  /* byteRate */
+                          0,    1,                /* blockAlign */
+                          4,    0,                /* bitsPerSample */
+                          2,    0,                /* byteExtraData */
+                          0xf9, 0x1,              /* samplesPerBlock = 505 */
+                          'f',  'a',  'c',  't',  /* subChunk2Id */
+                          0x4,  0,    0,    0,    /* subChunk2Size */
+                          0xFF, 0xFF, 0xFF, 0xFF, /* numOfSamples */
+                          'd',  'a',  't',  'a',  0xFF, 0xFF, 0xFF, 0xFF};
 
-
-
-
-
-
-
-
-u_int8 adpcmHeader[60] = {
-  'R', 'I', 'F', 'F',
-  0xFF, 0xFF, 0xFF, 0xFF,
-  'W', 'A', 'V', 'E',
-  'f', 'm', 't', ' ',
-  0x14, 0, 0, 0,          /* 20 */
-  0x11, 0,                /* IMA ADPCM */
-  0x1, 0,                 /* chan */
-  0x0, 0x0, 0x0, 0x0,     /* sampleRate */
-  0x0, 0x0, 0x0, 0x0,     /* byteRate */
-  0, 1,                   /* blockAlign */
-  4, 0,                   /* bitsPerSample */
-  2, 0,                   /* byteExtraData */
-  0xf9, 0x1,              /* samplesPerBlock = 505 */
-  'f', 'a', 'c', 't',     /* subChunk2Id */
-  0x4, 0, 0, 0,           /* subChunk2Size */
-  0xFF, 0xFF, 0xFF, 0xFF, /* numOfSamples */
-  'd', 'a', 't', 'a',
-  0xFF, 0xFF, 0xFF, 0xFF
-};
-
-u_int8 pcmHeader[44] = {
-  'R', 'I', 'F', 'F',
-  0xFF, 0xFF, 0xFF, 0xFF,
-  'W', 'A', 'V', 'E',
-  'f', 'm', 't', ' ',
-  0x10, 0, 0, 0,          /* 16 */
-  0x1, 0,                 /* PCM */
-  0x1, 0,                 /* chan */
-  0x0, 0x0, 0x0, 0x0,     /* sampleRate */
-  0x0, 0x0, 0x0, 0x0,     /* byteRate */
-  2, 0,                   /* blockAlign */
-  0x10, 0,                /* bitsPerSample */
-  'd', 'a', 't', 'a',
-  0xFF, 0xFF, 0xFF, 0xFF
-};
+u_int8 pcmHeader[44] = {'R',  'I', 'F', 'F', 0xFF, 0xFF, 0xFF, 0xFF,
+                        'W',  'A', 'V', 'E', 'f',  'm',  't',  ' ',
+                        0x10, 0,   0,   0,   /* 16 */
+                        0x1,  0,             /* PCM */
+                        0x1,  0,             /* chan */
+                        0x0,  0x0, 0x0, 0x0, /* sampleRate */
+                        0x0,  0x0, 0x0, 0x0, /* byteRate */
+                        2,    0,             /* blockAlign */
+                        0x10, 0,             /* bitsPerSample */
+                        'd',  'a', 't', 'a', 0xFF, 0xFF, 0xFF, 0xFF};
 
 void Set32(u_int8 *d, u_int32 n) {
   int i;
-  for (i=0; i<4; i++) {
+  for (i = 0; i < 4; i++) {
     *d++ = (u_int8)n;
     n >>= 8;
   }
@@ -676,12 +602,11 @@ void Set32(u_int8 *d, u_int32 n) {
 
 void Set16(u_int8 *d, u_int16 n) {
   int i;
-  for (i=0; i<2; i++) {
+  for (i = 0; i < 2; i++) {
     *d++ = (u_int8)n;
     n >>= 8;
   }
 }
-
 
 /*
   This function records an audio file in Ogg, MP3, or WAV formats.
@@ -690,17 +615,16 @@ void Set16(u_int8 *d, u_int16 n) {
 */
 void VS1053RecordFile(FILE *writeFp) {
   static u_int8 recBuf[REC_BUFFER_SIZE];
-  u_int32 nextReportPos=0;      // File pointer where to next collect/report
+  u_int32 nextReportPos = 0; // File pointer where to next collect/report
   u_int32 fileSize = 0;
   int volLevel = ReadSci(SCI_VOL) & 0xFF;
   int c;
   int ch = 2;
   int adpcm = 0;
-  int dataNeededInBuffer = REC_BUFFER_SIZE;  /* max size of IMA ADPCM block */
-  int adpcmBlocksPerWrite = 2/ch;
+  int dataNeededInBuffer = REC_BUFFER_SIZE; /* max size of IMA ADPCM block */
+  int adpcmBlocksPerWrite = 2 / ch;
   u_int32 adpcmBlocks = 0;
   u_int16 sampleRate = 8000;
-
 
   playerState = psPlayback;
 
@@ -724,12 +648,12 @@ void VS1053RecordFile(FILE *writeFp) {
   WriteVS10xxMem(0xc01a, 0x2);
 
   /* Load the plugin */
-  LoadPlugin(encoderPlugin, sizeof(encoderPlugin)/sizeof(encoderPlugin[0]));
+  LoadPlugin(encoderPlugin, sizeof(encoderPlugin) / sizeof(encoderPlugin[0]));
 
   /* Turn SCI_MODE bits. */
   WriteSci(SCI_MODE, ReadSci(SCI_MODE) | SM_ADPCM | SM_LINE1);
 
-  WriteSci(SCI_RECGAIN,   1024); /* 1024 = gain 1 = best quality */
+  WriteSci(SCI_RECGAIN, 1024); /* 1024 = gain 1 = best quality */
   WriteSci(SCI_AICTRL3, 0);
 
   /* Activate recording */
@@ -750,12 +674,12 @@ void VS1053RecordFile(FILE *writeFp) {
   sampleRate = 8000;
   ch = 1;
 
-  adpcmBlocksPerWrite = 2/ch;
+  adpcmBlocksPerWrite = 2 / ch;
   adpcm = 1;
 
   WriteSci(SCI_RECRATE, sampleRate);
-  WriteSci(SCI_RECGAIN,          0); /* 1024 = gain 1 = best quality */
-  WriteSci(SCI_RECMAXAUTO,    4096); /* if RECGAIN = 0, define max auto gain */
+  WriteSci(SCI_RECGAIN, 0);       /* 1024 = gain 1 = best quality */
+  WriteSci(SCI_RECMAXAUTO, 4096); /* if RECGAIN = 0, define max auto gain */
   if (ch == 2) {
     WriteSci(SCI_RECMODE,
              RM_53_FORMAT_IMA_ADPCM | RM_53_ADC_MODE_JOINT_AGC_STEREO);
@@ -764,16 +688,16 @@ void VS1053RecordFile(FILE *writeFp) {
   }
   /* Fill values according to VS1053b Datasheet Chapter "Adding
      an IMA ADPCM RIFF Header". */
-  Set16(adpcmHeader+22, ch);
-  Set32(adpcmHeader+24, sampleRate);
-  Set32(adpcmHeader+28, (u_int32)sampleRate*ch*256/505);
-  Set16(adpcmHeader+32, 256*ch);
+  Set16(adpcmHeader + 22, ch);
+  Set32(adpcmHeader + 24, sampleRate);
+  Set32(adpcmHeader + 28, (u_int32)sampleRate * ch * 256 / 505);
+  Set16(adpcmHeader + 32, 256 * ch);
   fwrite(adpcmHeader, sizeof(adpcmHeader), 1, writeFp);
   fileSize = sizeof(adpcmHeader);
 
   /* Start the encoder */
   WriteSci(SCI_MODE, ReadSci(SCI_MODE) | SM_LINE1 | SM_ADPCM | SM_RESET);
-  LoadPlugin(imaFix, sizeof(imaFix)/sizeof(imaFix[0]));
+  LoadPlugin(imaFix, sizeof(imaFix) / sizeof(imaFix[0]));
 
   audioFormat = afRiff;
 #else
@@ -791,8 +715,8 @@ void VS1053RecordFile(FILE *writeFp) {
   ch = 2;
 
   WriteSci(SCI_RECRATE, sampleRate);
-  WriteSci(SCI_RECGAIN,          0); /* 1024 = gain 1 = best quality */
-  WriteSci(SCI_RECMAXAUTO,    4096); /* if RECGAIN = 0, define max auto gain */
+  WriteSci(SCI_RECGAIN, 0);       /* 1024 = gain 1 = best quality */
+  WriteSci(SCI_RECMAXAUTO, 4096); /* if RECGAIN = 0, define max auto gain */
   if (ch == 2) {
     WriteSci(SCI_RECMODE, RM_53_FORMAT_PCM | RM_53_ADC_MODE_JOINT_AGC_STEREO);
   } else {
@@ -800,21 +724,19 @@ void VS1053RecordFile(FILE *writeFp) {
   }
   /* Fill values according to VS1053b Datasheet Chapter "Adding
      a PCM RIFF Header. */
-  Set16(pcmHeader+22, ch);
-  Set32(pcmHeader+24, sampleRate);
-  Set32(pcmHeader+28, 2L*sampleRate*ch);
-  Set16(pcmHeader+32, 2*ch);
+  Set16(pcmHeader + 22, ch);
+  Set32(pcmHeader + 24, sampleRate);
+  Set32(pcmHeader + 28, 2L * sampleRate * ch);
+  Set16(pcmHeader + 32, 2 * ch);
   fwrite(pcmHeader, sizeof(pcmHeader), 1, writeFp);
   fileSize = sizeof(pcmHeader);
 
   /* Start the encoder */
   WriteSci(SCI_MODE, ReadSci(SCI_MODE) | SM_LINE1 | SM_ADPCM | SM_RESET);
-  LoadPlugin(imaFix, sizeof(imaFix)/sizeof(imaFix[0]));
+  LoadPlugin(imaFix, sizeof(imaFix) / sizeof(imaFix[0]));
 
   audioFormat = afRiff;
 #endif
-
-
 
 #ifdef RECORDER_USER_INTERFACE
   SaveUIState();
@@ -826,8 +748,8 @@ void VS1053RecordFile(FILE *writeFp) {
 #ifdef RECORDER_USER_INTERFACE
     {
       c = GetUICommand();
-      
-      switch(c) {
+
+      switch (c) {
       case 'q':
         if (playerState == psPlayback) {
           printf("\nSwitching encoder off...\n");
@@ -842,18 +764,18 @@ void VS1053RecordFile(FILE *writeFp) {
       case '-':
         if (volLevel < 255) {
           volLevel++;
-          WriteSci(SCI_VOL, volLevel*0x101);
+          WriteSci(SCI_VOL, volLevel * 0x101);
         }
         break;
       case '+':
         if (volLevel) {
           volLevel--;
-          WriteSci(SCI_VOL, volLevel*0x101);
+          WriteSci(SCI_VOL, volLevel * 0x101);
         }
         break;
         break;
       case '_':
-        printf("\nvol %4.1f\n", -0.5*volLevel);
+        printf("\nvol %4.1f\n", -0.5 * volLevel);
         if (audioFormat == afOggVorbis) {
           printf("sampleCounter %ld\n", ReadVS10xxMem32Counter(0x1800));
         }
@@ -862,8 +784,7 @@ void VS1053RecordFile(FILE *writeFp) {
         printf("\nInteractive VS1053 file recorder keys:\n"
                "- +\tVolume down / up\n"
                "_\tShow current settings\n"
-               "q\tQuit recording\n"
-               );
+               "q\tQuit recording\n");
         break;
       default:
         if (c < -1) {
@@ -875,12 +796,10 @@ void VS1053RecordFile(FILE *writeFp) {
         if (c >= 0) {
           printf("\nUnknown char '%c' (%d)\n", isprint(c) ? c : '.', c);
         }
-        break;  
+        break;
       }
-      
     }
 #endif /* RECORDER_USER_INTERFACE */
-
 
     /* See if there is some data available */
     if ((n = ReadSci(SCI_RECWORDS)) > dataNeededInBuffer) {
@@ -889,28 +808,28 @@ void VS1053RecordFile(FILE *writeFp) {
 
       if (audioFormat == afOggVorbis) {
         /* Always leave at least one word unread if Ogg Vorbis format */
-        n = min(n-1, REC_BUFFER_SIZE/2);
+        n = min(n - 1, REC_BUFFER_SIZE / 2);
       } else {
         /* Always writes one or two IMA ADPCM block(s) at a time */
-        n = dataNeededInBuffer/2;
+        n = dataNeededInBuffer / 2;
         adpcmBlocks += adpcmBlocksPerWrite;
       }
       if (audioFormat == afOggVorbis || adpcm) {
-        for (i=0; i<n; i++) {
+        for (i = 0; i < n; i++) {
           u_int16 w = ReadSci(SCI_RECDATA);
           *rbp++ = (u_int8)(w >> 8);
           *rbp++ = (u_int8)(w & 0xFF);
         }
       } else {
         /* Make little-endian conversion for 16-bit PCM .WAV files */
-        for (i=0; i<n; i++) {
+        for (i = 0; i < n; i++) {
           u_int16 w = ReadSci(SCI_RECDATA);
           *rbp++ = (u_int8)(w & 0xFF);
           *rbp++ = (u_int8)(w >> 8);
         }
       }
-      fwrite(recBuf, 1, 2*n, writeFp);
-      fileSize += 2*n;
+      fwrite(recBuf, 1, 2 * n, writeFp);
+      fileSize += 2 * n;
     } else {
       /* This code is only for Ogg Vorbis recording. */
       if (playerState == psUserRequestedCancel && (ReadSci(SCI_AICTRL3) & 2)) {
@@ -920,12 +839,12 @@ void VS1053RecordFile(FILE *writeFp) {
 
     if (fileSize - nextReportPos >= REPORT_INTERVAL) {
       nextReportPos += REPORT_INTERVAL;
-      printf("\r%ldKiB ", fileSize/1024);
+      printf("\r%ldKiB ", fileSize / 1024);
       if (audioFormat == afOggVorbis) {
         printf("%lds ", ReadVS10xxMem32Counter(0x8));
       }
-      printf("%uHz %s %s ",
-             sampleRate, (ch == 2) ? "stereo" : "mono", afName[audioFormat]);
+      printf("%uHz %s %s ", sampleRate, (ch == 2) ? "stereo" : "mono",
+             afName[audioFormat]);
       if (audioFormat == afOggVorbis) {
         printf("%3.1f kbit/s, ", ReadVS10xxMem32(0xC) * 0.001);
         /* Read VU meter and determine from here if the Ogg file has been
@@ -937,20 +856,17 @@ void VS1053RecordFile(FILE *writeFp) {
           WriteSci(SCI_AICTRL0, 0x8080);
           if (lr & 0x80) {
             ch = 1;
-            printf("vu %3ddB ",
-                   LinToDB(lr & 0x7F00)-95);
+            printf("vu %3ddB ", LinToDB(lr & 0x7F00) - 95);
           } else {
             ch = 2;
-            printf("l %3ddB, r %3ddB ",
-                   LinToDB(lr & 0x7F00)-95,
-                   LinToDB(256 * (lr&0x7F))-95);
+            printf("l %3ddB, r %3ddB ", LinToDB(lr & 0x7F00) - 95,
+                   LinToDB(256 * (lr & 0x7F)) - 95);
           }
         }
       }
       fflush(stdout);
     }
   } /* while (playerState != psStopped) */
-
 
   if (audioFormat == afOggVorbis) {
     /* Correctly read and write final bytes of an Ogg Vorbis file */
@@ -975,17 +891,16 @@ void VS1053RecordFile(FILE *writeFp) {
   } else if (adpcm) {
     /* Update file sizes for an RIFF IMA ADPCM .WAV file */
     fseek(writeFp, 0, SEEK_SET);
-    Set32(adpcmHeader+4, fileSize-8);
-    Set32(adpcmHeader+48, adpcmBlocks*505);
-    Set32(adpcmHeader+56, fileSize-60);
+    Set32(adpcmHeader + 4, fileSize - 8);
+    Set32(adpcmHeader + 48, adpcmBlocks * 505);
+    Set32(adpcmHeader + 56, fileSize - 60);
     fwrite(adpcmHeader, sizeof(adpcmHeader), 1, writeFp);
   } else {
     /* Update file sizes for an RIFF PCM .WAV file */
     fseek(writeFp, 0, SEEK_SET);
-    Set32(pcmHeader+4, fileSize-8);
-    Set32(pcmHeader+40, fileSize-36);
+    Set32(pcmHeader + 4, fileSize - 8);
+    Set32(pcmHeader + 40, fileSize - 36);
     fwrite(pcmHeader, sizeof(pcmHeader), 1, writeFp);
-
   }
 
 #ifdef RECORDER_USER_INTERFACE
@@ -999,34 +914,26 @@ void VS1053RecordFile(FILE *writeFp) {
   printf("ok\n");
 }
 
-
-
-
-
 /*
 
   Hardware Initialization for VS1053.
 
-  
+  
 */
 int VSTestInitHardware(void) {
   /* Write here your microcontroller code which puts VS10xx in hardware
      reset anc back (set xRESET to 0 for at least a few clock cycles,
      then to 1). */
-    gpio__reset(VS_XRESET);
-    vtaskdelay(2);
-    gpio__set(VS_XRESET);
+  gpio__reset(VS_XRESET);
+  vtaskdelay(2);
+  gpio__set(VS_XRESET);
 
   return 0;
 }
 
-
-
 /* Note: code SS_VER=2 is used for both VS1002 and VS1011e */
-const u_int16 chipNumber[16] = {
-  1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
+const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
+                                0,    0,    0,    0,    0,    0,    0,    0};
 
 /*
 
@@ -1034,7 +941,7 @@ const u_int16 chipNumber[16] = {
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
 */
 int VSTestInitSoftware(void) {
   u_int16 ssVer;
@@ -1048,7 +955,7 @@ int VSTestInitSoftware(void) {
      reset we know what the status of the IC is. You need, depending
      on your application, either set or not set SM_SDISHARE. See the
      Datasheet for details. */
-  WriteSci(SCI_MODE, SM_SDINEW|SM_SDISHARE|SM_TESTS|SM_RESET);
+  WriteSci(SCI_MODE, SM_SDINEW | SM_SDISHARE | SM_TESTS | SM_RESET);
 
   /* A quick sanity check: write to two registers, then test if we
      get the same results. Note that if you use a too high SPI
@@ -1081,7 +988,6 @@ int VSTestInitSoftware(void) {
   WriteSci(SCI_CLOCKF,
            HZ_TO_SC_FREQ(12288000) | SC_MULT_53_35X | SC_ADD_53_10X);
 
-
   /* Now when we have upped the VS10xx clock speed, the microcontroller
      SPI bus can run faster. Do that before you start playing or
      recording files. */
@@ -1093,15 +999,11 @@ int VSTestInitSoftware(void) {
   WriteSci(SCI_VOL, 0x0c0c);
 
   /* Now it's time to load the proper patch set. */
-  LoadPlugin(plugin, sizeof(plugin)/sizeof(plugin[0]));
+  LoadPlugin(plugin, sizeof(plugin) / sizeof(plugin[0]));
 
   /* We're ready to go. */
   return 0;
 }
-
-
-
-
 
 /*
   Main function that activates either playback or recording.

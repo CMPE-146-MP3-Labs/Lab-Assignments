@@ -1,17 +1,17 @@
 #include "FreeRTOS.h"
 #include "board_io.h"
 #include "common_macros.h"
+#include "controls.h"
 #include "ff.h"
 #include "periodic_scheduler.h"
 #include "queue.h"
 #include "sj2_cli.h"
 #include "song_list.h"
-#include "task.h"
 #include "ssp2.h"
+#include "task.h"
+#include "vs10xx_uc.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "controls.h"
-#include "vs10xx_uc.h"  
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
@@ -66,12 +66,10 @@ static void player_task(void *params) {
 
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
     fprintf(stderr, "Output: ");
-    while(!gpio__get(VS_DREQ)){
+    while (!gpio__get(VS_DREQ)) {
       vTaskDelay(3);
     }
     VS1053PlayFile(&bytes_512);
-
-
   }
 }
 
@@ -99,4 +97,3 @@ static void reader_task(void *params) {
     f_close(&mp3_file);
   }
 }
-

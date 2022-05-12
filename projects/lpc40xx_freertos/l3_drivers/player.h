@@ -13,30 +13,30 @@
 
 #include "vs10xx_uc.h"
 
-void init_mp3decoder(){
+void init_mp3decoder() {
   int VSTestInitHardware(void);
   int VSTestInitSoftware(void);
 }
 int VSTestInitHardware(void);
 int VSTestInitSoftware(void);
 int VSTestHandleFile(const char *fileName, int record);
-void init_mp3decoder(){
+void init_mp3decoder() {
   int VSTestInitHardware(void);
   int VSTestInitSoftware(void);
 }
-void WriteSci(u_int8 addr, u_int16 data){
+void WriteSci(u_int8 addr, u_int16 data) {
   LPC_SSP2->DR = data;
   gpio__set(VS_CS);
   ssp2__dma_write_block(&addr, 2);
   gpio__reset(VS_CS);
 }
-u_int16 ReadSci(u_int8 addr){
+u_int16 ReadSci(u_int8 addr) {
   gpio__set(VS_CS);
   ssp2__dma_read_block(&addr, 2);
   gpio__reset(VS_CS);
   return (uint16_t)(LPC_SSP2->DR & 0xFF)
 }
-int WriteSdi(const u_int8 *data, u_int8 bytes){
+int WriteSdi(const u_int8 *data, u_int8 bytes) {
   LPC_SSP2->DR = data;
   gpio__set(VS_CS);
   ssp2__dma_write_block(&bytes, 1);
