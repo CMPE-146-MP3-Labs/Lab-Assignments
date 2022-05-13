@@ -10,7 +10,7 @@
   v1.00 2012-11-23 HH  Initial version
 
 */
-
+#include "gpio.h"
 /* NXP LPC 408X_7X Bridge
  */
 #define VS_XRESET gpio__construct_as_output(GPIO__PORT_2, 5)
