@@ -16,7 +16,7 @@
 
 int VSTestInitHardware(void);
 int VSTestInitSoftware(void);
-int VSTestHandleFile(const char *fileName, int record);
+int VSTestHandleFile(const char *fileName);
 void init_mp3decoder() {
   int VSTestInitHardware(void);
   int VSTestInitSoftware(void);

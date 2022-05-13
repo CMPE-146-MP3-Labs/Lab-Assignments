@@ -80,15 +80,14 @@ static void reader_task(void *params) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     FIL mp3_file;
-
+      
     result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
     fprintf(stderr, "Open Result: %i", result);
-
+    
     while (!f_eof(&mp3_file)) {
       result = f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
       fprintf(stderr, "Read Result: %i", result);
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
-      vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }
     f_close(&mp3_file);
