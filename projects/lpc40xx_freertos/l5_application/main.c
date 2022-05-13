@@ -9,7 +9,6 @@
 #include "song_list.h"
 #include "ssp2.h"
 #include "task.h"
-#include "vs10xx_uc.h"
 #include <stdio.h>
 #include <stdlib.h>
 
