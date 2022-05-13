@@ -26,7 +26,7 @@
 
 /* We also want to have the VS1053b Ogg Vorbis Encoder plugin. To get more
    than one plugin included, we'll have to include it in a slightly more
-   tricky way. To get the plugin included below, download the latest version
+   tricky way. To the plugin included below, download the latest version
    of the VS1053 Ogg Vorbis Encoder Application from
    http://www.vlsi.fi/en/support/software/vs10xxapplications.html */
 #define SKIP_PLUGIN_VARNAME
@@ -915,7 +915,15 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -950,7 +958,15 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
+
+
+
+
+
+
+
 
 
 
