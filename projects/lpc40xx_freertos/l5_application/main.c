@@ -3,12 +3,12 @@
 #include "common_macros.h"
 #include "ff.h"
 #include "periodic_scheduler.h"
+#include "player.h"
 #include "queue.h"
 #include "sj2_cli.h"
 #include "song_list.h"
 #include "ssp2.h"
 #include "task.h"
-#include "vs10xx_uc.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -52,7 +52,7 @@ static void create_reader_task(void) {
 }
 
 static void player_task(void *params) {
-  char bytes_512[512] = {0};
+  u_int8 bytes_512[512] = {0};
   init_mp3decoder();
 
   while (1) {
@@ -72,7 +72,7 @@ static void player_task(void *params) {
 
 static void reader_task(void *params) {
   songname_t name;
-  char bytes_512[512];
+  u_int8 bytes_512[512];
   UINT bytes_read;
   FRESULT result;
 
@@ -80,10 +80,10 @@ static void reader_task(void *params) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     FIL mp3_file;
-      
+
     result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
     fprintf(stderr, "Open Result: %i", result);
-    
+
     while (!f_eof(&mp3_file)) {
       result = f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
       fprintf(stderr, "Read Result: %i", result);
