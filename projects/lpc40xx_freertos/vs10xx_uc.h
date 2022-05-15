@@ -11,6 +11,7 @@
 
 */
 #include "gpio.h"
+#include "player.h"
 /* NXP LPC 408X_7X Bridge
  */
 #define VS_XRESET gpio__construct_as_output(GPIO__PORT_2, 5)
