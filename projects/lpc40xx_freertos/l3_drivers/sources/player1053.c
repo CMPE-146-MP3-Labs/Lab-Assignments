@@ -12,7 +12,7 @@
 
 */
 
-#include "player.h"
+#include "vs10xx_uc.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -915,7 +915,14 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
+
+
+
+
+
+
 
 
 
@@ -960,7 +967,14 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
+
+
+
+
+
+
 
 
 

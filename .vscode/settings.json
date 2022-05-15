@@ -5,6 +5,7 @@
         "ff.h": "c",
         "cstdio": "c",
         "*.def": "c",
-        "*.plg": "c"
+        "*.plg": "c",
+        "ctype.h": "c"
     }
 }
