@@ -269,7 +269,7 @@ void VS1053PlayFile(uint8_t *playBuf) {
       // This is the heart of the algorithm: on the following line
       // actual audio data gets sent to VS10xx.
       WriteSdi(bufP, t);
-
+      fprintf(stderr,"Writing...");
       bufP += t;
       bytesInBuffer -= t;
       pos += t;
@@ -915,7 +915,10 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
+
+
 
 
 
@@ -969,7 +972,10 @@ const uint16_t chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
+
+
 
 
 
