@@ -67,6 +67,7 @@ static void player_task(void *params) {
       fprintf(stderr, "DREQ: NOT READY");
     }
     VS1053PlayFile(&bytes_512);
+    fprintf(stderr,"SENT DATA");
   }
 }
 
