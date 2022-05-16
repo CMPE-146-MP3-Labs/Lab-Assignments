@@ -52,7 +52,7 @@ static void create_reader_task(void) {
 }
 
 static void player_task(void *params) {
-  u_int8 bytes_512[512] = {0};
+  uint8_t bytes_512[512] = {0};
   init_mp3decoder();
 
   while (1) {
@@ -72,7 +72,7 @@ static void player_task(void *params) {
 
 static void reader_task(void *params) {
   songname_t name;
-  u_int8 bytes_512[512];
+  uint8_t bytes_512[512];
   UINT bytes_read;
   FRESULT result;
 

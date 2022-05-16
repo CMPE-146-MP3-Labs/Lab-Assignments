@@ -18,16 +18,6 @@
 #define VS_CS gpio__construct_as_output(GPIO__PORT_2, 2)
 #define VS_DREQ gpio__construct_as_input(GPIO__PORT_2, 4)
 
-/* If these typedefs create clashed with what you get from other files
-   with your compiler, make sure that they are compatible (they probably
-   are), then remove these ones. */
-typedef char s_int8;
-typedef unsigned char u_int8;
-typedef short s_int16;
-typedef unsigned short u_int16;
-typedef long s_int32;
-typedef unsigned long u_int32;
-
 /* SCI registers */
 
 #define SCI_MODE 0x00

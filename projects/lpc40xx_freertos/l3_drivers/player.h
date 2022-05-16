@@ -15,11 +15,11 @@
 #include "ssp2.h"
 #include "vs10xx_uc.h"
 
-void VS1053PlayFile(u_int8 *bytes_512);
+void VS1053PlayFile(uint8_t *bytes_512);
 void init_mp3decoder();
-void WriteSci(u_int8 addr, u_int16 data);
-u_int16 ReadSci(u_int8 addr);
-int WriteSdi(const u_int8 *data, u_int8 bytes);
+void WriteSci(uint8_t addr, uint16_t data);
+uint16_t ReadSci(uint8_t addr);
+int WriteSdi(const uint8_t *data, uint8_t bytes);
 void SaveUIState(void);
 void RestoreUIState(void);
 int GetUICommand(void);
