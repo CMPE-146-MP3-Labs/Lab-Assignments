@@ -93,6 +93,7 @@ const char *afName[] = {
     "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
 };
 
+
 /*
   Read 32-bit increasing counter value from addr.
   Because the 32-bit value can change while reading it,
@@ -915,7 +916,8 @@ void VS1053RecordFile(FILE *writeFp) {
 
   Hardware Initialization for VS1053.
 
-  
+  
+
 
 
 
@@ -967,7 +969,8 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 
   Note that you need to check whether SM_SDISHARE should be set in
   your application or not.
-  
+  
+
 
 
 
@@ -1063,7 +1066,10 @@ int VSTestInitSoftware(void) {
   /* We're ready to go. */
   return 0;
 }
-
+ void init_mp3decoder(){
+  int VSTestInitHardware(void);
+  int VSTestInitSoftware(void);
+}
 /*
   Main function that activates either playback or recording.
 */
@@ -1071,11 +1077,35 @@ int VSTestHandleFile(const char *fileName) {
   FILE *fp = fopen(fileName, "rb");
   printf("Play file %s\n", fileName);
   if (fp) {
-    // VS1053PlayFile(fp);
+    VS1053PlayFile(fp);
   } else {
     printf("Failed opening %s for reading\n", fileName);
     return -1;
   }
 
+  return 0;
+}
+
+void SaveUIState(void) { return; }
+void RestoreUIState(void) { return; }
+int GetUICommand(void) { return 0; }
+
+void WriteSci(u_int8 addr, u_int16 data) {
+  gpio__set(VS_CS);
+  ssp2__exchange_byte(addr);
+  ssp2__exchange_byte(data >> 0 & 0xF);
+  ssp2__exchange_byte(data >> 8 & 0xF);
+  gpio__reset(VS_CS);
+}
+u_int16 ReadSci(u_int8 addr) {
+  gpio__set(VS_CS);
+  ssp2__dma_read_block(&addr, 2);
+  gpio__reset(VS_CS);
+  return (uint16_t)(LPC_SSP2->DR & 0xFF);
+}
+int WriteSdi(const u_int8 *data, u_int8 bytes) {
+  gpio__set(VS_CS);
+  ssp2__dma_write_block(data, bytes);
+  gpio__reset(VS_CS);
   return 0;
 }
