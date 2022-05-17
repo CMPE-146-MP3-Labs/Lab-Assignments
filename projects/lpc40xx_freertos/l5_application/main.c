@@ -23,15 +23,13 @@ int main(void) {
   create_player_task();
   sj2_cli__init();
 
-  puts("Starting RTOS\n");
-
   song_list__populate();
   for (size_t song_number = 0; song_number < song_list__get_item_count();
        song_number++) {
-    printf("Song %2d: %s\n", (1 + song_number),
-           song_list__get_name_for_item(song_number));
+    fprintf(stderr, "Song %2d: %s\n", (1 + song_number),
+            song_list__get_name_for_item(song_number));
   }
-
+  puts("Starting RTOS\n");
   vTaskStartScheduler();
 
   return 0;

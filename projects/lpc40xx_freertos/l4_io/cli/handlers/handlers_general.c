@@ -3,6 +3,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
+#include "song_list.h"
 #include "uart_printf.h"
 
 static void cli__task_list_print(sl_string_s user_input_minus_command_name,
