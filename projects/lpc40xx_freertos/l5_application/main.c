@@ -1,15 +1,10 @@
 #include "FreeRTOS.h"
-#include "board_io.h"
-#include "common_macros.h"
 #include "ff.h"
-#include "periodic_scheduler.h"
 #include "queue.h"
 #include "sj2_cli.h"
 #include "song_list.h"
 #include "task.h"
-#include "ssp2.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
@@ -54,7 +49,7 @@ static void create_reader_task(void) {
 
 static void player_task(void *params) {
   char bytes_512[512] = {0};
-  ssp2__initialize(400);
+  
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
@@ -62,27 +57,28 @@ static void player_task(void *params) {
     }
 
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
-    fprintf(stderr, "Output: ");
-    for (int i = 0; i < sizeof(bytes_512); i++) {
-      fprintf(stderr, "%c", bytes_512[i]);
-    }
-    vTaskDelay(2000);
+    
+
+    
   }
 }
 
 static void reader_task(void *params) {
   songname_t name;
-  char bytes_512[512];
-  UINT bytes_read;
-  FRESULT result;
+  //char bytes_512[512];
+  //UINT bytes_read;
+  //FRESULT result;
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
-    FIL mp3_file;
+    //FIL mp3_file;
+    VSTestHandleFile(&name, 0);
 
-    result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
+    /*result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
     fprintf(stderr, "Open Result: %i", result);
+
+    
 
     while (!f_eof(&mp3_file)) {
       result = f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
@@ -90,7 +86,9 @@ static void reader_task(void *params) {
       fprintf(stderr, "\nBytes read: %i\n", bytes_read);
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
-    }
-    f_close(&mp3_file);
+    }*/
+    //f_close(&mp3_file);
   }
 }
+
+

@@ -6,10 +6,8 @@
 * @version  1.20
 * @date   05. May 2022
 * @author CMPE 146 - Team 8: 
-*           Aaron Rice, Gianine Dao, Aishwar Gupta, Ulysses Villegas 
+*           Gianine Dao, Aishwar Gupta, Aaron Rice, Ulysses Villegas 
 * 
-* Copyright(C) 2011, NXP Semiconductor
-* All rights reserved.
 *
 ***********************************************************************/
 
@@ -113,6 +111,14 @@ typedef struct
 *   SC DECODE TIME activates the built-in clock multiplier. 
 *   This will multiply XTALI to create a higher CLKI.
 */
+
+/******************************************************************************/
+/*                         Peripheral memory map                              */
+/******************************************************************************/
+/* Base addresses                                                             */
+#define VS_SYSTEM_BASE          (0000U)         //System RAM
+#define VS_USER_BASE            (1800U)         //User RAM
+#define VS_STACK_BASE           (1880U)         //Stack
 
 
 

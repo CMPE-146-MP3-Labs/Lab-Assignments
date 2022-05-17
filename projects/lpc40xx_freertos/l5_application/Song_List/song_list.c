@@ -18,8 +18,7 @@ static void song_list__handle_filename(const char *filename) {
 
     // Better: But strncpy() does not guarantee to copy null char if max length
     // encountered So we can manually subtract 1 to reserve as NULL char
-    strncpy(list_of_songs[number_of_songs], filename,
-            sizeof(song_memory_t) - 1);
+    strncpy(list_of_songs[number_of_songs], filename, sizeof(song_memory_t) - 1);
 
     // Best: Compensates for the null, so if 128 char filename, then it copies
     // 127 chars, AND the NULL char snprintf(list_of_songs[number_of_songs],
