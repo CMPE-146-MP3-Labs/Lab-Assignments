@@ -200,7 +200,8 @@ typedef unsigned long u_int32;
 
 /* The following macro is for VS1011.
    The macro will automatically set the clock doubler if XTALI < 16 MHz */
-#define HZ_TO_SCI_CLOCKF(hz) ((((hz) < 16000000) ? 0x8000 : 0) + ((hz) + 1000) / 2000)
+#define HZ_TO_SCI_CLOCKF(hz)                                                   \
+  ((((hz) < 16000000) ? 0x8000 : 0) + ((hz) + 1000) / 2000)
 
 /* Following are for VS1003 and VS1033 */
 #define SC_MULT_03_10X 0x0000
@@ -246,7 +247,7 @@ typedef unsigned long u_int32;
 #define SCI_WRAM_X_OFFSET 0x0000
 #define SCI_WRAM_Y_OFFSET 0x4000
 #define SCI_WRAM_I_OFFSET 0x8000
-#define SCI_WRAM_IO_OFFSET 0x0000                    /* I/O addresses are @0xC000 -> no offset */
+#define SCI_WRAM_IO_OFFSET 0x0000 /* I/O addresses are @0xC000 -> no offset */
 #define SCI_WRAM_PARAMETRIC_OFFSET (0xC0C0 - 0x1E00) /* VS1063 */
 #define SCI_WRAM_Y2_OFFSET 0x0000                    /* VS1063 */
 
@@ -540,9 +541,10 @@ typedef unsigned long u_int32;
 #define PAR_AAC_SBR_AND_PS_STATUS_PS_PRESENT_B 2        /* VS1063, VS1053 */
 #define PAR_AAC_SBR_AND_PS_STATUS_PS_ACTIVE_B 3         /* VS1063, VS1053 */
 
-#define PAR_AAC_SBR_AND_PS_STATUS_SBR_PRESENT (1 << 0)       /* VS1063, VS1053 */
-#define PAR_AAC_SBR_AND_PS_STATUS_UPSAMPLING_ACTIVE (1 << 1) /* VS1063, VS1053 */
-#define PAR_AAC_SBR_AND_PS_STATUS_PS_PRESENT (1 << 2)        /* VS1063, VS1053 */
-#define PAR_AAC_SBR_AND_PS_STATUS_PS_ACTIVE (1 << 3)         /* VS1063, VS1053 */
+#define PAR_AAC_SBR_AND_PS_STATUS_SBR_PRESENT (1 << 0) /* VS1063, VS1053 */
+#define PAR_AAC_SBR_AND_PS_STATUS_UPSAMPLING_ACTIVE                            \
+  (1 << 1)                                            /* VS1063, VS1053 */
+#define PAR_AAC_SBR_AND_PS_STATUS_PS_PRESENT (1 << 2) /* VS1063, VS1053 */
+#define PAR_AAC_SBR_AND_PS_STATUS_PS_ACTIVE (1 << 3)  /* VS1063, VS1053 */
 
 #endif /* !VS10XX_MICROCONTROLLER_DEFINITIONS_H */

@@ -1,5 +1,6 @@
 #include "FreeRTOS.h"
 #include "ff.h"
+#include "player.h"
 #include "queue.h"
 #include "sj2_cli.h"
 #include "song_list.h"
@@ -47,7 +48,7 @@ static void create_reader_task(void) {
 
 static void player_task(void *params) {
   char bytes_512[512] = {0};
-  
+  VSTestInitHardware();
 
   while (1) {
     while (uxQueueMessagesWaiting(Q_songdata) == 0) {
@@ -55,28 +56,26 @@ static void player_task(void *params) {
     }
 
     xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
-    
-
-    
   }
 }
 
 static void reader_task(void *params) {
   songname_t name;
-  //char bytes_512[512];
-  //UINT bytes_read;
-  //FRESULT result;
+  // char bytes_512[512];
+  // UINT bytes_read;
+  // FRESULT result;
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
-    //FIL mp3_file;
+    // FIL mp3_file;
+    VSTestInitSoftware();
     VSTestHandleFile(&name, 0);
 
     /*result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
     fprintf(stderr, "Open Result: %i", result);
 
-    
+
 
     while (!f_eof(&mp3_file)) {
       result = f_read(&mp3_file, &bytes_512, sizeof(bytes_512), &bytes_read);
@@ -85,8 +84,6 @@ static void reader_task(void *params) {
       vTaskDelay(10);
       xQueueSend(Q_songdata, &bytes_512[0], portMAX_DELAY);
     }*/
-    //f_close(&mp3_file);
+    // f_close(&mp3_file);
   }
 }
-
-

@@ -97,7 +97,8 @@ enum AudioFormat {
 } audioFormat = afUnknown;
 
 const char *afName[] = {
-    "unknown", "RIFF", "Ogg", "MP1", "MP2", "MP3", "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
+    "unknown", "RIFF",     "Ogg",      "MP1",  "MP2", "MP3",
+    "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
 };
 
 void WriteSci(u_int8 addr, u_int16 data) {
@@ -258,7 +259,12 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
   }
 }
 
-enum PlayerStates { psPlayback = 0, psUserRequestedCancel, psCancelSentToVS10xx, psStopped } playerState;
+enum PlayerStates {
+  psPlayback = 0,
+  psUserRequestedCancel,
+  psCancelSentToVS10xx,
+  psStopped
+} playerState;
 
 /*
 
@@ -355,7 +361,9 @@ void VS1053PlayFile(FIL *readFp) {
         u_int16 h1 = ReadSci(SCI_HDAT1);
 #endif
 
-        nextReportPos += (audioFormat == afMidi || audioFormat == afUnknown) ? REPORT_INTERVAL_MIDI : REPORT_INTERVAL;
+        nextReportPos += (audioFormat == afMidi || audioFormat == afUnknown)
+                             ? REPORT_INTERVAL_MIDI
+                             : REPORT_INTERVAL;
         /* It is important to collect endFillByte while still in normal
            playback. If we need to later cancel playback or run into any
            trouble with e.g. a broken file, we need to be able to repeatedly
@@ -413,8 +421,9 @@ void VS1053PlayFile(FIL *readFp) {
                "%1ds %1.1f"
                "kb/s %dHz %s %s"
                " %04x   ",
-               pos / 1024, ReadSci(SCI_DECODE_TIME), byteRate * (8.0 / 1000.0), sampleRate & 0xFFFE,
-               (sampleRate & 1) ? "stereo" : "mono", afName[audioFormat], h1);
+               pos / 1024, ReadSci(SCI_DECODE_TIME), byteRate * (8.0 / 1000.0),
+               sampleRate & 0xFFFE, (sampleRate & 1) ? "stereo" : "mono",
+               afName[audioFormat], h1);
 
         fflush(stdout);
 #endif /* REPORT_ON_SCREEN */
@@ -447,7 +456,8 @@ void VS1053PlayFile(FIL *readFp) {
       u_int32 mSec = ReadVS10xxMem32Counter(PAR_POSITION_MSEC);
       printf("\nvol %1.1fdB, MODE %04x, ST %04x, "
              "HDAT1 %04x HDAT0 %04x\n",
-             -0.5 * volLevel, ReadSci(SCI_MODE), ReadSci(SCI_STATUS), ReadSci(SCI_HDAT1), ReadSci(SCI_HDAT0));
+             -0.5 * volLevel, ReadSci(SCI_MODE), ReadSci(SCI_STATUS),
+             ReadSci(SCI_HDAT1), ReadSci(SCI_HDAT0));
       printf("  sampleCounter %lu, ", ReadVS10xxMem32Counter(0x1800));
       if (mSec != 0xFFFFFFFFU) {
         printf("positionMSec %lu, ", mSec);
@@ -496,7 +506,8 @@ void VS1053PlayFile(FIL *readFp) {
     /* Toggle mono mode. Implemented in the VS1053b Patches package */
     case 'm':
       playMode ^= PAR_PLAY_MODE_MONO_ENA;
-      printf("\nMono mode %s\n", (playMode & PAR_PLAY_MODE_MONO_ENA) ? "on" : "off");
+      printf("\nMono mode %s\n",
+             (playMode & PAR_PLAY_MODE_MONO_ENA) ? "on" : "off");
       WriteVS10xxMem(PAR_PLAY_MODE, playMode);
       break;
 
@@ -574,7 +585,7 @@ void VS1053PlayFile(FIL *readFp) {
       break;
     }  /* switch (c) */
 #endif /* PLAYER_USER_INTERFACE */
-  }    /* while ((bytesInBuffer = fread(...)) > 0 && playerState != psStopped) */
+  } /* while ((bytesInBuffer = fread(...)) > 0 && playerState != psStopped) */
 
 #ifdef PLAYER_USER_INTERFACE
   RestoreUIState();
@@ -606,32 +617,34 @@ void VS1053PlayFile(FIL *readFp) {
      in a stable state. It is now safe to call this function again for
      the next song, and again, and again... */
   printf("ok\n");
-  f_close(&readFp);
+  f_close(readFp);
 }
 
-u_int8 adpcmHeader[60] = {'R',  'I',  'F',  'F',  0xFF, 0xFF, 0xFF, 0xFF, 'W', 'A',
-                          'V',  'E',  'f',  'm',  't',  ' ',  0x14, 0,    0,   0, /* 20 */
-                          0x11, 0,                                                /* IMA ADPCM */
-                          0x1,  0,                                                /* chan */
-                          0x0,  0x0,  0x0,  0x0,                                  /* sampleRate */
-                          0x0,  0x0,  0x0,  0x0,                                  /* byteRate */
-                          0,    1,                                                /* blockAlign */
-                          4,    0,                                                /* bitsPerSample */
-                          2,    0,                                                /* byteExtraData */
-                          0xf9, 0x1,                                              /* samplesPerBlock = 505 */
-                          'f',  'a',  'c',  't',                                  /* subChunk2Id */
-                          0x4,  0,    0,    0,                                    /* subChunk2Size */
-                          0xFF, 0xFF, 0xFF, 0xFF,                                 /* numOfSamples */
+u_int8 adpcmHeader[60] = {'R',  'I',  'F',  'F',  0xFF, 0xFF, 0xFF, 0xFF,
+                          'W',  'A',  'V',  'E',  'f',  'm',  't',  ' ',
+                          0x14, 0,    0,    0,    /* 20 */
+                          0x11, 0,                /* IMA ADPCM */
+                          0x1,  0,                /* chan */
+                          0x0,  0x0,  0x0,  0x0,  /* sampleRate */
+                          0x0,  0x0,  0x0,  0x0,  /* byteRate */
+                          0,    1,                /* blockAlign */
+                          4,    0,                /* bitsPerSample */
+                          2,    0,                /* byteExtraData */
+                          0xf9, 0x1,              /* samplesPerBlock = 505 */
+                          'f',  'a',  'c',  't',  /* subChunk2Id */
+                          0x4,  0,    0,    0,    /* subChunk2Size */
+                          0xFF, 0xFF, 0xFF, 0xFF, /* numOfSamples */
                           'd',  'a',  't',  'a',  0xFF, 0xFF, 0xFF, 0xFF};
 
-u_int8 pcmHeader[44] = {'R',  'I', 'F', 'F', 0xFF, 0xFF, 0xFF, 0xFF, 'W', 'A',
-                        'V',  'E', 'f', 'm', 't',  ' ',  0x10, 0,    0,   0, /* 16 */
-                        0x1,  0,                                             /* PCM */
-                        0x1,  0,                                             /* chan */
-                        0x0,  0x0, 0x0, 0x0,                                 /* sampleRate */
-                        0x0,  0x0, 0x0, 0x0,                                 /* byteRate */
-                        2,    0,                                             /* blockAlign */
-                        0x10, 0,                                             /* bitsPerSample */
+u_int8 pcmHeader[44] = {'R',  'I', 'F', 'F', 0xFF, 0xFF, 0xFF, 0xFF,
+                        'W',  'A', 'V', 'E', 'f',  'm',  't',  ' ',
+                        0x10, 0,   0,   0,   /* 16 */
+                        0x1,  0,             /* PCM */
+                        0x1,  0,             /* chan */
+                        0x0,  0x0, 0x0, 0x0, /* sampleRate */
+                        0x0,  0x0, 0x0, 0x0, /* byteRate */
+                        2,    0,             /* blockAlign */
+                        0x10, 0,             /* bitsPerSample */
                         'd',  'a', 't', 'a', 0xFF, 0xFF, 0xFF, 0xFF};
 
 void Set32(u_int8 *d, u_int32 n) {
@@ -675,7 +688,8 @@ void VS1053RecordFile(FILE *writeFp) {
   /* Initialize recording */
 
   /* Set clock to a known, high value. */
-  WriteSci(SCI_CLOCKF, HZ_TO_SC_FREQ(12288000) | SC_MULT_53_45X | SC_ADD_53_00X);
+  WriteSci(SCI_CLOCKF,
+           HZ_TO_SC_FREQ(12288000) | SC_MULT_53_45X | SC_ADD_53_00X);
 
 #if 1
   /* Ogg Vorbis recording from line in. */
@@ -722,7 +736,8 @@ void VS1053RecordFile(FILE *writeFp) {
   WriteSci(SCI_RECGAIN, 0);       /* 1024 = gain 1 = best quality */
   WriteSci(SCI_RECMAXAUTO, 4096); /* if RECGAIN = 0, define max auto gain */
   if (ch == 2) {
-    WriteSci(SCI_RECMODE, RM_53_FORMAT_IMA_ADPCM | RM_53_ADC_MODE_JOINT_AGC_STEREO);
+    WriteSci(SCI_RECMODE,
+             RM_53_FORMAT_IMA_ADPCM | RM_53_ADC_MODE_JOINT_AGC_STEREO);
   } else {
     WriteSci(SCI_RECMODE, RM_53_FORMAT_IMA_ADPCM | RM_53_ADC_MODE_LEFT);
   }
@@ -883,7 +898,8 @@ void VS1053RecordFile(FILE *writeFp) {
       if (audioFormat == afOggVorbis) {
         printf("%lds ", ReadVS10xxMem32Counter(0x8));
       }
-      printf("%uHz %s %s ", sampleRate, (ch == 2) ? "stereo" : "mono", afName[audioFormat]);
+      printf("%uHz %s %s ", sampleRate, (ch == 2) ? "stereo" : "mono",
+             afName[audioFormat]);
       if (audioFormat == afOggVorbis) {
         printf("%3.1f kbit/s, ", ReadVS10xxMem32(0xC) * 0.001);
         /* Read VU meter and determine from here if the Ogg file has been
@@ -898,7 +914,8 @@ void VS1053RecordFile(FILE *writeFp) {
             printf("vu %3ddB ", LinToDB(lr & 0x7F00) - 95);
           } else {
             ch = 2;
-            printf("l %3ddB, r %3ddB ", LinToDB(lr & 0x7F00) - 95, LinToDB(256 * (lr & 0x7F)) - 95);
+            printf("l %3ddB, r %3ddB ", LinToDB(lr & 0x7F00) - 95,
+                   LinToDB(256 * (lr & 0x7F)) - 95);
           }
         }
       }
@@ -970,7 +987,7 @@ int VSTestInitHardware(void) {
   const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
 
   // Keep scaling down divider until calculated is higher
-  while (2048 < (cpu_clock_khz / divider) && divider <= 254) {
+  while (2000 < (cpu_clock_khz / divider) && divider <= 254) {
     divider += 2;
   }
 
@@ -992,7 +1009,8 @@ int VSTestInitHardware(void) {
 }
 
 /* Note: code SS_VER=2 is used for both VS1002 and VS1011e */
-const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103, 0, 0, 0, 0, 0, 0, 0, 0};
+const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
+                                0,    0,    0,    0,    0,    0,    0,    0};
 
 /*
 
@@ -1022,7 +1040,8 @@ int VSTestInitSoftware(void) {
   WriteSci(SCI_AICTRL1, 0xABAD);
   WriteSci(SCI_AICTRL2, 0x7E57);
   if (ReadSci(SCI_AICTRL1) != 0xABAD || ReadSci(SCI_AICTRL2) != 0x7E57) {
-    printf("There is something wrong with VS10xx SCI registers: %x %x\n", ReadSci(SCI_AICTRL1), ReadSci(SCI_AICTRL2));
+    printf("There is something wrong with VS10xx SCI registers: %x %x\n",
+           ReadSci(SCI_AICTRL1), ReadSci(SCI_AICTRL2));
 
     return 1;
   }
@@ -1045,7 +1064,8 @@ int VSTestInitSoftware(void) {
   /* Set the clock. Until this point we need to run SPI slow so that
      we do not exceed the maximum speeds mentioned in
      Chapter SPI Timing Diagram in the Datasheet. */
-  WriteSci(SCI_CLOCKF, HZ_TO_SC_FREQ(12288000) | SC_MULT_53_35X | SC_ADD_53_10X);
+  WriteSci(SCI_CLOCKF,
+           HZ_TO_SC_FREQ(12288000) | SC_MULT_53_35X | SC_ADD_53_10X);
 
   /* Now when we have upped the VS10xx clock speed, the microcontroller
      SPI bus can run faster. Do that before you start playing or
