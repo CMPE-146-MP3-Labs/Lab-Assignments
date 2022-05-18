@@ -284,11 +284,9 @@ enum PlayerStates {
   - Returns any other for user input. For supported commands, see code.
 
 */
-void SaveUIState() {}
+void SaveUIState() { vTaskDelay(1); }
 
-void RestoreUIState() {}
-
-int GetUICommand() { return 0; }
+void RestoreUIState() { vTaskDelay(1); }
 
 void VS1053PlayFile(FIL *readFp) {
   static u_int8 playBuf[FILE_BUFFER_SIZE];
@@ -332,6 +330,7 @@ void VS1053PlayFile(FIL *readFp) {
         bytesInBuffer -= t;
         pos += t;
       }
+      vTaskDelay(1);
 
       /* If the user has requested cancel, set VS10xx SM_CANCEL bit */
       if (playerState == psUserRequestedCancel) {
@@ -435,19 +434,23 @@ void VS1053PlayFile(FIL *readFp) {
 
 #ifdef PLAYER_USER_INTERFACE
     /* GetUICommand should return -1 for no command and -2 for CTRL-C */
-    c = GetUICommand();
+    c = command;
+    command = -1;
     switch (c) {
     /* Volume adjustment */
     case '-':
+
       if (volLevel < 255) {
         volLevel++;
         WriteSci(SCI_VOL, volLevel * 0x101);
+        printf("Volume lowered: %d", volLevel);
       }
       break;
     case '+':
       if (volLevel) {
         volLevel--;
         WriteSci(SCI_VOL, volLevel * 0x101);
+        printf("Volume increased: %d", volLevel);
       }
       break;
 

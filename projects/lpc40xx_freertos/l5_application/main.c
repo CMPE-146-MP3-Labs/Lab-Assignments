@@ -15,11 +15,11 @@ static void reader_task(void *params);
 typedef char songname_t[16];
 
 QueueHandle_t Q_songname;
-QueueHandle_t Q_songdata;
+QueueHandle_t Q_mp3_command;
 
 int main(void) {
   Q_songname = xQueueCreate(1, sizeof(songname_t));
-  Q_songdata = xQueueCreate(1, 512);
+  Q_mp3_command = xQueueCreate(1, sizeof(int));
   create_reader_task();
   create_player_task();
   sj2_cli__init();
@@ -38,24 +38,43 @@ int main(void) {
 
 static void create_player_task(void) {
   xTaskCreate(player_task, "Player Task", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_LOW, NULL);
+              PRIORITY_MEDIUM, NULL);
 }
 
 static void create_reader_task(void) {
   xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), NULL,
-              PRIORITY_MEDIUM, NULL);
+              PRIORITY_LOW, NULL);
 }
 
 static void player_task(void *params) {
-  char bytes_512[512] = {0};
   VSTestInitHardware();
+  int player_command = -1;
 
   while (1) {
-    while (uxQueueMessagesWaiting(Q_songdata) == 0) {
-      vTaskDelay(1);
-    }
 
-    xQueueReceive(Q_songdata, &bytes_512[0], portMAX_DELAY);
+    xQueueReceive(Q_mp3_command, &player_command, portMAX_DELAY);
+    fprintf(stderr, "recieved: %d\n", player_command);
+    /* Volume adjustment */
+    int volLevel = ReadSci(SCI_VOL) & 0xFF;
+    fprintf(stderr, "VOL: %d\n", volLevel);
+    switch (player_command) {
+    case ('0'):
+      fprintf(stderr, "Case 0");
+      if (volLevel < 255) {
+        volLevel++;
+        WriteSci(SCI_VOL, volLevel * 0x101);
+        fprintf(stderr,"Volume lowered: %d", volLevel);
+      }
+      break;
+    case ('1'):
+      fprintf(stderr, "Case 1");
+      if (volLevel) {
+        volLevel--;
+        WriteSci(SCI_VOL, volLevel * 0x101);
+        printf("Volume increased: %d", volLevel);
+      }
+      break;
+    }
   }
 }
 

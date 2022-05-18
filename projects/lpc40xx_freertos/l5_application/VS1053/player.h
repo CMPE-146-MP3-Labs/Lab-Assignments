@@ -29,6 +29,5 @@ u_int16 ReadSci(u_int8 addr);
 int WriteSdi(const u_int8 *data, u_int8 bytes);
 void SaveUIState(void);
 void RestoreUIState(void);
-int GetUICommand(void);
 
 #endif

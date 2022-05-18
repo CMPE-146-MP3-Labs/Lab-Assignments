@@ -23,19 +23,29 @@ cli__uart3_transmit(app_cli__argument_t argument,
 }
 
 extern QueueHandle_t Q_songname;
+extern QueueHandle_t Q_mp3_command;
 
 app_cli_status_e cli__mp3_play(app_cli__argument_t argument,
                                sl_string_s *user_input_minus_command_name,
                                app_cli__print_string_function cli_output) {
   // user_input_minus_command_name is actually a 'char *' pointer type
   // We tell the Queue to copy 32 bytes of songname from this location
-  xQueueSend(Q_songname, user_input_minus_command_name, portMAX_DELAY);
-
   fprintf(stderr, "Sent %s over to the Q_songname\n",
           user_input_minus_command_name);
+  xQueueSend(Q_songname, user_input_minus_command_name, portMAX_DELAY);
   return APP_CLI_STATUS__SUCCESS;
 }
 
+app_cli_status_e cli__mp3_control(app_cli__argument_t argument,
+                                  sl_string_s *user_input_minus_command_name,
+                                  app_cli__print_string_function cli_output) {
+  // user_input_minus_command_name is actually a 'char *' pointer type
+  // We tell the Queue to copy 32 bytes of songname from this location
+  fprintf(stderr, "Sent %s over to the Q_mp3_command\n",
+          user_input_minus_command_name);
+  xQueueSend(Q_mp3_command, user_input_minus_command_name, portMAX_DELAY);
+  return APP_CLI_STATUS__SUCCESS;
+}
 app_cli_status_e cli__crash_me(app_cli__argument_t argument,
                                sl_string_s user_input_minus_command_name,
                                app_cli__print_string_function cli_output) {

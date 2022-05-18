@@ -52,6 +52,12 @@ void sj2_cli__init(void) {
           "play [song.mp3] will play the song.mp3 file in the SD card.",
       .app_cli_handler = cli__mp3_play};
 
+  static app_cli__command_s mp3_control = {.command_name = "mp3",
+                                           .help_message_for_command =
+                                               "Control MP3 playback.\n"
+                                               "mp3 [-] will lower the volume.",
+                                           .app_cli_handler = cli__mp3_control};
+
   // Add your CLI commands in descending sorted order to make them appear in
   // sorted order
   app_cli__add_command_handler(&sj2_cli_struct, &uart3_transmit);
@@ -59,6 +65,7 @@ void sj2_cli__init(void) {
   app_cli__add_command_handler(&sj2_cli_struct, &i2c);
   app_cli__add_command_handler(&sj2_cli_struct, &crash);
   app_cli__add_command_handler(&sj2_cli_struct, &mp3_play);
+  app_cli__add_command_handler(&sj2_cli_struct, &mp3_control);
 
   // In case other tasks are hogging the CPU, it would be useful to run the CLI
   // at high priority to at least be able to see what is going on
