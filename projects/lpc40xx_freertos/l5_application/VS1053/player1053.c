@@ -260,7 +260,6 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
 }
 
 
-
 /*
 
   This function plays back an audio file.

@@ -64,7 +64,7 @@ static void player_task(void *params) {
       if (volLevel < 255) {
         volLevel++;
         WriteSci(SCI_VOL, volLevel * 0x101);
-        fprintf(stderr,"Volume lowered: %d", volLevel);
+        fprintf(stderr, "Volume lowered: %d", volLevel);
       }
       break;
     case ('-'):
