@@ -18,6 +18,13 @@
 #define VS_DCS gpio__construct_as_output(GPIO__PORT_2, 6)
 #define VS_DREQ gpio__construct_as_input(GPIO__PORT_2, 4)
 
+enum PlayerStates {
+  psPlayback = 0,
+  psUserRequestedCancel,
+  psCancelSentToVS10xx,
+  psStopped
+} playerState;
+
 typedef char songname_t[16];
 
 int VSTestInitHardware(void);

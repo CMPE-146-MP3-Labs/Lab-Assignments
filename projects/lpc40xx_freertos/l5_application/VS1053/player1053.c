@@ -259,12 +259,7 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
   }
 }
 
-enum PlayerStates {
-  psPlayback = 0,
-  psUserRequestedCancel,
-  psCancelSentToVS10xx,
-  psStopped
-} playerState;
+
 
 /*
 

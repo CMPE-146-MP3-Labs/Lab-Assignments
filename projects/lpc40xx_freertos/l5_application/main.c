@@ -56,22 +56,60 @@ static void player_task(void *params) {
     fprintf(stderr, "recieved: %d\n", player_command);
     /* Volume adjustment */
     int volLevel = ReadSci(SCI_VOL) & 0xFF;
+    int bassLevel = (ReadSci(SCI_BASS) >> 12) & 0xF;
+    int trebleLevel = (ReadSci(SCI_BASS) >> 4) & 0xF;
     fprintf(stderr, "VOL: %d\n", volLevel);
     switch (player_command) {
-    case ('0'):
-      fprintf(stderr, "Case 0");
+    case ('+'):
       if (volLevel < 255) {
         volLevel++;
         WriteSci(SCI_VOL, volLevel * 0x101);
         fprintf(stderr,"Volume lowered: %d", volLevel);
       }
       break;
-    case ('1'):
-      fprintf(stderr, "Case 1");
+    case ('-'):
       if (volLevel) {
         volLevel--;
         WriteSci(SCI_VOL, volLevel * 0x101);
         printf("Volume increased: %d", volLevel);
+      }
+      break;
+    case ('p'):
+      if (playerState == psPlayback)
+        playerState = psUserRequestedCancel;
+      if (playerState == psStopped)
+        playerState = psPlayback;
+      break;
+    case ('s'):
+      if (playerState == psPlayback)
+        playerState = psUserRequestedCancel;
+      break;
+    case ('B'):
+      if (bassLevel < 15) {
+        bassLevel++;
+        WriteSci(SCI_BASS, bassLevel * SB_AMPLITUDE);
+        fprintf(stderr,"Bass lowered: %d", bassLevel);
+      }
+      break;
+    case ('b'):
+      if (bassLevel > 0) {
+        bassLevel--;
+        WriteSci(SCI_BASS, bassLevel * SB_AMPLITUDE);
+        printf("Bass increased: %d", bassLevel);
+      }
+      break;
+          case ('T'):
+      if (trebleLevel < 7) {
+        trebleLevel++;
+        WriteSci(SCI_BASS, trebleLevel * ST_AMPLITUDE);
+        fprintf(stderr,"Treble lowered: %d", trebleLevel);
+      }
+      break;
+    case ('t'):
+      if (trebleLevel > -8) {
+        trebleLevel--;
+        WriteSci(SCI_BASS, trebleLevel * ST_AMPLITUDE);
+        printf("Treble increased: %d", trebleLevel);
       }
       break;
     }
