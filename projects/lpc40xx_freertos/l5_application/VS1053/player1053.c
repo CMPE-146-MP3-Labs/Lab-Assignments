@@ -263,7 +263,8 @@ enum PlayerStates {
   psPlayback = 0,
   psUserRequestedCancel,
   psCancelSentToVS10xx,
-  psStopped
+  psStopped,
+  psPaused
 } playerState;
 
 /*
