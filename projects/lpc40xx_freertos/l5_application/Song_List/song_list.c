@@ -36,7 +36,7 @@ void song_list__populate(void) {
   FRESULT res;
   static FILINFO file_info;
   const char *root_path = "/";
-  strncpy(list_of_songs[0], "Shuffle All", sizeof(song_memory_t) - 1);
+  strncpy(list_of_songs[0], "Random Song", sizeof(song_memory_t) - 1);
   DIR dir;
   res = f_opendir(&dir, root_path);
 

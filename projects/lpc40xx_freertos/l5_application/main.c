@@ -6,6 +6,8 @@
 #include "song_list.h"
 #include "task.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // 'static' to make these functions 'private' to this file
 static void create_player_task(void);
@@ -118,6 +120,8 @@ static void player_task(void *params) {
 
 static void reader_task(void *params) {
   songname_t name;
+  songname_t* random;
+  time_t t;
   // char bytes_512[512];
   // UINT bytes_read;
   // FRESULT result;
@@ -126,8 +130,17 @@ static void reader_task(void *params) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
     printf("Received song to play: %s\n", name);
     // FIL mp3_file;
-    VSTestInitSoftware();
-    VSTestHandleFile(&name, 0);
+    if (name == "Random Song"){
+      srand((unsigned) time(&t));
+      random = song_list__get_name_for_item((rand() % song_list__get_item_count()) + 1);
+      VSTestInitSoftware();
+      VSTestHandleFile(random, 0);
+    }
+    else {
+      VSTestInitSoftware();
+      VSTestHandleFile(&name, 0);
+    }
+    
 
     /*result = f_open(&mp3_file, &name[0], FA_OPEN_EXISTING | FA_READ);
     fprintf(stderr, "Open Result: %i", result);
