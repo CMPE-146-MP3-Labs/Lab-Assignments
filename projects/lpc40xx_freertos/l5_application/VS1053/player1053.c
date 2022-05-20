@@ -52,7 +52,7 @@ const u_int16 imaFix[] = {
 #undef SKIP_PLUGIN_VARNAME
 
 #define FILE_BUFFER_SIZE 512
-#define SDI_MAX_TRANSFER_SIZE 32
+#define SDI_MAX_TRANSFER_SIZE 128
 #define SDI_END_FILL_BYTES_FLAC 12288
 #define SDI_END_FILL_BYTES 2050
 #define REC_BUFFER_SIZE 512
@@ -63,7 +63,7 @@ const u_int16 imaFix[] = {
    data is collected. */
 #define REPORT_INTERVAL 4096
 #define REPORT_INTERVAL_MIDI 512
-#if 0
+#if 1
 #define REPORT_ON_SCREEN
 #endif
 
@@ -137,9 +137,9 @@ int WriteSdi(const u_int8 *data, u_int8 bytes) {
   gpio__reset(VS_DCS);
   for (int i = 0; i < bytes; i++) {
     ssp0__exchange_byte(data[i]);
-    while (!gpio__get(VS_DREQ)) {
-      // wait
-    }
+    // while (!gpio__get(VS_DREQ)) {
+    //   // wait
+    // }
   }
   gpio__set(VS_DCS);
   return 0;
@@ -259,7 +259,6 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
   }
 }
 
-
 /*
 
   This function plays back an audio file.
@@ -278,9 +277,9 @@ void LoadPlugin(const u_int16 *d, u_int16 len) {
   - Returns any other for user input. For supported commands, see code.
 
 */
-void SaveUIState() { vTaskDelay(1); }
+void SaveUIState() {}
 
-void RestoreUIState() { vTaskDelay(1); }
+void RestoreUIState() {}
 
 void VS1053PlayFile(FIL *readFp) {
   static u_int8 playBuf[FILE_BUFFER_SIZE];
@@ -324,7 +323,7 @@ void VS1053PlayFile(FIL *readFp) {
         bytesInBuffer -= t;
         pos += t;
       }
-      vTaskDelay(1);
+      // vTaskDelay(1);
 
       /* If the user has requested cancel, set VS10xx SM_CANCEL bit */
       if (playerState == psUserRequestedCancel) {

@@ -14,9 +14,9 @@
 #include "vs10xx_uc.h"
 
 #define VS_XRESET gpio__construct_as_output(GPIO__PORT_2, 5)
-#define VS_CS gpio__construct_as_output(GPIO__PORT_2, 2)
+#define VS_CS gpio__construct_as_output(GPIO__PORT_2, 7)
 #define VS_DCS gpio__construct_as_output(GPIO__PORT_2, 6)
-#define VS_DREQ gpio__construct_as_input(GPIO__PORT_2, 4)
+#define VS_DREQ gpio__construct_as_input(GPIO__PORT_2, 8)
 
 enum PlayerStates {
   psPlayback = 0,
@@ -25,7 +25,7 @@ enum PlayerStates {
   psStopped
 } playerState;
 
-typedef char songname_t[16];
+typedef char songname_t[128];
 
 int VSTestInitHardware(void);
 int VSTestInitSoftware(void);
