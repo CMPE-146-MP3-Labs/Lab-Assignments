@@ -7,6 +7,7 @@
 static song_memory_t list_of_songs[32];
 static size_t number_of_songs;
 
+
 static void song_list__handle_filename(const char *filename) {
   // This will not work for cases like "file.mp3.zip"
   if (NULL != strstr(filename, ".mp3")) {
@@ -18,7 +19,7 @@ static void song_list__handle_filename(const char *filename) {
 
     // Better: But strncpy() does not guarantee to copy null char if max length
     // encountered So we can manually subtract 1 to reserve as NULL char
-    strncpy(list_of_songs[number_of_songs], filename,
+    strncpy(list_of_songs[number_of_songs + 1], filename,
             sizeof(song_memory_t) - 1);
 
     // Best: Compensates for the null, so if 128 char filename, then it copies
@@ -35,7 +36,7 @@ void song_list__populate(void) {
   FRESULT res;
   static FILINFO file_info;
   const char *root_path = "/";
-
+  strncpy(list_of_songs[0], "Shuffle All", sizeof(song_memory_t) - 1);
   DIR dir;
   res = f_opendir(&dir, root_path);
 
