@@ -10,7 +10,7 @@
 #include "task.h"
 #include <stdio.h>
 
-#define ACTUAL_BUTTONS 1
+#define ACTUAL_BUTTONS 0
 
 /*--------------MACROS-----------------------*/
 #define cmd_play_pause 'p'
@@ -175,9 +175,13 @@ static void player_task(void *params) {
 
 static void reader_task(void *params) {
   songname_t name;
+  // songname_t *first_song = song_list__get_name_for_item(1);
+
   // char bytes_512[512];
   // UINT bytes_read;
   // FRESULT result;
+
+  // VSTestHandleFile(first_song, 0);
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
@@ -352,48 +356,55 @@ static void button_task(void *params) {
   uint8_t switch_press;
   /* actual switches */
 #if ACTUAL_BUTTONS
-  gpio_s button0 = gpio__construct_as_input(GPIO__PORT_1, 30);
-  gpio_s button1 = gpio__construct_as_input(GPIO__PORT_1, 20);
+  gpio_s button4 = gpio__construct_as_input(GPIO__PORT_1, 30);
+  gpio_s button3 = gpio__construct_as_input(GPIO__PORT_1, 20);
   gpio_s button2 = gpio__construct_as_input(GPIO__PORT_1, 23);
-  gpio_s button3 = gpio__construct_as_input(GPIO__PORT_1, 28);
-  gpio_s button4 = gpio__construct_as_input(GPIO__PORT_1, 29);
-  gpio_s vol_down = gpio__construct_as_input(GPIO__PORT_1, 25);
+  gpio_s button1 = gpio__construct_as_input(GPIO__PORT_1, 28);
+  gpio_s button0 = gpio__construct_as_input(GPIO__PORT_1, 29);
+  gpio_s vol_down = gpi_construct_as_input(GPIO__PORT_1, 25);
   gpio_s vol_up = gpio__construct_as_input(GPIO__PORT_1, 31);
 
   // gpio__set_function(button0, GPIO__FUNCITON_0_IO_PIN);
   while (true) {
     // *SW0
     if (!gpio__get(button0)) {
+      printf("button 0");
       switch_press = 0;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW1
     if (!gpio__get(button1)) {
+      printf("button 1");
       switch_press = 1;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW2
     if (!gpio__get(button2)) {
+      printf("button 2");
       switch_press = 2;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW3
     if (!gpio__get(button3)) {
+      printf("button 3");
       switch_press = 3;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW4
     if (!gpio__get(button4)) {
+      printf("button 4");
       switch_press = 4;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW5 Volume Up
     if (!gpio__get(vol_up)) {
+      printf("button VUP");
       switch_press = 5;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }
     // *SW6 Volume Down
     if (!gpio__get(vol_down)) {
+      printf("button VDON");
       switch_press = 6;
       xQueueSend(Q_button, &switch_press, portMAX_DELAY);
     }

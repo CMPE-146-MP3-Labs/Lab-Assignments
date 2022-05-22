@@ -52,7 +52,7 @@ const u_int16 imaFix[] = {
 #undef SKIP_PLUGIN_VARNAME
 
 #define FILE_BUFFER_SIZE 512
-#define SDI_MAX_TRANSFER_SIZE 128
+#define SDI_MAX_TRANSFER_SIZE 32
 #define SDI_END_FILL_BYTES_FLAC 12288
 #define SDI_END_FILL_BYTES 2050
 #define REC_BUFFER_SIZE 512
@@ -101,6 +101,18 @@ const char *afName[] = {
     "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
 };
 
+void BootSpi() {
+  while (!gpio__get(VS_DREQ)) {
+    // wait
+  }
+  gpio__set(VS_DCS);
+  gpio__reset(VS_CS);
+  ssp0__exchange_byte(0x50);
+  ssp0__exchange_byte(0x26);
+  ssp0__exchange_byte(0x48);
+  gpio__set(VS_CS);
+}
+
 void WriteSci(u_int8 addr, u_int16 data) {
   while (!gpio__get(VS_DREQ)) {
     // wait
@@ -137,9 +149,9 @@ int WriteSdi(const u_int8 *data, u_int8 bytes) {
   gpio__reset(VS_DCS);
   for (int i = 0; i < bytes; i++) {
     ssp0__exchange_byte(data[i]);
-    // while (!gpio__get(VS_DREQ)) {
-    //   // wait
-    // }
+    while (!gpio__get(VS_DREQ)) {
+      // wait
+    }
   }
   gpio__set(VS_DCS);
   return 0;
@@ -983,7 +995,7 @@ int VSTestInitHardware(void) {
   const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
 
   // Keep scaling down divider until calculated is higher
-  while (2000 < (cpu_clock_khz / divider) && divider <= 254) {
+  while (1800 < (cpu_clock_khz / divider) && divider <= 254) {
     divider += 2;
   }
 
@@ -992,15 +1004,22 @@ int VSTestInitHardware(void) {
   gpio__construct_with_function(GPIO__PORT_0, 18, GPIO__FUNCTION_2);
   gpio__construct_with_function(GPIO__PORT_0, 15, GPIO__FUNCTION_2);
   gpio__construct_with_function(GPIO__PORT_0, 17, GPIO__FUNCTION_2);
-  VS_DREQ;
-  gpio__set(VS_XRESET);
-  gpio__set(VS_CS);
+  gpio__enable_open_drain(VS_DREQ);
+  gpio__reset(VS_CS);
   gpio__set(VS_DCS);
   vTaskDelay(2);
   gpio__reset(VS_XRESET);
   vTaskDelay(2);
   gpio__set(VS_XRESET);
-  vTaskDelay(2);
+  while (!gpio__get(VS_DREQ)) {
+    // wait
+  }
+  gpio__set(VS_CS);
+  BootSpi();
+  ReadSci(SCI_MODE);
+  WriteSci(SCI_MODE, 0x00);
+  WriteSci(SCI_MODE, SM_RESET | SM_SDINEW | SM_TESTS);
+
   return 0;
 }
 
@@ -1019,16 +1038,16 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 int VSTestInitSoftware(void) {
   u_int16 ssVer;
 
-  /* Start initialization with a dummy read, which makes sure our
-     microcontoller chips selects and everything are where they
-     are supposed to be and that VS10xx's SCI bus is in a known state. */
-  ReadSci(SCI_MODE);
+  // /* Start initialization with a dummy read, which makes sure our
+  //    microcontoller chips selects and everything are where they
+  //    are supposed to be and that VS10xx's SCI bus is in a known state. */
+  // ReadSci(SCI_MODE);
 
-  /* First real operation is a software reset. After the software
-     reset we know what the status of the IC is. You need, depending
-     on your application, either set or not set SM_SDISHARE. See the
-     Datasheet for details. */
-  WriteSci(SCI_MODE, SM_SDINEW | SM_TESTS | SM_RESET);
+  // /* First real operation is a software reset. After the software
+  //    reset we know what the status of the IC is. You need, depending
+  //    on your application, either set or not set SM_SDISHARE. See the
+  //    Datasheet for details. */
+  // WriteSci(SCI_MODE, SM_RESET | SM_SDINEW | SM_CLK_RANGE);
 
   /* A quick sanity check: write to two registers, then test if we
      get the same results. Note that if you use a too high SPI
@@ -1068,13 +1087,13 @@ int VSTestInitSoftware(void) {
      recording files. */
 
   /* Set up other parameters. */
-  WriteVS10xxMem(PAR_CONFIG1, PAR_CONFIG1_AAC_SBR_SELECTIVE_UPSAMPLE);
+  // WriteVS10xxMem(PAR_CONFIG1, PAR_CONFIG1_AAC_SBR_SELECTIVE_UPSAMPLE);
 
   /* Set volume level at -6 dB of maximum */
   WriteSci(SCI_VOL, 0x0c0c);
 
   /* Now it's time to load the proper patch set. */
-  LoadPlugin(plugin, sizeof(plugin) / sizeof(plugin[0]));
+  // LoadPlugin(plugin, sizeof(plugin) / sizeof(plugin[0]));
 
   /* We're ready to go. */
   fprintf(stderr, "LOADED\n");
