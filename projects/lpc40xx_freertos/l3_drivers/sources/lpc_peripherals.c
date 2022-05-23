@@ -148,6 +148,13 @@ void lpc_peripheral__turn_on_power_to(lpc_peripheral_e peripheral) {
     LPC_SC->PCONP |= (UINT32_C(1) << power_on_bit);
   }
 }
+void lpc_peripheral__turn_off_power_to(lpc_peripheral_e peripheral) {
+  if (peripheral < sizeof(lpc_peripheral_pconp_bit_map)) {
+    const uint32_t power_on_bit =
+        (uint32_t)lpc_peripheral_pconp_bit_map[peripheral];
+    LPC_SC->PCONP |= (UINT32_C(0) << power_on_bit);
+  }
+}
 
 bool lpc_peripheral__is_powered_on(lpc_peripheral_e peripheral) {
   bool powered_on = false;

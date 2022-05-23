@@ -51,11 +51,16 @@ const u_int16 imaFix[] = {
 };
 #undef SKIP_PLUGIN_VARNAME
 
-#define FILE_BUFFER_SIZE 1024
+#define FILE_BUFFER_SIZE 3072
 #define SDI_MAX_TRANSFER_SIZE 128
 #define SDI_END_FILL_BYTES_FLAC 12288
 #define SDI_END_FILL_BYTES 2050
 #define REC_BUFFER_SIZE 512
+#define XTALI_KHZ 12288
+#define SCIR_KHZ 6144
+#define SCIW_SDI_KHZ 12288
+#define BOOT_KHZ 1536
+#define SDI_YIELD_MS 45
 
 /* How many transferred bytes between collecting data.
    A value between 1-8 KiB is typically a good value.
@@ -63,7 +68,7 @@ const u_int16 imaFix[] = {
    data is collected. */
 #define REPORT_INTERVAL 4096
 #define REPORT_INTERVAL_MIDI 512
-#if 1
+#if 0
 #define REPORT_ON_SCREEN
 #endif
 
@@ -101,6 +106,18 @@ const char *afName[] = {
     "AAC MP4", "AAC ADTS", "AAC ADIF", "FLAC", "WMA", "MIDI",
 };
 
+void ssp0__set_max_clock(uint32_t max_clock_khz) {
+  uint8_t divider = 2;
+  const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
+
+  // Keep scaling down divider until calculated is higher
+  while (max_clock_khz < (cpu_clock_khz / divider) && divider <= 254) {
+    divider += 2;
+  }
+
+  LPC_SSP0->CPSR = divider;
+}
+
 void BootSpi() {
   while (!gpio__get(VS_DREQ)) {
     // wait
@@ -128,7 +145,7 @@ void WriteSci(u_int8 addr, u_int16 data) {
   gpio__set(VS_CS);
 }
 
-u_int16 ReadSci(u_int8 addr) {
+u_int16 ReadSciPB(u_int8 addr) {
   while (!gpio__get(VS_DREQ)) {
     // wait
   }
@@ -141,10 +158,28 @@ u_int16 ReadSci(u_int8 addr) {
   gpio__set(VS_CS);
   return data;
 }
+
+u_int16 ReadSci(u_int8 addr) {
+  ssp0__set_max_clock(SCIR_KHZ);
+  while (!gpio__get(VS_DREQ)) {
+    // wait
+  }
+  u_int16 data;
+  gpio__set(VS_DCS);
+  gpio__reset(VS_CS);
+  ssp0__exchange_byte(0x03);
+  ssp0__exchange_byte(addr);
+  data = ssp0__exchange_byte(0xFF) << 8 | ssp0__exchange_byte(0xFF);
+  gpio__set(VS_CS);
+  ssp0__set_max_clock(SCIW_SDI_KHZ);
+  return data;
+}
+
 int WriteSdi(const u_int8 *data, u_int8 bytes) {
   while (!gpio__get(VS_DREQ)) {
     // wait
   }
+
   gpio__set(VS_CS);
   gpio__reset(VS_DCS);
   for (int i = 0; i < bytes; i++) {
@@ -153,7 +188,7 @@ int WriteSdi(const u_int8 *data, u_int8 bytes) {
     }
   }
   gpio__set(VS_DCS);
-  vTaskDelay(1);
+
   return 0;
 }
 /*
@@ -335,7 +370,6 @@ void VS1053PlayFile(FIL *readFp) {
         bytesInBuffer -= t;
         pos += t;
       }
-      // vTaskDelay(1);
 
       /* If the user has requested cancel, set VS10xx SM_CANCEL bit */
       if (playerState == psUserRequestedCancel) {
@@ -593,6 +627,7 @@ void VS1053PlayFile(FIL *readFp) {
       break;
     }  /* switch (c) */
 #endif /* PLAYER_USER_INTERFACE */
+    vTaskDelay(SDI_YIELD_MS);
   } /* while ((bytesInBuffer = fread(...)) > 0 && playerState != psStopped) */
 
 #ifdef PLAYER_USER_INTERFACE
@@ -696,8 +731,6 @@ void VS1053RecordFile(FILE *writeFp) {
   /* Initialize recording */
 
   /* Set clock to a known, high value. */
-  WriteSci(SCI_CLOCKF,
-           HZ_TO_SC_FREQ(12288000) | SC_MULT_53_45X | SC_ADD_53_00X);
 
 #if 1
   /* Ogg Vorbis recording from line in. */
@@ -991,35 +1024,22 @@ int VSTestInitHardware(void) {
   LPC_SSP0->CR0 = 7;        // 8-bit mode
   LPC_SSP0->CR1 = (1 << 1); // Enable SSP as Master
 
-  uint8_t divider = 2;
-  const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
-
-  // Keep scaling down divider until calculated is higher
-  while (1755 < (cpu_clock_khz / divider) && divider <= 254) {
-    divider += 2;
-  }
-
-  LPC_SSP0->CPSR = divider;
-
+  ssp0__set_max_clock(BOOT_KHZ);
   gpio__construct_with_function(GPIO__PORT_0, 18, GPIO__FUNCTION_2);
   gpio__construct_with_function(GPIO__PORT_0, 15, GPIO__FUNCTION_2);
   gpio__construct_with_function(GPIO__PORT_0, 17, GPIO__FUNCTION_2);
-  gpio__enable_open_drain(VS_DREQ);
   gpio__reset(VS_CS);
   gpio__set(VS_DCS);
-  vTaskDelay(2);
   gpio__reset(VS_XRESET);
-  vTaskDelay(2);
   gpio__set(VS_XRESET);
   while (!gpio__get(VS_DREQ)) {
     // wait
   }
   gpio__set(VS_CS);
   BootSpi();
-  ReadSci(SCI_MODE);
+  ReadSciPB(SCI_MODE);
   WriteSci(SCI_MODE, 0x00);
   WriteSci(SCI_MODE, SM_RESET | SM_SDINEW | SM_TESTS);
-
   return 0;
 }
 
@@ -1037,7 +1057,6 @@ const u_int16 chipNumber[16] = {1001, 1011, 1011, 1003, 1053, 1033, 1063, 1103,
 */
 int VSTestInitSoftware(void) {
   u_int16 ssVer;
-
   // /* Start initialization with a dummy read, which makes sure our
   //    microcontoller chips selects and everything are where they
   //    are supposed to be and that VS10xx's SCI bus is in a known state. */
@@ -1054,9 +1073,9 @@ int VSTestInitSoftware(void) {
      speed, the MSB is the most likely to fail when read again. */
   WriteSci(SCI_AICTRL1, 0xABAD);
   WriteSci(SCI_AICTRL2, 0x7E57);
-  if (ReadSci(SCI_AICTRL1) != 0xABAD || ReadSci(SCI_AICTRL2) != 0x7E57) {
+  if (ReadSciPB(SCI_AICTRL1) != 0xABAD || ReadSciPB(SCI_AICTRL2) != 0x7E57) {
     printf("There is something wrong with VS10xx SCI registers: %x %x\n",
-           ReadSci(SCI_AICTRL1), ReadSci(SCI_AICTRL2));
+           ReadSciPB(SCI_AICTRL1), ReadSciPB(SCI_AICTRL2));
 
     return 1;
   }
@@ -1064,7 +1083,7 @@ int VSTestInitSoftware(void) {
   WriteSci(SCI_AICTRL2, 0);
 
   /* Check VS10xx type */
-  ssVer = ((ReadSci(SCI_STATUS) >> 4) & 15);
+  ssVer = ((ReadSciPB(SCI_STATUS) >> 4) & 15);
   if (chipNumber[ssVer]) {
     fprintf(stderr, "Chip is VS%d\n", chipNumber[ssVer]);
     if (chipNumber[ssVer] != 1053) {
@@ -1087,15 +1106,7 @@ int VSTestInitSoftware(void) {
   /* Now when we have upped the VS10xx clock speed, the microcontroller
      SPI bus can run faster. Do that before you start playing or
      recording files. */
-  uint8_t divider = 2;
-  const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
-
-  // Keep scaling down divider until calculated is higher
-  while (1755 * 4 < (cpu_clock_khz / divider) && divider <= 254) {
-    divider += 2;
-  }
-
-  LPC_SSP0->CPSR = divider;
+  ssp0__set_max_clock(SCIW_SDI_KHZ);
   /* Set up other parameters. */
   // WriteVS10xxMem(PAR_CONFIG1,
   // PAR_CONFIG1_AAC_SBR_SELECTIVE_UPSAMPLE);

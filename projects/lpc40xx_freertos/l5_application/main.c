@@ -42,9 +42,6 @@ static void player_task(void *params);
 static void reader_task(void *params);
 static void display_task(void *params);
 static void button_task(void *params);
-
-static void create_uart_task(void);
-static void uart_task(void *params);
 /*-------------------------------------------*/
 
 /*-------------Queue Handles-----------------*/
@@ -76,7 +73,7 @@ int main(void) {
     fprintf(stderr, "Song %2d: %s\n", (1 + song_number),
             song_list__get_name_for_item(song_number));
   }
-
+  xQueueSend(Q_songname, song_list__get_name_for_item(3), portMAX_DELAY);
   puts("Starting RTOS\n");
   vTaskStartScheduler();
 
@@ -95,12 +92,13 @@ static void create_player_task(void) {
 }
 
 static void create_reader_task(void) {
-  xTaskCreate(reader_task, "Reader Task", (512U * 8) / sizeof(void *), 0, 1, 0);
+  xTaskCreate(reader_task, "Reader Task", (512U * 16) / sizeof(void *), 0, 2,
+              0);
 }
 
 static void player_task(void *params) {
-  VSTestInitHardware();
   char player_command = 0;
+  xQueueReceive(Q_mp3_command, &player_command, portMAX_DELAY);
   int volLevel = ReadSci(SCI_VOL) & 0xFF;
   int bassLevel = (ReadSci(SCI_BASS) >> 12) & 0xF;
   int trebleLevel = (ReadSci(SCI_BASS) >> 4) & 0xF;
@@ -174,13 +172,10 @@ static void player_task(void *params) {
 
 static void reader_task(void *params) {
   songname_t name;
-  // songname_t *first_song = song_list__get_name_for_item(1);
-
+  VSTestInitHardware();
   // char bytes_512[512];
   // UINT bytes_read;
   // FRESULT result;
-
-  // VSTestHandleFile(first_song, 0);
 
   while (1) {
     xQueueReceive(Q_songname, &name[0], portMAX_DELAY);
