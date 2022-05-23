@@ -68,7 +68,7 @@ const u_int16 imaFix[] = {
    data is collected. */
 #define REPORT_INTERVAL 4096
 #define REPORT_INTERVAL_MIDI 512
-#if 0
+#if 1
 #define REPORT_ON_SCREEN
 #endif
 
