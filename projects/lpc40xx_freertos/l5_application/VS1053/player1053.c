@@ -51,8 +51,8 @@ const u_int16 imaFix[] = {
 };
 #undef SKIP_PLUGIN_VARNAME
 
-#define FILE_BUFFER_SIZE 512
-#define SDI_MAX_TRANSFER_SIZE 32
+#define FILE_BUFFER_SIZE 1024
+#define SDI_MAX_TRANSFER_SIZE 128
 #define SDI_END_FILL_BYTES_FLAC 12288
 #define SDI_END_FILL_BYTES 2050
 #define REC_BUFFER_SIZE 512
@@ -150,10 +150,10 @@ int WriteSdi(const u_int8 *data, u_int8 bytes) {
   for (int i = 0; i < bytes; i++) {
     ssp0__exchange_byte(data[i]);
     while (!gpio__get(VS_DREQ)) {
-      // wait
     }
   }
   gpio__set(VS_DCS);
+  vTaskDelay(1);
   return 0;
 }
 /*
@@ -995,7 +995,7 @@ int VSTestInitHardware(void) {
   const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
 
   // Keep scaling down divider until calculated is higher
-  while (1800 < (cpu_clock_khz / divider) && divider <= 254) {
+  while (1755 < (cpu_clock_khz / divider) && divider <= 254) {
     divider += 2;
   }
 
@@ -1080,14 +1080,25 @@ int VSTestInitSoftware(void) {
      we do not exceed the maximum speeds mentioned in
      Chapter SPI Timing Diagram in the Datasheet. */
   WriteSci(SCI_CLOCKF,
-           HZ_TO_SC_FREQ(12288000) | SC_MULT_53_35X | SC_ADD_53_10X);
+           HZ_TO_SC_FREQ(12288000) | SC_MULT_53_40X | SC_ADD_53_00X);
+
+  vTaskDelay(5);
 
   /* Now when we have upped the VS10xx clock speed, the microcontroller
      SPI bus can run faster. Do that before you start playing or
      recording files. */
+  uint8_t divider = 2;
+  const uint32_t cpu_clock_khz = clock__get_core_clock_hz() / 1000UL;
 
+  // Keep scaling down divider until calculated is higher
+  while (1755 * 4 < (cpu_clock_khz / divider) && divider <= 254) {
+    divider += 2;
+  }
+
+  LPC_SSP0->CPSR = divider;
   /* Set up other parameters. */
-  // WriteVS10xxMem(PAR_CONFIG1, PAR_CONFIG1_AAC_SBR_SELECTIVE_UPSAMPLE);
+  // WriteVS10xxMem(PAR_CONFIG1,
+  // PAR_CONFIG1_AAC_SBR_SELECTIVE_UPSAMPLE);
 
   /* Set volume level at -6 dB of maximum */
   WriteSci(SCI_VOL, 0x0c0c);

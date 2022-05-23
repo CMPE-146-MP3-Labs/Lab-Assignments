@@ -66,7 +66,7 @@ int main(void) {
   sj2_cli__init();
 
   /* Initialize the SPI interface */
-  ssp2__initialize(24);
+  ssp2__initialize(24 * 1000);
   /* Initialize the LCD display */
   LCD_Init();
 
