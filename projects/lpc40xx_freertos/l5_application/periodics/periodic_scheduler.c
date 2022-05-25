@@ -15,18 +15,24 @@ typedef struct {
   /// This callback is invoked from the task
   periodic_callbacks_f callback;
 
-  /// Incremented until task_delay_in_ticks and then task_finished_flag is checked for deadline
+  /// Incremented until task_delay_in_ticks and then task_finished_flag is
+  /// checked for deadline
   TickType_t ticks_elapsed;
 
-  /// After the callback() is invoked, this flag is set which is later checked by periodic_scheduler__task_monitor()
+  /// After the callback() is invoked, this flag is set which is later checked
+  /// by periodic_scheduler__task_monitor()
   volatile bool task_finished_flag;
 } periodic_scheduler_s;
 
 /// Instances of the 4 periodic tasks and their callback function pointer
-static periodic_scheduler_s periodic_scheduler__1Hz = {1000, periodic_callbacks__1Hz};
-static periodic_scheduler_s periodic_scheduler__10Hz = {100, periodic_callbacks__10Hz};
-static periodic_scheduler_s periodic_scheduler__100Hz = {10, periodic_callbacks__100Hz};
-static periodic_scheduler_s periodic_scheduler__1000Hz = {1, periodic_callbacks__1000Hz};
+static periodic_scheduler_s periodic_scheduler__1Hz = {1000,
+                                                       periodic_callbacks__1Hz};
+static periodic_scheduler_s periodic_scheduler__10Hz = {
+    100, periodic_callbacks__10Hz};
+static periodic_scheduler_s periodic_scheduler__100Hz = {
+    10, periodic_callbacks__100Hz};
+static periodic_scheduler_s periodic_scheduler__1000Hz = {
+    1, periodic_callbacks__1000Hz};
 
 static bool periodic_scheduler__run_1000hz;
 
@@ -45,12 +51,21 @@ static void periodic_scheduler__run(periodic_scheduler_s *periodic) {
   }
 }
 
-static void periodic_scheduler__1Hz_task(void *param) { periodic_scheduler__run(&periodic_scheduler__1Hz); }
-static void periodic_scheduler__10Hz_task(void *param) { periodic_scheduler__run(&periodic_scheduler__10Hz); }
-static void periodic_scheduler__100Hz_task(void *param) { periodic_scheduler__run(&periodic_scheduler__100Hz); }
-static void periodic_scheduler__1000Hz_task(void *param) { periodic_scheduler__run(&periodic_scheduler__1000Hz); }
+static void periodic_scheduler__1Hz_task(void *param) {
+  periodic_scheduler__run(&periodic_scheduler__1Hz);
+}
+static void periodic_scheduler__10Hz_task(void *param) {
+  periodic_scheduler__run(&periodic_scheduler__10Hz);
+}
+static void periodic_scheduler__100Hz_task(void *param) {
+  periodic_scheduler__run(&periodic_scheduler__100Hz);
+}
+static void periodic_scheduler__1000Hz_task(void *param) {
+  periodic_scheduler__run(&periodic_scheduler__1000Hz);
+}
 
-static void periodic_scheduler__check_flag(periodic_scheduler_s *periodic_task, TickType_t tick_delay) {
+static void periodic_scheduler__check_flag(periodic_scheduler_s *periodic_task,
+                                           TickType_t tick_delay) {
   periodic_task->ticks_elapsed += tick_delay;
 
   if (periodic_task->ticks_elapsed >= periodic_task->task_delay_in_ticks) {
@@ -82,8 +97,8 @@ static void periodic_scheduler__task_monitor(void *param) {
 
 void periodic_scheduler__initialize(void) {
   /* You can modify these stack sizes to suit your needs
-   * Generally, you should not need higher than 4k stack size as you should not allocate
-   * large data objects on the stack memory
+   * Generally, you should not need higher than 4k stack size as you should not
+   * allocate large data objects on the stack memory
    */
 
   static StackType_t hz1_stack[4096 / sizeof(StackType_t)];
@@ -99,7 +114,8 @@ void periodic_scheduler__initialize(void) {
 
   static StackType_t wdt_stack[1024 / sizeof(StackType_t)];
   static StaticTask_t wdt_struct;
-  xTaskCreateStatic(periodic_scheduler__task_monitor, "Hz_wdt", ARRAY_SIZE(wdt_stack), NULL, PRIORITY_PERIODIC_MONITOR,
+  xTaskCreateStatic(periodic_scheduler__task_monitor, "Hz_wdt",
+                    ARRAY_SIZE(wdt_stack), NULL, PRIORITY_PERIODIC_MONITOR,
                     wdt_stack, &wdt_struct);
 
   periodic_callbacks__initialize();
@@ -108,7 +124,8 @@ void periodic_scheduler__initialize(void) {
 void periodic_scheduler__initialize_with_1khz(void) {
   static StackType_t hz1000_stack[4096 / sizeof(StackType_t)];
   static StaticTask_t hz1000_struct;
-  xTaskCreateStatic(periodic_scheduler__1000Hz_task, "1000Hz", ARRAY_SIZE(hz1000_stack), NULL, PRIORITY_PERIODIC_1000HZ,
+  xTaskCreateStatic(periodic_scheduler__1000Hz_task, "1000Hz",
+                    ARRAY_SIZE(hz1000_stack), NULL, PRIORITY_PERIODIC_1000HZ,
                     hz1000_stack, &hz1000_struct);
 
   periodic_scheduler__initialize();

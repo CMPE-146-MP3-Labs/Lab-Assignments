@@ -275,7 +275,7 @@ typedef enum {
 	FR_INVALID_PARAMETER	/* (19) Given parameter is invalid */
 } FRESULT;
 
-
+ 
 
 /*--------------------------------------------------------------*/
 /* FatFs module application interface                           */
